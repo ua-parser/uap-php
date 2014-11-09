@@ -3,8 +3,8 @@ namespace UAParser\Command;
 
 use Symfony\Component\Console\Application;
 
-$packageAutoloader = __DIR__ . '/../../vendor/autoload.php';
-$standaloneAutoloader = __DIR__ . '/../../../../autoload.php';
+$packageAutoloader = __DIR__ . '/../vendor/autoload.php';
+$standaloneAutoloader = __DIR__ . '/../../autoload.php';
 if (file_exists($packageAutoloader)) {
     require_once $packageAutoloader;
 } else {
@@ -12,7 +12,7 @@ if (file_exists($packageAutoloader)) {
 }
 
 $resourceDirectory = realpath(__DIR__ . '/../resources');
-$defaultYamlFile = realpath(__DIR__ . '/../../regexes.yaml');
+$defaultYamlFile = realpath(__DIR__ . '/../resources/regexes.yaml');
 
 $application = new Application('ua-parser');
 $application->add(new ConvertCommand($resourceDirectory, $defaultYamlFile));

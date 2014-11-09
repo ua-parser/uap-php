@@ -6,7 +6,7 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Tests;
+namespace UAParser;
 
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
@@ -174,7 +174,7 @@ class ParserTest extends AbstractParserTest
 
     private static function createTestData(Finder $resources)
     {
-        $resourcesDirectory = __DIR__ . '/../../../../test_resources';
+        $resourcesDirectory = __DIR__ . '/test_resources';
         $testData = array();
 
         /** @var $resource SplFileInfo */

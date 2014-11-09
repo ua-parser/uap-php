@@ -6,7 +6,7 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Tests;
+namespace UAParser;
 
 use PHPUnit_Framework_TestCase as AbstractTestCase;
 use UAParser\AbstractParser;
@@ -26,7 +26,7 @@ abstract class AbstractParserTest extends AbstractTestCase
 
         $this->assertInstanceOf(
             $parserClassName,
-            $parserClassName::create(__DIR__ . '/../../../resources/regexes.php')
+            $parserClassName::create(__DIR__ . '/../resources/regexes.php')
         );
     }
 

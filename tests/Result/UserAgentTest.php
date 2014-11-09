@@ -6,12 +6,12 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Tests\Result;
+namespace UAParser\Result;
 
 use PHPUnit_Framework_TestCase as AbstractTestCase;
 use UAParser\Result\OperatingSystem;
 
-class OperatingSystemTest extends AbstractTestCase
+class UserAgentTest extends AbstractTestCase
 {
     /** @var OperatingSystem */
     private $operatingSystem;
