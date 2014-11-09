@@ -6,7 +6,7 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Tests\Util;
+namespace UAParser\Util;
 
 use PHPUnit_Framework_TestCase as AbstractTestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;

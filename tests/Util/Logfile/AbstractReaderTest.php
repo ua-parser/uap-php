@@ -6,7 +6,7 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Tests\Util\Logfile;
+namespace UAParser\Util\Logfile;
 
 use PHPUnit_Framework_TestCase as AbstractTestCase;
 use UAParser\Util\Logfile\ReaderInterface;

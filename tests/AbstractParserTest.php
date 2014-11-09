@@ -6,7 +6,7 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Tests;
+namespace UAParser;
 
 use PHPUnit_Framework_TestCase as AbstractTestCase;
 use UAParser\AbstractParser;
