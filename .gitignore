@@ -1,0 +1,11 @@
+# Composer
+/vendor
+composer.lock
+
+# Windows
+*umbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Mac
+.DS_Store

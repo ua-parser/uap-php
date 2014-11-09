@@ -118,6 +118,6 @@ abstract class AbstractParser
     {
         return static::$defaultFile
             ? static::$defaultFile
-            : realpath(__DIR__ . '/../../resources') . DIRECTORY_SEPARATOR . 'regexes.php';
+            : realpath(__DIR__ . '/../resources') . DIRECTORY_SEPARATOR . 'regexes.php';
     }
 }

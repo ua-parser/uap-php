@@ -26,7 +26,7 @@ abstract class AbstractParserTest extends AbstractTestCase
 
         $this->assertInstanceOf(
             $parserClassName,
-            $parserClassName::create(__DIR__ . '/../../../resources/regexes.php')
+            $parserClassName::create(__DIR__ . '/../resources/regexes.php')
         );
     }
 

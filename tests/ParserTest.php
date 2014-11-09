@@ -174,7 +174,7 @@ class ParserTest extends AbstractParserTest
 
     private static function createTestData(Finder $resources)
     {
-        $resourcesDirectory = __DIR__ . '/../../../../test_resources';
+        $resourcesDirectory = __DIR__ . '/test_resources';
         $testData = array();
 
         /** @var $resource SplFileInfo */
