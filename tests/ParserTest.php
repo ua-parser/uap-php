@@ -35,10 +35,10 @@ class ParserTest extends AbstractParserTest
     {
         $resources = Finder::create()
             ->files()
-            ->name('test_device.yaml')
-            ->name('*os*.yaml')
-            ->notName('test_device.yaml')
-            ->notName('pgts_browser_list-orig.yaml');
+            ->path('tests')
+            ->name('test_os.yaml')
+            ->path('test_resources')
+            ->name('additional_os_tests.yaml');
 
         return static::createTestData($resources);
     }
@@ -47,10 +47,21 @@ class ParserTest extends AbstractParserTest
     {
         $resources = Finder::create()
             ->files()
-            ->name('*.yaml')
-            ->notName('*os*')
-            ->notName('test_device.yaml')
-            ->notName('pgts_browser_list-orig.yaml');
+            ->path('tests')
+            ->name('test_ua.yaml')
+            ->path('test_resources')
+            ->name('firefox_user_agent_strings.yaml')
+            ->name('pgts_browser_list.yaml');
+
+        return static::createTestData($resources);
+    }
+
+    public static function getDeviceTestData()
+    {
+        $resources = Finder::create()
+            ->files()
+            ->path('tests')
+            ->name('test_device.yaml');
 
         return static::createTestData($resources);
     }
@@ -58,9 +69,20 @@ class ParserTest extends AbstractParserTest
     public function testNoMatch()
     {
         $result = $this->parser->parse('unknown user agent');
+
         $this->assertSame('Other', $result->device->family);
         $this->assertSame('Other', $result->ua->family);
         $this->assertSame('Other', $result->os->family);
+    }
+
+    /** @dataProvider getDeviceTestData */
+    public function testDeviceParsing($userAgent, array $jsUserAgent, $family, $major, $minor, $patch, $patchMinor, $brand, $model)
+    {
+        $result = $this->parser->parse($userAgent, $jsUserAgent);
+
+        $this->assertSame($family, $result->device->family);
+        $this->assertSame($brand,  $result->device->brand);
+        $this->assertSame($model,  $result->device->model);
     }
 
     /** @dataProvider getOsTestData */
@@ -161,7 +183,7 @@ class ParserTest extends AbstractParserTest
 
     private static function createTestData(Finder $resources)
     {
-        $resourcesDirectory = __DIR__ . '/../uap-core/test_resources';
+        $resourcesDirectory = realpath(__DIR__ . '/../uap-core');
         $testData = array();
 
         /** @var $resource SplFileInfo */
@@ -185,6 +207,8 @@ class ParserTest extends AbstractParserTest
             isset($testCase['minor']) ? $testCase['minor'] : null,
             isset($testCase['patch']) ? $testCase['patch'] : null,
             isset($testCase['patch_minor']) ? $testCase['patch_minor'] : null,
+            isset($testCase['brand']) ? $testCase['brand'] : null,
+            isset($testCase['model']) ? $testCase['model'] : null,
             $resource->getFilename()
         );
     }
