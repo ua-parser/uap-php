@@ -1,5 +1,5 @@
 {
-    "name": "tobie/ua-parser",
+    "name": "ua-parser/ua-parser",
     "description": "A multi-language port of Browserscope's user agent parser.",
     "require": {
         "symfony/yaml": "~2",
