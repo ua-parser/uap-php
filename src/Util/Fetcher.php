@@ -22,14 +22,15 @@ class Fetcher
         if (is_resource($streamContext) && get_resource_type($streamContext) === 'stream-context') {
             $this->streamContext = $streamContext;
         } else {
+            // Since PHP 5.6, CN_match is deprecated
+            $peerNameKey = version_compare(PHP_VERSION, '5.6') === 1 ? 'peer_name' : 'CN_match';
             $this->streamContext = stream_context_create(
                 array(
                     'ssl' => array(
                         'verify_peer'         => true,
                         'verify_depth'        => 10,
                         'cafile'              => __DIR__ . '/../../resources/ca-bundle.crt',
-                        'CN_match'           => 'raw.githubusercontent.com',
-                        'peer_name'           => 'raw.githubusercontent.com',
+                        $peerNameKey          => 'raw.githubusercontent.com',
                         'disable_compression' => true,
                     )
                 )
