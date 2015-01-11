@@ -1,8 +1,8 @@
 # ua-parser PHP Library #
 
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ua-parser/uap-php?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ua-parser/uap-php?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/ua-parser/uap-php.svg?branch=master)](https://travis-ci.org/ua-parser/uap-php)
 
-This is the PHP library for the [ua-parser](https://github.com/tobie/ua-parser) project.
+This is the PHP library for the [uap-core](https://github.com/ua-parser/uap-core) project.
 
 # v3.3 Changes
 
@@ -60,7 +60,7 @@ print $result->os->toVersion();       // 10.7.5
 print $result->device->family;        // Other
 
 print $result->toString();            // Safari 6.0.2/Mac OS X 10.7.5
-print $result->originalUserAgent;            // Mozilla/5.0 (Macintosh; Intel Ma...
+print $result->originalUserAgent;     // Mozilla/5.0 (Macintosh; Intel Ma...
 ```
 
 ## Using Your Own Custom regexes.php File ##
@@ -139,3 +139,6 @@ Also, many thanks to the following major contributors to the PHP library:
 * The user agents data from the ua-parser project is licensed under the Apache license
 * The initial list of generic feature phones & smartphones came from Mobile Web OSP under the MIT license
 * The initial list of spiders was taken from Yiibu's profile project under the MIT license.
+
+## Installation ##
+Add `ua-parser/uap-php` to the require section of your `composer.json` file and run `composer update`.  
