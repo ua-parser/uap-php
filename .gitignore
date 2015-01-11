@@ -9,3 +9,6 @@ $RECYCLE.BIN/
 
 # Mac
 .DS_Store
+
+# PHPStorm
+.idea/

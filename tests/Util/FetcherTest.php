@@ -37,7 +37,7 @@ class FetcherTest extends AbstractTestCase
 
         $this->setExpectedException(
             'UAParser\Exception\FetcherException',
-            'Could not fetch HTTP resource "https://raw.githubusercontent.com/tobie/ua-parser/master/regexes.yaml": file_get_contents(https://raw.githubusercontent.com/tobie/ua-parser/master/regexes.yaml): failed to open stream: operation failed'
+            'Could not fetch HTTP resource "https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml": file_get_contents(https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml): failed to open stream: operation failed'
         );
 
         $fetcher->fetch();

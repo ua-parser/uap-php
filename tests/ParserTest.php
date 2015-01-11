@@ -55,29 +55,12 @@ class ParserTest extends AbstractParserTest
         return static::createTestData($resources);
     }
 
-    public static function getDeviceTestData()
-    {
-        $resources = Finder::create()
-            ->files()
-            ->name('test_device.yaml');
-
-        return static::createTestData($resources);
-    }
-
     public function testNoMatch()
     {
         $result = $this->parser->parse('unknown user agent');
         $this->assertSame('Other', $result->device->family);
         $this->assertSame('Other', $result->ua->family);
         $this->assertSame('Other', $result->os->family);
-    }
-
-    /** @dataProvider getDeviceTestData */
-    public function testDeviceParsing($userAgent, array $jsUserAgent, $family)
-    {
-        $result = $this->parser->parse($userAgent, $jsUserAgent);
-
-        $this->assertSame($family, $result->device->family);
     }
 
     /** @dataProvider getOsTestData */
@@ -106,6 +89,10 @@ class ParserTest extends AbstractParserTest
     /** @group performance */
     public function testPerformance()
     {
+        if (extension_loaded('xdebug')) {
+            $this->markTestSkipped('xdebug skews performance numbers');
+        }
+
         $userAgents = array(
             'Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en; rv:1.8.1.6) Gecko/20070809 Camino/1.5.1',
             'Mozilla/5.0 (IE 11.0; Windows NT 6.3; Trident/7.0; .NET4.0E; .NET4.0C; rv:11.0) like Gecko',
@@ -174,7 +161,7 @@ class ParserTest extends AbstractParserTest
 
     private static function createTestData(Finder $resources)
     {
-        $resourcesDirectory = __DIR__ . '/test_resources';
+        $resourcesDirectory = __DIR__ . '/../uap-core/test_resources';
         $testData = array();
 
         /** @var $resource SplFileInfo */

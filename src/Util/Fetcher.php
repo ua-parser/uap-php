@@ -12,7 +12,7 @@ use UAParser\Exception\FetcherException;
 
 class Fetcher
 {
-    private $resourceUri = 'https://raw.githubusercontent.com/tobie/ua-parser/master/regexes.yaml';
+    private $resourceUri = 'https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml';
 
     /** @var resource */
     private $streamContext;
@@ -26,9 +26,10 @@ class Fetcher
                 array(
                     'ssl' => array(
                         'verify_peer'         => true,
-                        'verify_depth'        => 5,
+                        'verify_depth'        => 10,
                         'cafile'              => __DIR__ . '/../../resources/ca-bundle.crt',
-                        'CN_match'            => 'www.github.com',
+                        'CN_match'           => 'raw.githubusercontent.com',
+                        'peer_name'           => 'raw.githubusercontent.com',
                         'disable_compression' => true,
                     )
                 )
