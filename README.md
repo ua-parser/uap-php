@@ -4,7 +4,13 @@
 
 This is the PHP library for the [uap-core](https://github.com/ua-parser/uap-core) project.
 
-# v3.3 Changes
+## v3.4 Changes
+Move done to it’s own dedicated project. Now officially available via composer as `ua-parser/uap-php`
+ * Use `peer_name` instead of `CN_match` for PHP >=5.6
+ * Advertise Gitter chat for support requests
+ * Include uap-core as a git submodule
+
+## v3.3 Changes
 
 v3.3 of the PHP library is no longer compatible with the previous version. It now supports composer, requires PHP 5.3
 and has a slightly different API (see below).
