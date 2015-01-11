@@ -1,5 +1,5 @@
 {
-    "name": "ua-parser/ua-parser",
+    "name": "ua-parser/uap-php",
     "description": "A multi-language port of Browserscope's user agent parser.",
     "require": {
         "symfony/yaml": "~2",
