@@ -1,5 +1,7 @@
 # ua-parser PHP Library #
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ua-parser/uap-php?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is the PHP library for the [ua-parser](https://github.com/tobie/ua-parser) project.
 
 # v3.3 Changes
