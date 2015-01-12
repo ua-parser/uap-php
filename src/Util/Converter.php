@@ -59,6 +59,12 @@ class Converter
      */
     protected function doConvert(array $regexes, $backupBeforeOverride = true)
     {
+        foreach (array('user_agent_parsers', 'os_parsers', 'device_parsers') as $parsers) {
+            if (isset($regexes[$parsers])) {
+                $this->doEscapeRegexes($regexes[$parsers]);
+            }
+        }
+
         $data = "<?php\nreturn " . var_export($regexes, true) . ';';
 
         $regexesFile = $this->destination . '/regexes.php';
@@ -76,5 +82,16 @@ class Converter
         }
 
         $this->fs->dumpFile($regexesFile, $data);
+    }
+
+    /**
+     * escapes @ to \@ for later preg_match in Parser
+     * @param array $regexes
+     */
+    protected function doEscapeRegexes(array &$regexes)
+    {
+        foreach ($regexes as &$regex) {
+            $regex['regex'] = preg_replace( '/@/', '\@', $regex['regex']);
+        }
     }
 }
