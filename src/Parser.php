@@ -23,7 +23,7 @@ class Parser extends AbstractParser
     private $userAgentParser;
 
     /**
-     * Start up the parser by importing the json file to $this->regexes
+     * Start up the parser by importing the data file to $this->regexes
      *
      * @param array $regexes
      */

@@ -59,13 +59,8 @@ class Converter
      */
     protected function doConvert(array $regexes, $backupBeforeOverride = true)
     {
-        foreach (array('user_agent_parsers', 'os_parsers', 'device_parsers') as $parsers) {
-            if (isset($regexes[$parsers])) {
-                $this->doEscapeRegexes($regexes[$parsers]);
-            }
-        }
-
-        $data = "<?php\nreturn " . var_export($regexes, true) . ';';
+        $regexes = $this->sanitizeRegexes($regexes);
+        $data = "<?php\nreturn " . preg_replace('/\s+$/m', '', var_export($regexes, true)) . ';';
 
         $regexesFile = $this->destination . '/regexes.php';
         if ($backupBeforeOverride && $this->fs->exists($regexesFile)) {
@@ -84,14 +79,19 @@ class Converter
         $this->fs->dumpFile($regexesFile, $data);
     }
 
-    /**
-     * escapes @ to \@ for later preg_match in Parser
-     * @param array $regexes
-     */
-    protected function doEscapeRegexes(array &$regexes)
+    private function sanitizeRegexes(array $regexes)
     {
-        foreach ($regexes as &$regex) {
-            $regex['regex'] = preg_replace( '/@/', '\@', $regex['regex']);
+        foreach ($regexes as $groupName => $group) {
+            $regexes[$groupName] = array_map([$this, 'sanitizeRegex'], $group);
         }
+
+        return $regexes;
+    }
+
+    private function sanitizeRegex(array $regex)
+    {
+        $regex['regex'] = str_replace('@', '\@', $regex['regex']);
+
+        return $regex;
     }
 }

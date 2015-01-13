@@ -39,8 +39,8 @@ class ConverterTest extends AbstractTestCase
             ->getMock();
         $this->converter = new Converter(sys_get_temp_dir(), $this->fs);
         $yaml = <<<EOS
-foo:
-    bar
+group:
+    - {regex: "REGEX@"}
 EOS;
         $this->yamlFile = sys_get_temp_dir() . '/uaparser-' . time() . '.yaml';
         file_put_contents($this->yamlFile, $yaml);
@@ -48,7 +48,13 @@ EOS;
         $this->php = <<<EOS
 <?php
 return array (
-  'foo' => 'bar',
+  'group' =>
+  array (
+    0 =>
+    array (
+      'regex' => 'REGEX\\\\@',
+    ),
+  ),
 );
 EOS;
         $this->phpFile = sys_get_temp_dir() . '/regexes.php';
