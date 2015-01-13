@@ -82,7 +82,7 @@ class Converter
     private function sanitizeRegexes(array $regexes)
     {
         foreach ($regexes as $groupName => $group) {
-            $regexes[$groupName] = array_map([$this, 'sanitizeRegex'], $group);
+            $regexes[$groupName] = array_map(array($this, 'sanitizeRegex'), $group);
         }
 
         return $regexes;
