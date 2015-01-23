@@ -4,6 +4,10 @@
 
 This is the PHP library for the [uap-core](https://github.com/ua-parser/uap-core) project.
 
+## v3.4.1 Changes
+ * Fix a regex delimiter issue with uap-core
+ * Bundle regex.php with uap-php
+
 ## v3.4 Changes
 Move done to it’s own dedicated project. Now officially available via composer as `ua-parser/uap-php`
  * Use `peer_name` instead of `CN_match` for PHP >=5.6
