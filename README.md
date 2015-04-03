@@ -4,6 +4,9 @@
 
 This is the PHP library for the [uap-core](https://github.com/ua-parser/uap-core) project.
 
+## v3.4.2 Changes
+ * Update uap-core
+
 ## v3.4.1 Changes
  * Fix a regex delimiter issue with uap-core
  * Bundle regex.php with uap-php
