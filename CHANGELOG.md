@@ -1,15 +1,13 @@
-THIS CHANGELOG IS AN ATTEMPT TO DOCUMENT CHANGES TO THIS PROJECT.
-SUPER MINOR REVISION NUMBERS WON'T SHOW UP IN GITHUB BUT IT'LL HELP
-ME ORGANIZE WHEN I MADE A SET OF FIXES
+# Changelog
 
-UAP-3.4.0
+## 3.4.0
  - ADD: device Parsing with brand model and case insensitive testing
 
-UAP-3.3.1
+## 3.3.1
  - PSR-4 ready
  - Self repository, less useless files
 
-UAP-3.3.0
+## 3.3.0
  - Use composer for dependency management
  - Introduce namespaces
  - Removing legacy library dependencies
@@ -23,22 +21,22 @@ UAP-3.3.0
  - Secure updating: SSL certificate verification, hashing, try to do atomic updates
  - Restore fetching YAML file only (without generating JSON)
 
-UAP-2.1.1
+## 2.1.1
  - FIX: making sure patch minor is being populated correctly when showing a mismatch
 
-UAP-2.1.0
+## 2.1.0
  - ADD: support for custom regexes.json files (via @pravindahal)
  - FIX: formerly private vars/functions are now protected (via @pravindahal)
  - FIX: command line tool gets 'pretty' option for PHP 5.4 users (via @skyzyx)
  - FIX: refactored the regexes.yaml test suite
  - FIX: now check to see if allow_url_fopen is set to 'On' before trying to download the YAML file from the command line
  - THX: thanks to @pravindahal and @skyzyx for the pull requests
- 
-UAP-2.0.1
+
+## 2.0.1
  - FIX: renamed uaParser, osParser, & deviceParser to uaParse, osParse, & deviceParse to address a bug with uaParser being recognized as the contruct function for the overall lib
  - FIX: updated the test lib so that device failures are properly formatted
 
-UAP-2.0.0
+## 2.0.0
  - ADD: toString() converts the version bits and family into a simple string
  - ADD: toVersionString() converts the version bits into a simple string
  - ADD: toFullString() combines the UA and OS family and version bits
@@ -58,7 +56,7 @@ UAP-2.0.0
  - DEL: tests no longer run against pgts_browser_list.yaml
  - THX: thanks to @rjd22 for the dynamic class code/fix
 
-UAP-1.5.0
+## 1.5.0
  - ADD: command line interface is now in its own file (via @Synchro)
  - ADD: command line utility now supports parsing an Apache log file & recording the results
  - ADD: command line utility can now parse a supplied user-agent string and push out a simple list or JSON
@@ -73,83 +71,83 @@ UAP-1.5.0
  - FIX: if regexes.yaml picks up bad slashes the PHP lib will account for it (e.g. GoogleTV regex)
  - THX: thanks to @Krinkle and @Synchro for the numerous fixes
 
-UAP-1.4.5
+## 1.4.5
  - FIX: an embarrassing debug print survived the last edit
  - THX: thanks to @memakeit for dropping the bug report
 
-UAP-1.4.4
+## 1.4.4
  - FIX: made sure that the regex file is only loaded once if running the library multiple times. performance boost.
  - FIX: added support for identifying various game devices as mobile devices
  - THX: thanks to @rjd22 for pointing out the perf issue
 
-UAP-1.4.3
+## 1.4.3
  - FIX: added support for patch & family attributes to sort of match the other libraries
 
-UAP-1.4.2
+## 1.4.2
  - FIX: notice if regexes.yaml is missing parens (e.g. match $1) for device & os names
 
-UAP-1.4.1
+## 1.4.1
  - FIX: notice when using UAParser from the command line
 
-UAP-1.4.0
+## 1.4.0
  - ADD: silent mode for the UA::get() method
  - ADD: nobackup mode for the UA::get() method
  - ADD: example of how to do a redirect with ua-parser-php
  - The following were changes to regexes.yaml:
- ---- ADD: support for Google Earth browser
- ---- ADD: another regex for Firefox Mobile
- ---- ADD: support for Firefox Alpha builds
- ---- ADD: support for Sogou Explorer
- ---- ADD: support for the Raven for Mac browser
- ---- ADD: support for WebKit Nightly builds (though slightly pointless)
- ---- FIX: better pattern matching for the Pale Moon browser
+   * ADD: support for Google Earth browser
+   * ADD: another regex for Firefox Mobile
+   * ADD: support for Firefox Alpha builds
+   * ADD: support for Sogou Explorer
+   * ADD: support for the Raven for Mac browser
+   * ADD: support for WebKit Nightly builds (though slightly pointless)
+   * FIX: better pattern matching for the Pale Moon browser
 
-UAP-v1.3.2
+## 1.3.2
  - FIX: addressed false "tablet" classification for opera mobile & mini on android
  - The following were changes to regexes.yaml:
- ---- ADD: support for Tizen Browser (aka SLP Browser) from Samsung
- ---- FIX: support for a new look Polaris 8.0 user agent string
- ---- FIX: modified where the Epiphany Browser check happens
+   * ADD: support for Tizen Browser (aka SLP Browser) from Samsung
+   * FIX: support for a new look Polaris 8.0 user agent string
+   * FIX: modified where the Epiphany Browser check happens
 
-UAP-v1.3.1
+## 1.3.1
  - FIX: now doing some sanity cleaning on the user agent strings
  - FIX: added a smarter default if the user agent isn't recognized at all
 
-UAP-v1.3.0
+## 1.3.0
  - FIX: now points to Tobie's ua-parser project for the latest greatest YAML file
  - FIX: YAML file is now standardized as regexes.yaml instead of user_agents_regex.yaml
  - FIX: minor NOTICE issues resolved for very select UAs
 
-UAP-v1.2.2
+## 1.2.2
  - The following were changes to user_agents_regex.yaml:
- ---- ADD: support for UC Browser
+   * ADD: support for UC Browser
 
-UAP-v1.2.1
+## 1.2.1
  - The following were changes to user_agents_regex.yaml:
- ---- ADD: support for android 4 user agents that have a dash in them
+   * ADD: support for android 4 user agents that have a dash in them
 
-UAP-v1.2.0
+## 1.2.0
  - FIX: should be compatible with PHP 5.2
  - FIX: addressed STRICT mode errors
  - FIX: addressed NOTICE for a missing variable
  - FIX: if isTablet is set to true then isMobile is set to false (mobile to me means phone)
  - THX: Thanks to Mike Bond of WVU Libraries for pointing out the 5.2 incompatibility
 
-UAP-v1.1.0
+## 1.1.0
  - FIX: a number of fixes from bryan shelton
  - The following were changes to user_agents_regex.yaml:
- ---- ADD: support for Chrome Mobile
+   * ADD: support for Chrome Mobile
 
-UAP-v1.0.0
+## 1.0.0
  - just because i don't expect to update this anytime soon and ppl report it's working
 
-UAP-v0.3.1
+## 0.3.1
  - FIX: swapped nil for null in parse()
  - FIX: smarter/saner defaults
  - FIX: now using isset() for family_replacement
  - THX: thanks to bryan shelton for these fixes 
 
-UAP-v0.3.0
+## 0.3.0
  - ADD: can now supply a specific UA to be checked
  - ADD: if the UA contains 'tablet' isTablet is marked true
  - ADD: for certain mobile OSs they report a desktop browser. marking them mobile now.
@@ -159,32 +157,32 @@ UAP-v0.3.0
  - FIX: for the device check, if it returns spider as a result it no longer marks it as mobile
  - FIX: added more mobile browsers to that specific check
  - The following were changes to user_agents_regex.yaml:
- ---- ADD: symphony, minimo, teleca, semc, up.browser, bunjaloo, jasmine, & brew browsers supported
- ---- ADD: windows mobile 6.5 os support
- ---- ADD: amoi, asus, bird, dell, docomo, huawei, i-mate, kyocera, lenovo, lg, microsoft kind,
+   * ADD: symphony, minimo, teleca, semc, up.browser, bunjaloo, jasmine, & brew browsers supported
+   * ADD: windows mobile 6.5 os support
+   * ADD: amoi, asus, bird, dell, docomo, huawei, i-mate, kyocera, lenovo, lg, microsoft kind,
        motorola, philips, samsung, softbank, & sony ericsson device checks
- ---- FIX: mobile firefox, opera mobile & mini, obigo, polaris, nokiabrowser, ie mobile,
+   * FIX: mobile firefox, opera mobile & mini, obigo, polaris, nokiabrowser, ie mobile,
        android, & mobile safari browser checks
- ---- FIX: iOS support
- ---- FIX: htc, android, palm/hp, kindle, ios, generic feature phones & spider device checks
+   * FIX: iOS support
+   * FIX: htc, android, palm/hp, kindle, ios, generic feature phones & spider device checks
 
-UAP-v0.2.0
+## 0.2.0
  - ADD: added isMobile support
  - ADD: added isTablet support
  - ADD: added isComputer support
  - ADD: added isSpider support
 
-UAP-v0.1.0
+## 0.1.0
  - The following were changes to user_agents_regex.yaml:
- ---- expanded support for Symbia & Nokia Devices, 
- ---- cleaned up some slashies, 
- ---- added Mobile Safari as the family replacement for iOS devices, 
- ---- better support for longer HTC device names
- ---- added feature phones to the device check
- ---- added generic smartphones to the device check
- ---- added AvantGo to the ua check
- ---- tweaked a lot of the nokia checks
- ---- added kindle support to the device section
- ---- added a generic catch for android devices.
- ---- added support for blackberry devices
- ---- changed the blackberry family to 'blackberry webkit' when it's a webkit browser
+   * expanded support for Symbia & Nokia Devices, 
+   * cleaned up some slashies, 
+   * added Mobile Safari as the family replacement for iOS devices, 
+   * better support for longer HTC device names
+   * added feature phones to the device check
+   * added generic smartphones to the device check
+   * added AvantGo to the ua check
+   * tweaked a lot of the nokia checks
+   * added kindle support to the device section
+   * added a generic catch for android devices.
+   * added support for blackberry devices
+   * changed the blackberry family to 'blackberry webkit' when it's a webkit browser
