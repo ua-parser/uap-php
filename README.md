@@ -4,40 +4,6 @@
 
 This is the PHP library for the [uap-core](https://github.com/ua-parser/uap-core) project.
 
-## v3.4.2 Changes
- * Update uap-core
-
-## v3.4.1 Changes
- * Fix a regex delimiter issue with uap-core
- * Bundle regex.php with uap-php
-
-## v3.4 Changes
-Move done to it’s own dedicated project. Now officially available via composer as `ua-parser/uap-php`
- * Use `peer_name` instead of `CN_match` for PHP >=5.6
- * Advertise Gitter chat for support requests
- * Include uap-core as a git submodule
-
-## v3.3 Changes
-
-v3.3 of the PHP library is no longer compatible with the previous version. It now supports composer, requires PHP 5.3
-and has a slightly different API (see below).
-* `UAParser` class is now `UAParser\Parser`
-* Typed result objects: `Parser::parse()` returns `UAParser\Result\Client`, `Client::$os` is a  `UAParser\Result\OperatingSystem` and `Client::$device` is a `UAParser\Result\Device`
-* `toString()` and `toVersion()` are now methods
-* Properties now use camelCase, not underscore_case.
-
-## v2.0 Changes ##
-
-v2.0 of the PHP library, released in December 2012, marked a huge transition from the previous pseudo-port of `ua-parser` to a true port that matches up well with the other libraries in the `ua-parser` repo. The primary changes:
-
-* the `UAParser` class is now dynamic
-* properties are nested _(e.g. $result->family is now $result->ua->family)_
-* a user agent string is now required when using `parse()`. the auto-magical "use the server provided UA" is no longer supported.
-* `uaParse()`, `osParse()`, and `deviceParse()` are public and can be used to just return those select bits for a given user agent string.
-* the `is*` boolean properties _(e.g. isMobile)_ have been dropped. they now exist as part of the `ua-classifier` project.
-
-Please refer to the `CHANGELOG` for the full list of changes.
-
 ## Demo ##
 
 You can [test the PHP library](http://uaparser.dmolsen.com/) with your browser.

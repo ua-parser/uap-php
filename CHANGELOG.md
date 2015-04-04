@@ -1,7 +1,17 @@
 # Changelog
 
+## 3.4.2
+ - Update uap-core
+
+## 3.4.1
+ - Fix a regex delimiter issue with uap-core
+ - Bundle regex.php with uap-php
+
 ## 3.4.0
  - ADD: device Parsing with brand model and case insensitive testing
+ - Use `peer_name` instead of `CN_match` for PHP >=5.6
+ - Advertise Gitter chat for support requests
+ - Include uap-core as a git submodule
 
 ## 3.3.1
  - PSR-4 ready
@@ -14,7 +24,11 @@
  - Use PHPUnit for testing
  - Make all tests pass, fix all the remaining bugs
  - Introduce specific result objects
- - Comply with PSR-X coding standards
+ - Comply with PSR-X coding standards:
+   * `UAParser` class is now `UAParser\Parser`
+   * Typed result objects: `Parser::parse()` returns `UAParser\Result\Client`, `Client::$os` is a  `UAParser\Result\OperatingSystem` and `Client::$device` is a `UAParser\Result\Device`
+   * `toString()` and `toVersion()` are now methods
+   * Properties now use camelCase, not underscore_case.
  - Use Travis for CI
  - Update README
  - Port command line tool to Symfony CLI
@@ -37,6 +51,12 @@
  - FIX: updated the test lib so that device failures are properly formatted
 
 ## 2.0.0
+ - Summary:
+   * the `UAParser` class is now dynamic
+   * properties are nested _(e.g. $result->family is now $result->ua->family)_
+   * a user agent string is now required when using `parse()`. the auto-magical "use the server provided UA" is no longer supported.
+   * `uaParse()`, `osParse()`, and `deviceParse()` are public and can be used to just return those select bits for a given user agent string.
+   * the `is*` boolean properties _(e.g. isMobile)_ have been dropped. they now exist as part of the `ua-classifier` project.
  - ADD: toString() converts the version bits and family into a simple string
  - ADD: toVersionString() converts the version bits into a simple string
  - ADD: toFullString() combines the UA and OS family and version bits
