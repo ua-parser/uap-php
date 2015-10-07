@@ -436,6 +436,7 @@ return array (
     91 =>
     array (
       'regex' => '(Edge)/(\\d+)\\.(\\d+)',
+      'family_replacement' => 'Edge', 
     ),
     92 =>
     array (
