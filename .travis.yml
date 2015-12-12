@@ -1,5 +1,8 @@
 language: php
 
+before_script:
+  - phpenv config-rm xdebug.ini
+
 php:
   - 5.3
   - 5.4
@@ -18,7 +21,5 @@ before_install:
 install:
   - composer install
   - php bin/uaparser.php ua-parser:update
-
-script: phpunit --coverage-text
 
 sudo: false
