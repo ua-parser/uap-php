@@ -179,27 +179,27 @@ return array (
     ),
     38 =>
     array (
-      'regex' => '(Opera)/.+Opera Mobi.+Version/(\\d+)\\.(\\d+)',
-      'family_replacement' => 'Opera Mobile',
+      'regex' => '(Opera Mini)(?:/att)?/(\\d+)?(?:\\.(\\d+))?(?:\\.(\\d+))?',
     ),
     39 =>
     array (
-      'regex' => '(Opera)/(\\d+)\\.(\\d+).+Opera Mobi',
+      'regex' => '(Opera)/.+Opera Mobi.+Version/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Opera Mobile',
     ),
     40 =>
     array (
-      'regex' => 'Opera Mobi.+(Opera)(?:/|\\s+)(\\d+)\\.(\\d+)',
+      'regex' => '(Opera)/(\\d+)\\.(\\d+).+Opera Mobi',
       'family_replacement' => 'Opera Mobile',
     ),
     41 =>
     array (
-      'regex' => 'Opera Mobi',
+      'regex' => 'Opera Mobi.+(Opera)(?:/|\\s+)(\\d+)\\.(\\d+)',
       'family_replacement' => 'Opera Mobile',
     ),
     42 =>
     array (
-      'regex' => '(Opera Mini)(?:/att)?/(\\d+)\\.(\\d+)',
+      'regex' => 'Opera Mobi',
+      'family_replacement' => 'Opera Mobile',
     ),
     43 =>
     array (
@@ -1216,97 +1216,102 @@ return array (
     ),
     76 =>
     array (
+      'regex' => '(tvOS)/(\\d+).(\\d+)',
+      'os_replacement' => 'tvOS',
+    ),
+    77 =>
+    array (
       'regex' => '(CrOS) [a-z0-9_]+ (\\d+)\\.(\\d+)(?:\\.(\\d+))?',
       'os_replacement' => 'Chrome OS',
     ),
-    77 =>
+    78 =>
     array (
       'regex' => '([Dd]ebian)',
       'os_replacement' => 'Debian',
     ),
-    78 =>
+    79 =>
     array (
       'regex' => '(Linux Mint)(?:/(\\d+))?',
     ),
-    79 =>
+    80 =>
     array (
       'regex' => '(Mandriva)(?: Linux)?/(?:[\\d.-]+m[a-z]{2}(\\d+).(\\d))?',
     ),
-    80 =>
+    81 =>
     array (
       'regex' => '(Symbian[Oo][Ss])[/ ](\\d+)\\.(\\d+)',
       'os_replacement' => 'Symbian OS',
     ),
-    81 =>
+    82 =>
     array (
       'regex' => '(Symbian/3).+NokiaBrowser/7\\.3',
       'os_replacement' => 'Symbian^3 Anna',
     ),
-    82 =>
+    83 =>
     array (
       'regex' => '(Symbian/3).+NokiaBrowser/7\\.4',
       'os_replacement' => 'Symbian^3 Belle',
     ),
-    83 =>
+    84 =>
     array (
       'regex' => '(Symbian/3)',
       'os_replacement' => 'Symbian^3',
     ),
-    84 =>
+    85 =>
     array (
       'regex' => '\\b(Series 60|SymbOS|S60Version|S60V\\d|S60\\b)',
       'os_replacement' => 'Symbian OS',
     ),
-    85 =>
+    86 =>
     array (
       'regex' => '(MeeGo)',
     ),
-    86 =>
+    87 =>
     array (
       'regex' => 'Symbian [Oo][Ss]',
       'os_replacement' => 'Symbian OS',
     ),
-    87 =>
+    88 =>
     array (
       'regex' => 'Series40;',
       'os_replacement' => 'Nokia Series 40',
     ),
-    88 =>
+    89 =>
     array (
       'regex' => 'Series30Plus;',
       'os_replacement' => 'Nokia Series 30 Plus',
     ),
-    89 =>
+    90 =>
     array (
       'regex' => '(BB10);.+Version/(\\d+)\\.(\\d+)\\.(\\d+)',
       'os_replacement' => 'BlackBerry OS',
     ),
-    90 =>
+    91 =>
     array (
       'regex' => '(Black[Bb]erry)[0-9a-z]+/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
       'os_replacement' => 'BlackBerry OS',
     ),
-    91 =>
+    92 =>
     array (
       'regex' => '(Black[Bb]erry).+Version/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
       'os_replacement' => 'BlackBerry OS',
     ),
-    92 =>
+    93 =>
     array (
       'regex' => '(RIM Tablet OS) (\\d+)\\.(\\d+)\\.(\\d+)',
       'os_replacement' => 'BlackBerry Tablet OS',
     ),
-    93 =>
+    94 =>
     array (
       'regex' => '(Play[Bb]ook)',
       'os_replacement' => 'BlackBerry Tablet OS',
     ),
-    94 =>
+    95 =>
     array (
       'regex' => '(Black[Bb]erry)',
       'os_replacement' => 'BlackBerry OS',
     ),
-    95 =>
+    96 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/18.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
@@ -1314,114 +1319,114 @@ return array (
       'os_v2_replacement' => '0',
       'os_v3_replacement' => '1',
     ),
-    96 =>
+    97 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/18.1 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '1',
       'os_v2_replacement' => '1',
     ),
-    97 =>
+    98 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/26.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '1',
       'os_v2_replacement' => '2',
     ),
-    98 =>
+    99 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/28.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '1',
       'os_v2_replacement' => '3',
     ),
-    99 =>
+    100 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/30.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '1',
       'os_v2_replacement' => '4',
     ),
-    100 =>
+    101 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/32.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '2',
       'os_v2_replacement' => '0',
     ),
-    101 =>
+    102 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/34.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '2',
       'os_v2_replacement' => '1',
     ),
-    102 =>
+    103 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
     ),
-    103 =>
+    104 =>
     array (
       'regex' => '(BREW)[ /](\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    104 =>
+    105 =>
     array (
       'regex' => '(BREW);',
     ),
-    105 =>
+    106 =>
     array (
       'regex' => '(Brew MP|BMP)[ /](\\d+)\\.(\\d+)\\.(\\d+)',
       'os_replacement' => 'Brew MP',
     ),
-    106 =>
+    107 =>
     array (
       'regex' => 'BMP;',
       'os_replacement' => 'Brew MP',
     ),
-    107 =>
+    108 =>
     array (
       'regex' => '(GoogleTV)(?: (\\d+)\\.(\\d+)(?:\\.(\\d+))?|/[\\da-z]+)',
     ),
-    108 =>
+    109 =>
     array (
       'regex' => '(WebTV)/(\\d+).(\\d+)',
     ),
-    109 =>
+    110 =>
     array (
       'regex' => '(hpw|web)OS/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
       'os_replacement' => 'webOS',
     ),
-    110 =>
+    111 =>
     array (
       'regex' => '(VRE);',
     ),
-    111 =>
+    112 =>
     array (
       'regex' => '(Fedora|Red Hat|PCLinuxOS|Puppy|Ubuntu|Kindle|Bada|Lubuntu|BackTrack|Slackware|(?:Free|Open|Net|\\b)BSD)[/ ](\\d+)\\.(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
     ),
-    112 =>
+    113 =>
     array (
       'regex' => '(Linux)[ /](\\d+)\\.(\\d+)(?:\\.(\\d+))?.*gentoo',
       'os_replacement' => 'Gentoo',
     ),
-    113 =>
+    114 =>
     array (
       'regex' => '\\((Bada);',
     ),
-    114 =>
+    115 =>
     array (
       'regex' => '(Windows|Android|WeTab|Maemo)',
     ),
-    115 =>
+    116 =>
     array (
       'regex' => '(Ubuntu|Kubuntu|Arch Linux|CentOS|Slackware|Gentoo|openSUSE|SUSE|Red Hat|Fedora|PCLinuxOS|Mageia|(?:Free|Open|Net|\\b)BSD)',
     ),
-    116 =>
+    117 =>
     array (
       'regex' => '(Linux)(?:[ /](\\d+)\\.(\\d+)(?:\\.(\\d+))?)?',
     ),
-    117 =>
+    118 =>
     array (
       'regex' => 'SunOS',
       'os_replacement' => 'Solaris',
