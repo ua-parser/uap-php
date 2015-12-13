@@ -22,18 +22,14 @@ class Fetcher
         if (is_resource($streamContext) && get_resource_type($streamContext) === 'stream-context') {
             $this->streamContext = $streamContext;
         } else {
-            // Since PHP 5.6, CN_match is deprecated
-            $is56 = version_compare(PHP_VERSION, '5.6') === 1;
-            $peerNameKey = $is56  ? 'peer_name' : 'CN_match';
-            $peerName = $is56 ? 'raw.githubusercontent.com' : 'www.github.com';
             $this->streamContext = stream_context_create(
                 array(
                     'ssl' => array(
-                        'verify_peer'         => true,
-                        'verify_depth'        => 10,
-                        'cafile'              => __DIR__ . '/../../resources/ca-bundle.crt',
-                        $peerNameKey          => $peerName,
-                        'disable_compression' => true,
+                        'verify_peer'            => true,
+                        'verify_depth'           => 10,
+                        'cafile'                 => __DIR__ . '/../../resources/ca-bundle.crt',
+                        static::getPeerNameKey() => 'www.github.com',
+                        'disable_compression'    => true,
                     )
                 )
             );
@@ -52,5 +48,10 @@ class Fetcher
         }
 
         return $result;
+    }
+
+    public static function getPeerNameKey()
+    {
+        return version_compare(PHP_VERSION, '5.6') === 1 ? 'peer_name' : 'CN_match';
     }
 }

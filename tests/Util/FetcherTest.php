@@ -29,8 +29,8 @@ class FetcherTest extends AbstractTestCase
             stream_context_create(
                 array(
                     'ssl' => array(
-                        'verify_peer' => true,
-                        'CN_match'    => 'invalid.com',
+                        'verify_peer'              => true,
+                        Fetcher::getPeerNameKey()  => 'invalid.com',
                     )
                 )
             )
