@@ -61,13 +61,13 @@ A command line utility is now included with the PHP library. The following comma
 
 Provides simple usage information:
 
-    php bin/uaparser.php
+    php bin/uaparser
 
 ### Update the regexes.php File
 
 Fetches an updated YAML file for `ua-parser` and overwrites the current JSON file. You can use the following as part of a cron job that runs nightly.
 
-    php bin/uaparser.php ua-parser:update [--no-backup]
+    php bin/uaparser ua-parser:update [--no-backup]
 
 By default creates a backup file. Use `--no-backup` to turn that feature off.
 
@@ -75,13 +75,13 @@ By default creates a backup file. Use `--no-backup` to turn that feature off.
 
 With the change to v2.0 you may have an existing and customized YAML file for `ua-parser`. Use the following to convert it to JSON.
 
-    php bin/uaparser.php ua-parser:convert [file]
+    php bin/uaparser ua-parser:convert [file]
 
 ### Grab Just the Latest regexes.yaml File From the Repository
 
 If you need to add a new UA it's easier to edit the original YAML and then convert it to JSON.
 
-    php bin/uaparser.php ua-parser:fetch [file]
+    php bin/uaparser ua-parser:fetch [file]
 
 Fetches an updated YAML file. *Warning:* This method overwrites any existing `regexes.yaml` file.
 
@@ -89,13 +89,13 @@ Fetches an updated YAML file. *Warning:* This method overwrites any existing `re
 
 Parses a user agent string and dumps the results as a list.
 
-    php bin/uaparser.php ua-parser:parse "your user agent string"
+    php bin/uaparser ua-parser:parse "your user agent string"
 
 ### Parse a Webserver Log File
 
 Parses the supplied log file or log directory to test ua-parser. Saves the UA to a file when the UA or OS family aren't recognized or when the UA is listed as a generic smartphone or as a generic feature phone.
 
-    php bin/uaparser.php ua-parser:logfile [-f /path/to/logfile] [-d /path/to/logdir] [--include "*.gz"] [--exclude "*.gz"] errors.log
+    php bin/uaparser ua-parser:logfile [-f /path/to/logfile] [-d /path/to/logdir] [--include "*.gz"] [--exclude "*.gz"] errors.log
 
 Multiple `--include` and `--exclude` parameters are allowed.
 

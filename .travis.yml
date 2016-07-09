@@ -20,6 +20,6 @@ before_install:
 
 install:
   - composer install
-  - php bin/uaparser.php ua-parser:update || true
+  - bin/uaparser ua-parser:update || true
 
 sudo: false
