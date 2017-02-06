@@ -4,6 +4,9 @@
 
 This is the PHP library for the [uap-core](https://github.com/ua-parser/uap-core) project.
 
+## Installation ##
+Add `ua-parser/uap-php` to the require section of your `composer.json` file and run `composer update`.  
+
 ## Demo ##
 
 You can [test the PHP library](http://uaparser.dmolsen.com/) with your browser.
@@ -119,5 +122,3 @@ Also, many thanks to the following major contributors to the PHP library:
 * The initial list of generic feature phones & smartphones came from Mobile Web OSP under the MIT license
 * The initial list of spiders was taken from Yiibu's profile project under the MIT license.
 
-## Installation ##
-Add `ua-parser/uap-php` to the require section of your `composer.json` file and run `composer update`.  
