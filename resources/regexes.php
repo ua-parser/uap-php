@@ -93,8 +93,8 @@ return array (
     ),
     20 =>
     array (
-      'regex' => '(Pale[Mm]oon)/(\\d+)\\.(\\d+)\\.?(\\d+)?',
-      'family_replacement' => 'Pale Moon (Firefox Variant)',
+      'regex' => '(PaleMoon)/(\\d+)\\.(\\d+)\\.?(\\d+)?',
+      'family_replacement' => 'Pale Moon',
     ),
     21 =>
     array (
