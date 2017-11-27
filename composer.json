@@ -11,7 +11,7 @@
         "symfony/yaml": "Required for CLI usage, minimum version 2.0",
         "symfony/filesystem": "Required for CLI usage, minimum version 2.0",
         "symfony/finder": "Required for CLI usage, minimum version 2.0",
-        "symfony/console": "Required for CLI usage, minimum version 2.0",   
+        "symfony/console": "Required for CLI usage, minimum version 2.0"  
     },
     "prefer-stable": true,
     "license": "MIT",
