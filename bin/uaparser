@@ -2,6 +2,12 @@
 <?php
 namespace UAParser\Command;
 
+// Ensure symfony packages installed
+if (!class_exists(Symfony\Component\Console\Application::class)) {
+    echo 'You must include the symfony packages, see composer.json "suggest" section' . PHP_EOL;
+    exit(1);
+}
+
 use Symfony\Component\Console\Application;
 
 $packageAutoloader = __DIR__ . '/../vendor/autoload.php';
