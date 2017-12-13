@@ -15,7 +15,7 @@
         "symfony/yaml": "Required for CLI usage - ^4.0 || ^5.0",
         "symfony/filesystem": "Required for CLI usage - 2.0 || ^3.0 || ^4.0",
         "symfony/finder": "Required for CLI usage - ^2.0 || ^3.0 || ^4.0",
-        "symfony/console": "Required for CLI usage - ^2.0 || ^3.0 || ^4.0",   
+        "symfony/console": "Required for CLI usage - ^2.0 || ^3.0 || ^4.0"   
     },
     "prefer-stable": true,
     "license": "MIT",
