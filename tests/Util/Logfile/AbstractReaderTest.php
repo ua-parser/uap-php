@@ -8,7 +8,7 @@
  */
 namespace UAParser\Util\Logfile;
 
-use PHPUnit_Framework_TestCase as AbstractTestCase;
+use PHPUnit\Framework\TestCase as AbstractTestCase;
 use UAParser\Util\Logfile\ReaderInterface;
 
 abstract class AbstractReaderTest extends AbstractTestCase

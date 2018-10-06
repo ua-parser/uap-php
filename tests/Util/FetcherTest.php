@@ -8,7 +8,7 @@
  */
 namespace UAParser\Util;
 
-use PHPUnit_Framework_TestCase as AbstractTestCase;
+use PHPUnit\Framework\TestCase as AbstractTestCase;
 use UAParser\Util\Fetcher;
 
 /**
