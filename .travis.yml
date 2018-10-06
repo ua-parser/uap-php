@@ -1,8 +1,5 @@
 language: php
 
-before_script:
-  - phpenv config-rm xdebug.ini
-
 php:
   - 5.3
   - 5.4
@@ -10,16 +7,19 @@ php:
   - 5.6
   - 7.0
   - 7.1
+  - 7.2
   - nightly
   - hhvm
 
 matrix:
     allow_failures:
+        - php: 5.3
         - php: hhvm
         - php: nightly
 
-before_install:
-  - travis_retry composer self-update
+before_script:
+  # Remove XDebug.
+  - if [ ! "$TRAVIS_PHP_VERSION" == "nightly" ]; then phpenv config-rm xdebug.ini; fi
 
 install:
   - composer install
