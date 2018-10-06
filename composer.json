@@ -28,5 +28,10 @@
             "UAParser\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "UAParser\\Test\\": "tests/"
+        }
+    },
     "bin": ["bin/uaparser"]
 }

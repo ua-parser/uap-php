@@ -6,9 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Util;
+namespace UAParser\Test\Util;
 
-use UAParser\AbstractTestCase;
+use UAParser\Test\AbstractTestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use Symfony\Component\Filesystem\Filesystem;
 use UAParser\Util\Converter;

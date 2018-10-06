@@ -6,7 +6,7 @@
  *
  * Released under the MIT license
  */
-namespace UAParser;
+namespace UAParser\Test;
 
 use PHPUnit\Framework\TestCase;
 

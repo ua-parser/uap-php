@@ -6,9 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Result;
+namespace UAParser\Test\Result;
 
-use UAParser\AbstractTestCase;
+use UAParser\Test\AbstractTestCase;
 use UAParser\Result\OperatingSystem;
 
 class UserAgentTest extends AbstractTestCase
