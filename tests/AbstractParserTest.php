@@ -8,7 +8,6 @@
  */
 namespace UAParser;
 
-use PHPUnit\Framework\TestCase as AbstractTestCase;
 use UAParser\AbstractParser;
 
 abstract class AbstractParserTest extends AbstractTestCase
@@ -34,7 +33,7 @@ abstract class AbstractParserTest extends AbstractTestCase
     {
         $parserClassName = $this->getParserClassName();
 
-        $this->setExpectedException(
+        $this->fcExpectException(
             'UAParser\Exception\FileNotFoundException',
             'ua-parser cannot find the custom regexes file you supplied ("foo.php"). Please make sure you have the correct path.'
         );
@@ -45,7 +44,7 @@ abstract class AbstractParserTest extends AbstractTestCase
     {
         $parserClassName = $this->getParserClassName();
 
-        $this->setExpectedException(
+        $this->fcExpectException(
             'UAParser\Exception\FileNotFoundException',
             'Please download the "invalidFile" file before using ua-parser by running "php bin/uaparser ua-parser:update"'
         );

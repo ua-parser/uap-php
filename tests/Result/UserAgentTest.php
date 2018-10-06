@@ -8,7 +8,7 @@
  */
 namespace UAParser\Result;
 
-use PHPUnit\Framework\TestCase as AbstractTestCase;
+use UAParser\AbstractTestCase;
 use UAParser\Result\OperatingSystem;
 
 class UserAgentTest extends AbstractTestCase

@@ -8,7 +8,7 @@
  */
 namespace UAParser\Util;
 
-use PHPUnit\Framework\TestCase as AbstractTestCase;
+use UAParser\AbstractTestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use Symfony\Component\Filesystem\Filesystem;
 use UAParser\Util\Converter;
@@ -75,7 +75,7 @@ EOS;
             ->with('path/to/file')
             ->will($this->returnValue(false));
 
-        $this->setExpectedException(
+        $this->fcExpectException(
             'UAParser\Exception\FileNotFoundException',
             'File "path/to/file" does not exist'
         );

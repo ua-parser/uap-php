@@ -8,7 +8,7 @@
  */
 namespace UAParser\Util;
 
-use PHPUnit\Framework\TestCase as AbstractTestCase;
+use UAParser\AbstractTestCase;
 use UAParser\Util\Fetcher;
 
 /**
@@ -36,7 +36,7 @@ class FetcherTest extends AbstractTestCase
             )
         );
 
-        $this->setExpectedException(
+        $this->fcExpectException(
             'UAParser\Exception\FetcherException',
             'Could not fetch HTTP resource "'.$url.'": file_get_contents('.$url.'): failed to open stream: operation failed'
         );
