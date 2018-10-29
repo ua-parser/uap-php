@@ -2,7 +2,7 @@ language: php
 
 before_script:
   # Remove XDebug.
-  - if [ ! "$TRAVIS_PHP_VERSION" == "hhvm" ] && [ ! "$TRAVIS_PHP_VERSION" == "nightly" ]; then phpenv config-rm xdebug.ini; fi
+  - phpenv config-rm xdebug.ini || true
 
 php:
   - 5.4
@@ -11,6 +11,7 @@ php:
   - 7.0
   - 7.1
   - 7.2
+  - 7.3
   - nightly
   - hhvm
 
