@@ -22,10 +22,6 @@ matrix:
         - php: 5.3
           dist: precise
 
-
-before_install:
-  - travis_retry composer self-update
-
 install:
   - composer install
   - bin/uaparser ua-parser:update || true

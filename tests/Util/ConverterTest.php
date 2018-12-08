@@ -6,9 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Util;
+namespace UAParser\Test\Util;
 
-use PHPUnit_Framework_TestCase as AbstractTestCase;
+use UAParser\Test\AbstractTestCase;
 use PHPUnit_Framework_MockObject_MockObject as MockObject;
 use Symfony\Component\Filesystem\Filesystem;
 use UAParser\Util\Converter;
@@ -75,10 +75,9 @@ EOS;
             ->with('path/to/file')
             ->will($this->returnValue(false));
 
-        $this->setExpectedException(
-            'UAParser\Exception\FileNotFoundException',
-            'File "path/to/file" does not exist'
-        );
+        $this->expectException('UAParser\Exception\FileNotFoundException');
+        $this->expectExceptionMessage('File "path/to/file" does not exist');
+
         $this->converter->convertFile('path/to/file');
     }
 
