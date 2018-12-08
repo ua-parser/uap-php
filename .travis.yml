@@ -4,7 +4,6 @@ before_script:
   - phpenv config-rm xdebug.ini || true
 
 php:
-  - 5.3
   - 5.4
   - 5.5
   - 5.6
