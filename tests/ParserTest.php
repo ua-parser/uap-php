@@ -6,7 +6,7 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Test;
+namespace UAParser;
 
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;

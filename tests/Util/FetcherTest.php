@@ -6,9 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Test\Util;
+namespace UAParser\Util;
 
-use UAParser\Test\AbstractTestCase;
+use PHPUnit_Framework_TestCase as AbstractTestCase;
 use UAParser\Util\Fetcher;
 
 /**
@@ -24,7 +24,7 @@ class FetcherTest extends AbstractTestCase
 
     public function testFetchError()
     {
-        $url = 'https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml';
+        $url = "https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml";
         $fetcher = new Fetcher(
             stream_context_create(
                 array(
@@ -36,9 +36,9 @@ class FetcherTest extends AbstractTestCase
             )
         );
 
-        $this->expectException('UAParser\Exception\FetcherException');
-        $this->expectExceptionMessage(
-            'Could not fetch HTTP resource "' . $url . '": file_get_contents(' . $url . '): failed to open stream: operation failed'
+        $this->setExpectedException(
+            'UAParser\Exception\FetcherException',
+            'Could not fetch HTTP resource "'.$url.'": file_get_contents('.$url.'): failed to open stream: operation failed'
         );
 
         $fetcher->fetch();

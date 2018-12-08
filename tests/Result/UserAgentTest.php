@@ -6,9 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Test\Result;
+namespace UAParser\Result;
 
-use UAParser\Test\AbstractTestCase;
+use PHPUnit_Framework_TestCase as AbstractTestCase;
 use UAParser\Result\OperatingSystem;
 
 class UserAgentTest extends AbstractTestCase

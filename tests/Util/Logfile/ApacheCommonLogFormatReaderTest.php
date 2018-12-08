@@ -6,7 +6,7 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Test\Util\Logfile;
+namespace UAParser\Util\Logfile;
 
 use UAParser\Util\Logfile\ApacheCommonLogFormatReader;
 

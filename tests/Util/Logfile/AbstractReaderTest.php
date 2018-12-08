@@ -6,9 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Test\Util\Logfile;
+namespace UAParser\Util\Logfile;
 
-use UAParser\Test\AbstractTestCase;
+use PHPUnit_Framework_TestCase as AbstractTestCase;
 use UAParser\Util\Logfile\ReaderInterface;
 
 abstract class AbstractReaderTest extends AbstractTestCase
@@ -37,9 +37,10 @@ abstract class AbstractReaderTest extends AbstractTestCase
 
     public function testReadEmptyLine()
     {
-        $this->expectException('UAParser\Exception\ReaderException');
-        $this->expectExceptionMessage('Cannot extract user agent string from line "invalid"');
-
+        $this->setExpectedException(
+            'UAParser\Exception\ReaderException',
+            'Cannot extract user agent string from line "invalid"'
+        );
         $this->reader->read('invalid');
     }
 
