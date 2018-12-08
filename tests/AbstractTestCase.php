@@ -15,7 +15,7 @@ abstract class AbstractTestCase extends TestCase
     private $exceptionClass;
     private $exceptionMessage;
 
-    protected function expectException($exceptionClass)
+    public function expectException($exceptionClass)
     {
         if (method_exists('parent', 'expectException')) {
             return parent::expectException($exceptionClass);
@@ -25,7 +25,7 @@ abstract class AbstractTestCase extends TestCase
         $this->setExpectedException($this->exceptionClass, $this->exceptionMessage);
     }
 
-    protected function expectExceptionMessage($exceptionMessage)
+    public function expectExceptionMessage($exceptionMessage)
     {
         if (method_exists('parent', 'expectExceptionMessage')) {
             return parent::expectExceptionMessage($exceptionMessage);
