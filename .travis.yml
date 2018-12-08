@@ -19,6 +19,10 @@ matrix:
     allow_failures:
         - php: hhvm
         - php: nightly
+    include:
+        - php: 5.3
+          dist: precise
+
 
 before_install:
   - travis_retry composer self-update
