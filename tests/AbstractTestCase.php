@@ -34,19 +34,4 @@ abstract class AbstractTestCase extends TestCase
         $this->exceptionMessage = $exceptionMessage;
         $this->setExpectedException($this->exceptionClass, $this->exceptionMessage);
     }
-
-    /**
-     * Polyfill to allow exception testing across PHPUnit 4 to PHPUnit 7.
-     */
-    public function fcExpectException($exception, $message = null)
-    {
-        if (method_exists($this, 'expectException')) {
-            $this->expectException($exception);
-            if ($message !== null) {
-                $this->expectExceptionMessage($message);
-            }
-        } else {
-            $this->setExpectedException($exception, $message);
-        }
-    }
 }
