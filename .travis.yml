@@ -1,7 +1,6 @@
 language: php
 
 before_script:
-  # Remove XDebug.
   - phpenv config-rm xdebug.ini || true
 
 php:
@@ -16,9 +15,6 @@ php:
   - hhvm
 
 matrix:
-    include:
-        - php: 5.3
-          dist: precise
     allow_failures:
         - php: hhvm
         - php: nightly
