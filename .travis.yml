@@ -22,7 +22,10 @@ matrix:
     allow_failures:
         - php: hhvm
         - php: nightly
-
+    include:
+        - php: 5.3
+          dist: precise
+          
 install:
   - composer install
   - bin/uaparser ua-parser:update || true
