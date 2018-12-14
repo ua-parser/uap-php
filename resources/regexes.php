@@ -21,15 +21,15 @@ return array (
     ),
     4 =>
     array (
-      'regex' => '^(.*)-iPad/(\\d+)\\.?(\\d+)?.?(\\d+)?.?(\\d+)? CFNetwork',
+      'regex' => '^(.*)-iPad\\/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)(?:\\.(\\d+)|) CFNetwork',
     ),
     5 =>
     array (
-      'regex' => '^(.*)-iPhone/(\\d+)\\.?(\\d+)?.?(\\d+)?.?(\\d+)? CFNetwork',
+      'regex' => '^(.*)-iPhone/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)(?:\\.(\\d+)|) CFNetwork',
     ),
     6 =>
     array (
-      'regex' => '^(.*)/(\\d+)\\.?(\\d+)?.?(\\d+)?.?(\\d+)? CFNetwork',
+      'regex' => '^(.*)/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)(?:\\.(\\d+)|) CFNetwork',
     ),
     7 =>
     array (
@@ -57,7 +57,7 @@ return array (
     ),
     12 =>
     array (
-      'regex' => '(CFNetwork)(?:/(\\d+)\\.(\\d+)\\.?(\\d+)?)?',
+      'regex' => '(CFNetwork)(?:/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)|)',
       'family_replacement' => 'CFNetwork',
     ),
     13 =>
@@ -116,49 +116,49 @@ return array (
     ),
     24 =>
     array (
-      'regex' => '/((?:Ant-)?Nutch|[A-z]+[Bb]ot|[A-z]+[Ss]pider|Axtaris|fetchurl|Isara|ShopSalad|Tailsweep)[ \\-](\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '/((?:Ant-|)Nutch|[A-z]+[Bb]ot|[A-z]+[Ss]pider|Axtaris|fetchurl|Isara|ShopSalad|Tailsweep)[ \\-](\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     25 =>
     array (
-      'regex' => '\\b(008|Altresium|Argus|BaiduMobaider|BoardReader|DNSGroup|DataparkSearch|EDI|Goodzer|Grub|INGRID|Infohelfer|LinkedInBot|LOOQ|Nutch|PathDefender|Peew|PostPost|Steeler|Twitterbot|VSE|WebCrunch|WebZIP|Y!J-BR[A-Z]|YahooSeeker|envolk|sproose|wminer)/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '\\b(008|Altresium|Argus|BaiduMobaider|BoardReader|DNSGroup|DataparkSearch|EDI|Goodzer|Grub|INGRID|Infohelfer|LinkedInBot|LOOQ|Nutch|PathDefender|Peew|PostPost|Steeler|Twitterbot|VSE|WebCrunch|WebZIP|Y!J-BR[A-Z]|YahooSeeker|envolk|sproose|wminer)/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     26 =>
     array (
-      'regex' => '(MSIE) (\\d+)\\.(\\d+)([a-z]\\d?)?;.* MSIECrawler',
+      'regex' => '(MSIE) (\\d+)\\.(\\d+)([a-z]\\d|[a-z]|);.* MSIECrawler',
       'family_replacement' => 'MSIECrawler',
     ),
     27 =>
     array (
-      'regex' => '(DAVdroid)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(DAVdroid)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     28 =>
     array (
-      'regex' => '(Google-HTTP-Java-Client|Apache-HttpClient|Go-http-client|scalaj-http|http%20client|Python-urllib|HttpMonitor|TLSProber|WinHTTP|JNLP|okhttp|aihttp|reqwest)(?:[ /](\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?)?',
+      'regex' => '(Google-HTTP-Java-Client|Apache-HttpClient|Go-http-client|scalaj-http|http%20client|Python-urllib|HttpMonitor|TLSProber|WinHTTP|JNLP|okhttp|aihttp|reqwest)(?:[ /](\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)',
     ),
     29 =>
     array (
-      'regex' => '(Pinterest(?:bot)?)/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?[;\\s\\(]+\\+https://www.pinterest.com/bot.html',
+      'regex' => '(Pinterest(?:bot|))/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)[;\\s(]+\\+https://www.pinterest.com/bot.html',
       'family_replacement' => 'Pinterestbot',
     ),
     30 =>
     array (
-      'regex' => '(1470\\.net crawler|50\\.nu|8bo Crawler Bot|Aboundex|Accoona-[A-z]+-Agent|AdsBot-Google(?:-[a-z]+)?|altavista|AppEngine-Google|archive.*?\\.org_bot|archiver|Ask Jeeves|[Bb]ai[Dd]u[Ss]pider(?:-[A-Za-z]+)*|bingbot|BingPreview|blitzbot|BlogBridge|Bloglovin|BoardReader(?: [A-Za-z]+)*|boitho.com-dc|BotSeer|BUbiNG|\\b\\w*favicon\\w*\\b|\\bYeti(?:-[a-z]+)?|Catchpoint(?: bot)?|[Cc]harlotte|Checklinks|clumboot|Comodo HTTP\\(S\\) Crawler|Comodo-Webinspector-Crawler|ConveraCrawler|CRAWL-E|CrawlConvera|Daumoa(?:-feedfetcher)?|Feed Seeker Bot|Feedbin|findlinks|Flamingo_SearchEngine|FollowSite Bot|furlbot|Genieo|gigabot|GomezAgent|gonzo1|(?:[a-zA-Z]+-)?Googlebot(?:-[a-zA-Z]+)?|Google SketchUp|grub-client|gsa-crawler|heritrix|HiddenMarket|holmes|HooWWWer|htdig|ia_archiver|ICC-Crawler|Icarus6j|ichiro(?:/mobile)?|IconSurf|IlTrovatore(?:-Setaccio)?|InfuzApp|Innovazion Crawler|InternetArchive|IP2[a-z]+Bot|jbot\\b|KaloogaBot|Kraken|Kurzor|larbin|LEIA|LesnikBot|Linguee Bot|LinkAider|LinkedInBot|Lite Bot|Llaut|lycos|Mail\\.RU_Bot|masscan|masidani_bot|Mediapartners-Google|Microsoft .*? Bot|mogimogi|mozDex|MJ12bot|msnbot(?:-media *)?|msrbot|Mtps Feed Aggregation System|netresearch|Netvibes|NewsGator[^/]*|^NING|Nutch[^/]*|Nymesis|ObjectsSearch|Orbiter|OOZBOT|PagePeeker|PagesInventory|PaxleFramework|Peeplo Screenshot Bot|PlantyNet_WebRobot|Pompos|Qwantify|Read%20Later|Reaper|RedCarpet|Retreiver|Riddler|Rival IQ|scooter|Scrapy|Scrubby|searchsight|seekbot|semanticdiscovery|SemrushBot|Simpy|SimplePie|SEOstats|SimpleRSS|SiteCon|Slackbot-LinkExpanding|Slack-ImgProxy|Slurp|snappy|Speedy Spider|Squrl Java|Stringer|TheUsefulbot|ThumbShotsBot|Thumbshots\\.ru|Tiny Tiny RSS|TwitterBot|WhatsApp|URL2PNG|Vagabondo|VoilaBot|^vortex|Votay bot|^voyager|WASALive.Bot|Web-sniffer|WebThumb|WeSEE:[A-z]+|WhatWeb|WIRE|WordPress|Wotbox|www\\.almaden\\.ibm\\.com|Xenu(?:.s)? Link Sleuth|Xerka [A-z]+Bot|yacy(?:bot)?|Yahoo[a-z]*Seeker|Yahoo! Slurp|Yandex\\w+|YodaoBot(?:-[A-z]+)?|YottaaMonitor|Yowedo|^Zao|^Zao-Crawler|ZeBot_www\\.ze\\.bz|ZooShot|ZyBorg)(?:[ /]v?(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?)?',
+      'regex' => '(1470\\.net crawler|50\\.nu|8bo Crawler Bot|Aboundex|Accoona-[A-z]{1,30}-Agent|AdsBot-Google(?:-[a-z]{1,30}|)|altavista|AppEngine-Google|archive.{0,30}\\.org_bot|archiver|Ask Jeeves|[Bb]ai[Dd]u[Ss]pider(?:-[A-Za-z]{1,30})(?:-[A-Za-z]{1,30}|)|bingbot|BingPreview|blitzbot|BlogBridge|Bloglovin|BoardReader Blog Indexer|BoardReader Favicon Fetcher|boitho.com-dc|BotSeer|BUbiNG|\\b\\w{0,30}favicon\\w{0,30}\\b|\\bYeti(?:-[a-z]{1,30}|)|Catchpoint(?: bot|)|[Cc]harlotte|Checklinks|clumboot|Comodo HTTP\\(S\\) Crawler|Comodo-Webinspector-Crawler|ConveraCrawler|CRAWL-E|CrawlConvera|Daumoa(?:-feedfetcher|)|Feed Seeker Bot|Feedbin|findlinks|Flamingo_SearchEngine|FollowSite Bot|furlbot|Genieo|gigabot|GomezAgent|gonzo1|(?:[a-zA-Z]{1,30}-|)Googlebot(?:-[a-zA-Z]{1,30}|)|Google SketchUp|grub-client|gsa-crawler|heritrix|HiddenMarket|holmes|HooWWWer|htdig|ia_archiver|ICC-Crawler|Icarus6j|ichiro(?:/mobile|)|IconSurf|IlTrovatore(?:-Setaccio|)|InfuzApp|Innovazion Crawler|InternetArchive|IP2[a-z]{1,30}Bot|jbot\\b|KaloogaBot|Kraken|Kurzor|larbin|LEIA|LesnikBot|Linguee Bot|LinkAider|LinkedInBot|Lite Bot|Llaut|lycos|Mail\\.RU_Bot|masscan|masidani_bot|Mediapartners-Google|Microsoft .{0,30} Bot|mogimogi|mozDex|MJ12bot|msnbot(?:-media {0,2}|)|msrbot|Mtps Feed Aggregation System|netresearch|Netvibes|NewsGator[^/]{0,30}|^NING|Nutch[^/]{0,30}|Nymesis|ObjectsSearch|Orbiter|OOZBOT|PagePeeker|PagesInventory|PaxleFramework|Peeplo Screenshot Bot|PlantyNet_WebRobot|Pompos|Qwantify|Read%20Later|Reaper|RedCarpet|Retreiver|Riddler|Rival IQ|scooter|Scrapy|Scrubby|searchsight|seekbot|semanticdiscovery|SemrushBot|Simpy|SimplePie|SEOstats|SimpleRSS|SiteCon|Slackbot-LinkExpanding|Slack-ImgProxy|Slurp|snappy|Speedy Spider|Squrl Java|Stringer|TheUsefulbot|ThumbShotsBot|Thumbshots\\.ru|Tiny Tiny RSS|TwitterBot|WhatsApp|URL2PNG|Vagabondo|VoilaBot|^vortex|Votay bot|^voyager|WASALive.Bot|Web-sniffer|WebThumb|WeSEE:[A-z]{1,30}|WhatWeb|WIRE|WordPress|Wotbox|www\\.almaden\\.ibm\\.com|Xenu(?:.s|) Link Sleuth|Xerka [A-z]{1,30}Bot|yacy(?:bot|)|YahooSeeker|Yahoo! Slurp|Yandex\\w{1,30}|YodaoBot(?:-[A-z]{1,30}|)|YottaaMonitor|Yowedo|^Zao|^Zao-Crawler|ZeBot_www\\.ze\\.bz|ZooShot|ZyBorg)(?:[ /]v?(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)|)',
     ),
     31 =>
     array (
-      'regex' => '\\b(Boto3?|JetS3t|aws-(?:cli|sdk-(?:cpp|go|java|nodejs|ruby2?))|s3fs)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '\\b(Boto3?|JetS3t|aws-(?:cli|sdk-(?:cpp|go|java|nodejs|ruby2?))|s3fs)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     32 =>
     array (
-      'regex' => '(?:\\/[A-Za-z0-9\\.]+)? *([A-Za-z0-9 \\-_\\!\\[\\]:]*(?:[Aa]rchiver|[Ii]ndexer|[Ss]craper|[Bb]ot|[Ss]pider|[Cc]rawl[a-z]*))/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '(?:\\/[A-Za-z0-9\\.]+|) *([A-Za-z0-9 \\-_\\!\\[\\]:]*(?:[Aa]rchiver|[Ii]ndexer|[Ss]craper|[Bb]ot|[Ss]pider|[Cc]rawl[a-z]*))/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)',
     ),
     33 =>
     array (
-      'regex' => '(?:\\/[A-Za-z0-9\\.]+)? *([A-Za-z0-9 _\\!\\[\\]:]*(?:[Aa]rchiver|[Ii]ndexer|[Ss]craper|[Bb]ot|[Ss]pider|[Cc]rawl[a-z]*)) (\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '(?:\\/[A-Za-z0-9\\.]+|) *([A-Za-z0-9 _\\!\\[\\]:]*(?:[Aa]rchiver|[Ii]ndexer|[Ss]craper|[Bb]ot|[Ss]pider|[Cc]rawl[a-z]*)) (\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)',
     ),
     34 =>
     array (
-      'regex' => '((?:[A-z0-9]+|[A-z\\-]+ ?)?(?: the )?(?:[Ss][Pp][Ii][Dd][Ee][Rr]|[Ss]crape|[A-Za-z0-9-]*(?:[^C][^Uu])[Bb]ot|[Cc][Rr][Aa][Ww][Ll])[A-z0-9]*)(?:(?:[ /]| v)(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?)?',
+      'regex' => '((?:[A-z0-9]+|[A-z\\-]+ ?|)(?: the |)(?:[Ss][Pp][Ii][Dd][Ee][Rr]|[Ss]crape|[A-Za-z0-9-]*(?:[^C][^Uu])[Bb]ot|[Cc][Rr][Aa][Ww][Ll])[A-z0-9]*)(?:(?:[ /]| v)(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)',
     ),
     35 =>
     array (
@@ -166,16 +166,16 @@ return array (
     ),
     36 =>
     array (
-      'regex' => '(Chimera|SeaMonkey|Camino|Waterfox)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+[a-z]*)?',
+      'regex' => '(Chimera|SeaMonkey|Camino|Waterfox)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+[a-z]*|)',
     ),
     37 =>
     array (
-      'regex' => '\\[(FBAN/MessengerForiOS|FB_IAB/MESSENGER);FBAV/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '\\[(FBAN/MessengerForiOS|FB_IAB/MESSENGER);FBAV/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)',
       'family_replacement' => 'Facebook Messenger',
     ),
     38 =>
     array (
-      'regex' => '\\[FB.*;(FBAV)/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '\\[FB.*;(FBAV)/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
       'family_replacement' => 'Facebook',
     ),
     39 =>
@@ -189,7 +189,7 @@ return array (
     ),
     41 =>
     array (
-      'regex' => '(Pinterest)(?: for Android(?: Tablet)?)?/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '(Pinterest)(?: for Android(?: Tablet|)|)/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     42 =>
     array (
@@ -218,7 +218,7 @@ return array (
     ),
     48 =>
     array (
-      'regex' => '(PaleMoon)/(\\d+)\\.(\\d+)\\.?(\\d+)?',
+      'regex' => '(PaleMoon)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Pale Moon',
     ),
     49 =>
@@ -243,7 +243,7 @@ return array (
     ),
     53 =>
     array (
-      'regex' => '(Namoroka|Shiretoko|Minefield)/(\\d+)\\.(\\d+)\\.(\\d+(?:pre)?)',
+      'regex' => '(Namoroka|Shiretoko|Minefield)/(\\d+)\\.(\\d+)\\.(\\d+(?:pre|))',
       'family_replacement' => 'Firefox ($1)',
     ),
     54 =>
@@ -258,17 +258,17 @@ return array (
     ),
     56 =>
     array (
-      'regex' => '(Firefox)-(?:\\d+\\.\\d+)?/(\\d+)\\.(\\d+)(a\\d+[a-z]*)',
+      'regex' => '(Firefox)-(?:\\d+\\.\\d+|)/(\\d+)\\.(\\d+)(a\\d+[a-z]*)',
       'family_replacement' => 'Firefox Alpha',
     ),
     57 =>
     array (
-      'regex' => '(Firefox)-(?:\\d+\\.\\d+)?/(\\d+)\\.(\\d+)(b\\d+[a-z]*)',
+      'regex' => '(Firefox)-(?:\\d+\\.\\d+|)/(\\d+)\\.(\\d+)(b\\d+[a-z]*)',
       'family_replacement' => 'Firefox Beta',
     ),
     58 =>
     array (
-      'regex' => '(Namoroka|Shiretoko|Minefield)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*)?',
+      'regex' => '(Namoroka|Shiretoko|Minefield)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*|)',
       'family_replacement' => 'Firefox ($1)',
     ),
     59 =>
@@ -278,11 +278,11 @@ return array (
     ),
     60 =>
     array (
-      'regex' => '(MozillaDeveloperPreview)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*)?',
+      'regex' => '(MozillaDeveloperPreview)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*|)',
     ),
     61 =>
     array (
-      'regex' => '(FxiOS)/(\\d+)\\.(\\d+)(\\.(\\d+))?(\\.(\\d+))?',
+      'regex' => '(FxiOS)/(\\d+)\\.(\\d+)(\\.(\\d+)|)(\\.(\\d+)|)',
       'family_replacement' => 'Firefox iOS',
     ),
     62 =>
@@ -305,7 +305,7 @@ return array (
     ),
     66 =>
     array (
-      'regex' => '(Netscape6)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+)?',
+      'regex' => '(Netscape6)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+|)',
       'family_replacement' => 'Netscape',
     ),
     67 =>
@@ -320,11 +320,11 @@ return array (
     ),
     69 =>
     array (
-      'regex' => '(Opera Tablet).*Version/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Opera Tablet).*Version/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     70 =>
     array (
-      'regex' => '(Opera Mini)(?:/att)?/?(\\d+)?(?:\\.(\\d+))?(?:\\.(\\d+))?',
+      'regex' => '(Opera Mini)(?:/att|)/?(\\d+|)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     71 =>
     array (
@@ -348,7 +348,7 @@ return array (
     ),
     75 =>
     array (
-      'regex' => '(Opera)/9.80.*Version/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Opera)/9.80.*Version/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     76 =>
     array (
@@ -377,7 +377,7 @@ return array (
     ),
     81 =>
     array (
-      'regex' => '(hpw|web)OS/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(hpw|web)OS/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'webOS Browser',
     ),
     82 =>
@@ -395,17 +395,17 @@ return array (
     ),
     85 =>
     array (
-      'regex' => '(Firefox)/(\\d+)\\.(\\d+)\\.(\\d+(?:pre)?) \\(Swiftfox\\)',
+      'regex' => '(Firefox)/(\\d+)\\.(\\d+)\\.(\\d+(?:pre|)) \\(Swiftfox\\)',
       'family_replacement' => 'Swiftfox',
     ),
     86 =>
     array (
-      'regex' => '(Firefox)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*)? \\(Swiftfox\\)',
+      'regex' => '(Firefox)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*|) \\(Swiftfox\\)',
       'family_replacement' => 'Swiftfox',
     ),
     87 =>
     array (
-      'regex' => '(rekonq)/(\\d+)\\.(\\d+)\\.?(\\d+)? Safari',
+      'regex' => '(rekonq)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|) Safari',
       'family_replacement' => 'Rekonq',
     ),
     88 =>
@@ -415,7 +415,7 @@ return array (
     ),
     89 =>
     array (
-      'regex' => '(conkeror|Conkeror)/(\\d+)\\.(\\d+)\\.?(\\d+)?',
+      'regex' => '(conkeror|Conkeror)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Conkeror',
     ),
     90 =>
@@ -468,12 +468,12 @@ return array (
     ),
     100 =>
     array (
-      'regex' => '(Silk)/(\\d+)\\.(\\d+)(?:\\.([0-9\\-]+))?',
+      'regex' => '(Silk)/(\\d+)\\.(\\d+)(?:\\.([0-9\\-]+)|)',
       'family_replacement' => 'Amazon Silk',
     ),
     101 =>
     array (
-      'regex' => '(Puffin)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Puffin)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     102 =>
     array (
@@ -487,17 +487,17 @@ return array (
     ),
     104 =>
     array (
-      'regex' => '(SznProhlizec)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(SznProhlizec)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Seznam prohlížeč',
     ),
     105 =>
     array (
-      'regex' => '(coc_coc_browser)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(coc_coc_browser)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Coc Coc',
     ),
     106 =>
     array (
-      'regex' => '(baidubrowser)[/\\s](\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '(baidubrowser)[/\\s](\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
       'family_replacement' => 'Baidu Browser',
     ),
     107 =>
@@ -507,7 +507,7 @@ return array (
     ),
     108 =>
     array (
-      'regex' => '(MxBrowser)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(MxBrowser)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Maxthon',
     ),
     109 =>
@@ -561,17 +561,17 @@ return array (
     ),
     119 =>
     array (
-      'regex' => '(MQQBrowser/Mini)(?:(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?)?',
+      'regex' => '(MQQBrowser/Mini)(?:(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)',
       'family_replacement' => 'QQ Browser Mini',
     ),
     120 =>
     array (
-      'regex' => '(MQQBrowser)(?:/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?)?',
+      'regex' => '(MQQBrowser)(?:/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)',
       'family_replacement' => 'QQ Browser Mobile',
     ),
     121 =>
     array (
-      'regex' => '(QQBrowser)(?:/(\\d+)(?:\\.(\\d+)\\.(\\d+)(?:\\.(\\d+))?)?)?',
+      'regex' => '(QQBrowser)(?:/(\\d+)(?:\\.(\\d+)\\.(\\d+)(?:\\.(\\d+)|)|)|)',
       'family_replacement' => 'QQ Browser',
     ),
     122 =>
@@ -599,7 +599,7 @@ return array (
     ),
     127 =>
     array (
-      'regex' => '(PodCruncher|Downcast)[ /]?(\\d+)\\.?(\\d+)?\\.?(\\d+)?\\.?(\\d+)?',
+      'regex' => '(PodCruncher|Downcast)[ /]?(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     128 =>
     array (
@@ -622,7 +622,7 @@ return array (
     ),
     132 =>
     array (
-      'regex' => '(HipChat)/?(\\d+)?',
+      'regex' => '(HipChat)/?(\\d+|)',
       'family_replacement' => 'HipChat Desktop Client',
     ),
     133 =>
@@ -660,11 +660,11 @@ return array (
     ),
     139 =>
     array (
-      'regex' => '(Airmail) (\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Airmail) (\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     140 =>
     array (
-      'regex' => '(Thunderbird)/(\\d+)\\.(\\d+)(?:\\.(\\d+(?:pre)?))?',
+      'regex' => '(Thunderbird)/(\\d+)\\.(\\d+)(?:\\.(\\d+(?:pre|))|)',
       'family_replacement' => 'Thunderbird',
     ),
     141 =>
@@ -674,12 +674,12 @@ return array (
     ),
     142 =>
     array (
-      'regex' => '(Barca(?:Pro)?)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Barca(?:Pro)?)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Barca',
     ),
     143 =>
     array (
-      'regex' => '(Lotus-Notes)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Lotus-Notes)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Lotus Notes',
     ),
     144 =>
@@ -688,7 +688,7 @@ return array (
     ),
     145 =>
     array (
-      'regex' => '(Edge)/(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Edge)/(\\d+)(?:\\.(\\d+)|)',
     ),
     146 =>
     array (
@@ -702,11 +702,11 @@ return array (
     ),
     148 =>
     array (
-      'regex' => '\\b(Dolphin)(?: |HDCN/|/INT\\-)(\\d+)\\.(\\d+)\\.?(\\d+)?',
+      'regex' => '\\b(Dolphin)(?: |HDCN/|/INT\\-)(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     149 =>
     array (
-      'regex' => '(HeadlessChrome)(?:/(\\d+)\\.(\\d+)\\.(\\d+))?',
+      'regex' => '(HeadlessChrome)(?:/(\\d+)\\.(\\d+)\\.(\\d+)|)',
     ),
     150 =>
     array (
@@ -714,15 +714,15 @@ return array (
     ),
     151 =>
     array (
-      'regex' => '(RCM CardDAV plugin)/(\\d+)\\.(\\d+)\\.(\\d+(?:-dev)?)',
+      'regex' => '(RCM CardDAV plugin)/(\\d+)\\.(\\d+)\\.(\\d+(?:-dev|))',
     ),
     152 =>
     array (
-      'regex' => '(bingbot|Bolt|AdobeAIR|Jasmine|IceCat|Skyfire|Midori|Maxthon|Lynx|Arora|IBrowse|Dillo|Camino|Shiira|Fennec|Phoenix|Flock|Netscape|Lunascape|Epiphany|WebPilot|Opera Mini|Opera|NetFront|Netfront|Konqueror|Googlebot|SeaMonkey|Kazehakase|Vienna|Iceape|Iceweasel|IceWeasel|Iron|K-Meleon|Sleipnir|Galeon|GranParadiso|iCab|iTunes|MacAppStore|NetNewsWire|Space Bison|Stainless|Orca|Dolfin|BOLT|Minimo|Tizen Browser|Polaris|Abrowser|Planetweb|ICE Browser|mDolphin|qutebrowser|Otter|QupZilla|MailBar|kmail2|YahooMobileMail|ExchangeWebServices|ExchangeServicesClient|Dragon|Outlook-iOS-Android)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(bingbot|Bolt|AdobeAIR|Jasmine|IceCat|Skyfire|Midori|Maxthon|Lynx|Arora|IBrowse|Dillo|Camino|Shiira|Fennec|Phoenix|Flock|Netscape|Lunascape|Epiphany|WebPilot|Opera Mini|Opera|NetFront|Netfront|Konqueror|Googlebot|SeaMonkey|Kazehakase|Vienna|Iceape|Iceweasel|IceWeasel|Iron|K-Meleon|Sleipnir|Galeon|GranParadiso|iCab|iTunes|MacAppStore|NetNewsWire|Space Bison|Stainless|Orca|Dolfin|BOLT|Minimo|Tizen Browser|Polaris|Abrowser|Planetweb|ICE Browser|mDolphin|qutebrowser|Otter|QupZilla|MailBar|kmail2|YahooMobileMail|ExchangeWebServices|ExchangeServicesClient|Dragon|Outlook-iOS-Android)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     153 =>
     array (
-      'regex' => '(Chromium|Chrome)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?(?:\\.(\\d+))?',
+      'regex' => '(Chromium|Chrome)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     154 =>
     array (
@@ -743,11 +743,11 @@ return array (
     ),
     158 =>
     array (
-      'regex' => '^(AntennaPod|WMPlayer|Zune|Podkicker|Radio|ExoPlayerDemo|Overcast|PocketTunes|NSPlayer|okhttp|DoggCatcher|QuickNews|QuickTime|Peapod|Podcasts|GoldenPod|VLC|Spotify|Miro|MediaGo|Juice|iPodder|gPodder|Banshee)/(\\d+)\\.(\\d+)\\.?(\\d+)?\\.?(\\d+)?',
+      'regex' => '^(AntennaPod|WMPlayer|Zune|Podkicker|Radio|ExoPlayerDemo|Overcast|PocketTunes|NSPlayer|okhttp|DoggCatcher|QuickNews|QuickTime|Peapod|Podcasts|GoldenPod|VLC|Spotify|Miro|MediaGo|Juice|iPodder|gPodder|Banshee)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     159 =>
     array (
-      'regex' => '^(Peapod|Liferea)/([^.\\s]+)\\.([^.\\s]+)?\\.?([^.\\s]+)?',
+      'regex' => '^(Peapod|Liferea)/([^.\\s]+)\\.([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
     160 =>
     array (
@@ -784,11 +784,11 @@ return array (
     ),
     168 =>
     array (
-      'regex' => '(LG Player|Doppler|FancyMusic|MediaMonkey|Clementine) (\\d+)\\.(\\d+)\\.?([^.\\s]+)?\\.?([^.\\s]+)?',
+      'regex' => '(LG Player|Doppler|FancyMusic|MediaMonkey|Clementine) (\\d+)\\.(\\d+)\\.?([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
     169 =>
     array (
-      'regex' => '(philpodder)/(\\d+)\\.(\\d+)\\.?([^.\\s]+)?\\.?([^.\\s]+)?',
+      'regex' => '(philpodder)/(\\d+)\\.(\\d+)\\.?([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
     170 =>
     array (
@@ -814,11 +814,11 @@ return array (
     ),
     175 =>
     array (
-      'regex' => '(ESPN) Radio (\\d+)\\.(\\d+)\\.?(\\d+)? ?(?:rv:(\\d+))? ',
+      'regex' => '(ESPN) Radio (\\d+)\\.(\\d+)(?:\\.(\\d+)|) ?(?:rv:(\\d+)|) ',
     ),
     176 =>
     array (
-      'regex' => '(podracer|jPodder) v ?(\\d+)\\.(\\d+)\\.?(\\d+)?',
+      'regex' => '(podracer|jPodder) v ?(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     177 =>
     array (
@@ -826,7 +826,7 @@ return array (
     ),
     178 =>
     array (
-      'regex' => '(Zune|BeyondPod) (\\d+)\\.?(\\d+)?[\\);]',
+      'regex' => '(Zune|BeyondPod) (\\d+)(?:\\.(\\d+)|)[\\);]',
     ),
     179 =>
     array (
@@ -839,7 +839,7 @@ return array (
     ),
     181 =>
     array (
-      'regex' => '^(RSSRadio)[ /]?(\\d+)?',
+      'regex' => '^(RSSRadio)[ /]?(\\d+|)',
     ),
     182 =>
     array (
@@ -853,7 +853,7 @@ return array (
     ),
     184 =>
     array (
-      'regex' => '^(HTC) Streaming Player \\S+ / \\S+ / \\S+ / (\\d+)\\.(\\d+)\\.?(\\d+)?',
+      'regex' => '^(HTC) Streaming Player \\S+ / \\S+ / \\S+ / (\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     185 =>
     array (
@@ -878,15 +878,15 @@ return array (
     ),
     190 =>
     array (
-      'regex' => '^(foobar)\\S+/([^.\\s]+)\\.([^.\\s]+)?\\.?([^.\\s]+)?',
+      'regex' => '^(foobar)\\S+/([^.\\s]+)\\.([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
     191 =>
     array (
-      'regex' => '^(Clementine)\\S+ ([^.\\s]+)\\.([^.\\s]+)?\\.?([^.\\s]+)?',
+      'regex' => '^(Clementine)\\S+ ([^.\\s]+)\\.([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
     192 =>
     array (
-      'regex' => '(amarok)/([^.\\s]+)\\.([^.\\s]+)?\\.?([^.\\s]+)?',
+      'regex' => '(amarok)/([^.\\s]+)\\.([^.\\s]+|)\\.?([^.\\s]+|)',
       'family_replacement' => 'Amarok',
     ),
     193 =>
@@ -899,7 +899,7 @@ return array (
     ),
     195 =>
     array (
-      'regex' => '(iCab|Lunascape|Opera|Android|Jasmine|Polaris|Microsoft SkyDriveSync|The Bat!) (\\d+)\\.(\\d+)\\.?(\\d+)?',
+      'regex' => '(iCab|Lunascape|Opera|Android|Jasmine|Polaris|Microsoft SkyDriveSync|The Bat!) (\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
     196 =>
     array (
@@ -962,7 +962,7 @@ return array (
     ),
     208 =>
     array (
-      'regex' => '(Obigo|OBIGO)[^\\d]*(\\d+)(?:.(\\d+))?',
+      'regex' => '(Obigo|OBIGO)[^\\d]*(\\d+)(?:.(\\d+)|)',
       'family_replacement' => 'Obigo',
     ),
     209 =>
@@ -996,7 +996,7 @@ return array (
     ),
     215 =>
     array (
-      'regex' => '(BonEcho)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+)?',
+      'regex' => '(BonEcho)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+|)',
       'family_replacement' => 'Bon Echo',
     ),
     216 =>
@@ -1006,27 +1006,27 @@ return array (
     ),
     217 =>
     array (
-      'regex' => '(iPod|iPhone|iPad).+Version/(\\d+)\\.(\\d+)(?:\\.(\\d+))?.*[ +]Safari',
+      'regex' => '(iPod|iPhone|iPad).+Version/(\\d+)\\.(\\d+)(?:\\.(\\d+)|).*[ +]Safari',
       'family_replacement' => 'Mobile Safari',
     ),
     218 =>
     array (
-      'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+))?.* AppleNews\\/\\d+\\.\\d+\\.\\d+?',
+      'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+)|).* AppleNews\\/\\d+\\.\\d+\\.\\d+?',
       'family_replacement' => 'Mobile Safari UI/WKWebView',
     ),
     219 =>
     array (
-      'regex' => '(iPod|iPhone|iPad).+Version/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(iPod|iPhone|iPad).+Version/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Mobile Safari UI/WKWebView',
     ),
     220 =>
     array (
-      'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+))?.*Mobile.*[ +]Safari',
+      'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+)|).*Mobile.*[ +]Safari',
       'family_replacement' => 'Mobile Safari',
     ),
     221 =>
     array (
-      'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+))?.*Mobile',
+      'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+)|).*Mobile',
       'family_replacement' => 'Mobile Safari UI/WKWebView',
     ),
     222 =>
@@ -1168,12 +1168,12 @@ return array (
     ),
     251 =>
     array (
-      'regex' => '(AppleWebKit)/(\\d+)\\.?(\\d+)?\\+ .* Safari',
+      'regex' => '(AppleWebKit)/(\\d+)(?:\\.(\\d+)|)\\+ .* Safari',
       'family_replacement' => 'WebKit Nightly',
     ),
     252 =>
     array (
-      'regex' => '(Version)/(\\d+)\\.(\\d+)(?:\\.(\\d+))?.*Safari/',
+      'regex' => '(Version)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|).*Safari/',
       'family_replacement' => 'Safari',
     ),
     253 =>
@@ -1229,7 +1229,7 @@ return array (
     ),
     263 =>
     array (
-      'regex' => '(Espial)/(\\d+)(?:\\.(\\d+))?(?:\\.(\\d+))?',
+      'regex' => '(Espial)/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     264 =>
     array (
@@ -1242,7 +1242,7 @@ return array (
     ),
     266 =>
     array (
-      'regex' => '(Firefox)/(\\d+)\\.(\\d+)(pre|[ab]\\d+[a-z]*)?',
+      'regex' => '(Firefox)/(\\d+)\\.(\\d+)(pre|[ab]\\d+[a-z]*|)',
     ),
     267 =>
     array (
@@ -1256,19 +1256,19 @@ return array (
     ),
     269 =>
     array (
-      'regex' => '\\b(Windows-Update-Agent|Microsoft-CryptoAPI|SophosUpdateManager|SophosAgent|Debian APT-HTTP|Ubuntu APT-HTTP|libcurl-agent|libwww-perl|urlgrabber|curl|PycURL|Wget|aria2|Axel|OpenBSD ftp|lftp|jupdate|insomnia)(?:[ /](\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?)?',
+      'regex' => '\\b(Windows-Update-Agent|Microsoft-CryptoAPI|SophosUpdateManager|SophosAgent|Debian APT-HTTP|Ubuntu APT-HTTP|libcurl-agent|libwww-perl|urlgrabber|curl|PycURL|Wget|aria2|Axel|OpenBSD ftp|lftp|jupdate|insomnia)(?:[ /](\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)',
     ),
     270 =>
     array (
-      'regex' => '(Java)[/ ]{0,1}\\d+\\.(\\d+)\\.(\\d+)[_-]*([a-zA-Z0-9]+)*',
+      'regex' => '(Java)[/ ]{0,1}\\d+\\.(\\d+)\\.(\\d+)[_-]*([a-zA-Z0-9]+|)',
     ),
     271 =>
     array (
-      'regex' => '^(Cyberduck)/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.\\d+)?',
+      'regex' => '^(Cyberduck)/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.\\d+|)',
     ),
     272 =>
     array (
-      'regex' => '^(S3 Browser) (\\d+)-(\\d+)-(\\d+)(?:\\s*http://s3browser\\.com)?',
+      'regex' => '^(S3 Browser) (\\d+)-(\\d+)-(\\d+)(?:\\s*http://s3browser\\.com|)',
     ),
     273 =>
     array (
@@ -1346,12 +1346,12 @@ return array (
     ),
     11 =>
     array (
-      'regex' => '(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone)[ +]+(\\d+)[_\\.](\\d+)(?:[_\\.](\\d+))?.*Outlook-iOS-Android',
+      'regex' => '(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone)[ +]+(\\d+)[_\\.](\\d+)(?:[_\\.](\\d+)|).*Outlook-iOS-Android',
       'os_replacement' => 'iOS',
     ),
     12 =>
     array (
-      'regex' => '(Android)[ \\-/](\\d+)\\.?(\\d+)?(?:[.\\-]([a-z0-9]+))?',
+      'regex' => '(Android)[ \\-/](\\d+)(?:\\.(\\d+)|)(?:[.\\-]([a-z0-9]+)|)',
     ),
     13 =>
     array (
@@ -1384,27 +1384,27 @@ return array (
     ),
     18 =>
     array (
-      'regex' => '^UCWEB.*; (Adr) (\\d+)\\.(\\d+)(?:[.\\-]([a-z0-9]+))?;',
+      'regex' => '^UCWEB.*; (Adr) (\\d+)\\.(\\d+)(?:[.\\-]([a-z0-9]+)|);',
       'os_replacement' => 'Android',
     ),
     19 =>
     array (
-      'regex' => '^UCWEB.*; (iPad|iPh|iPd) OS (\\d+)_(\\d+)(?:_(\\d+))?;',
+      'regex' => '^UCWEB.*; (iPad|iPh|iPd) OS (\\d+)_(\\d+)(?:_(\\d+)|);',
       'os_replacement' => 'iOS',
     ),
     20 =>
     array (
-      'regex' => '^UCWEB.*; (wds) (\\d+)\\.(\\d+)(?:\\.(\\d+))?;',
+      'regex' => '^UCWEB.*; (wds) (\\d+)\\.(\\d+)(?:\\.(\\d+)|);',
       'os_replacement' => 'Windows Phone',
     ),
     21 =>
     array (
-      'regex' => '^(JUC).*; ?U; ?(?:Android)?(\\d+)\\.(\\d+)(?:[\\.\\-]([a-z0-9]+))?',
+      'regex' => '^(JUC).*; ?U; ?(?:Android|)(\\d+)\\.(\\d+)(?:[\\.\\-]([a-z0-9]+)|)',
       'os_replacement' => 'Android',
     ),
     22 =>
     array (
-      'regex' => '(android)\\s(?:mobile\\/)(\\d+)(?:\\.?(\\d+))?(?:\\.?(\\d+))?',
+      'regex' => '(android)\\s(?:mobile\\/)(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)',
       'os_replacement' => 'Android',
     ),
     23 =>
@@ -1414,7 +1414,7 @@ return array (
     ),
     24 =>
     array (
-      'regex' => '(x86_64|aarch64)\\ (\\d+)+\\.(\\d+)+\\.(\\d+)+.*Chrome.*(?:CitrixChromeApp)$',
+      'regex' => '(x86_64|aarch64)\\ (\\d+)\\.(\\d+)\\.(\\d+).*Chrome.*(?:CitrixChromeApp)$',
       'os_replacement' => 'Chrome OS',
     ),
     25 =>
@@ -1547,16 +1547,16 @@ return array (
     ),
     47 =>
     array (
-      'regex' => '((?:Mac[ +]?|; )OS[ +]X)[\\s+/](?:(\\d+)[_.](\\d+)(?:[_.](\\d+))?|Mach-O)',
+      'regex' => '((?:Mac[ +]?|; )OS[ +]X)[\\s+/](?:(\\d+)[_.](\\d+)(?:[_.](\\d+)|)|Mach-O)',
       'os_replacement' => 'Mac OS X',
     ),
     48 =>
     array (
-      'regex' => '(\\w+\\s+Mac OS X\\s+\\w+\\s+(\\d+).(\\d+).(\\d+).*)',
+      'regex' => '\\w+\\s+Mac OS X\\s+\\w+\\s+(\\d+).(\\d+).(\\d+).*',
       'os_replacement' => 'Mac OS X',
-      'os_v1_replacement' => '$2',
-      'os_v2_replacement' => '$3',
-      'os_v3_replacement' => '$4',
+      'os_v1_replacement' => '$1',
+      'os_v2_replacement' => '$2',
+      'os_v3_replacement' => '$3',
     ),
     49 =>
     array (
@@ -1604,17 +1604,17 @@ return array (
     ),
     56 =>
     array (
-      'regex' => '^Box.*;(Darwin)/(10)\\.(1\\d)(?:\\.(\\d+))?',
+      'regex' => '^Box.*;(Darwin)/(10)\\.(1\\d)(?:\\.(\\d+)|)',
       'os_replacement' => 'Mac OS X',
     ),
     57 =>
     array (
-      'regex' => '(Apple\\s?TV)(?:/(\\d+)\\.(\\d+))?',
+      'regex' => '(Apple\\s?TV)(?:/(\\d+)\\.(\\d+)|)',
       'os_replacement' => 'ATV OS X',
     ),
     58 =>
     array (
-      'regex' => '(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS)[ +]+(\\d+)[_\\.](\\d+)(?:[_\\.](\\d+))?',
+      'regex' => '(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS)[ +]+(\\d+)[_\\.](\\d+)(?:[_\\.](\\d+)|)',
       'os_replacement' => 'iOS',
     ),
     59 =>
@@ -1921,7 +1921,7 @@ return array (
     ),
     106 =>
     array (
-      'regex' => '\\b(iOS[ /]|iOS; |iPhone(?:/| v|[ _]OS[/,]|; | OS : |\\d,\\d/|\\d,\\d; )|iPad/)(\\d{1,2})[_\\.](\\d{1,2})(?:[_\\.](\\d+))?',
+      'regex' => '\\b(iOS[ /]|iOS; |iPhone(?:/| v|[ _]OS[/,]|; | OS : |\\d,\\d/|\\d,\\d; )|iPad/)(\\d{1,2})[_\\.](\\d{1,2})(?:[_\\.](\\d+)|)',
       'os_replacement' => 'iOS',
     ),
     107 =>
@@ -1939,7 +1939,7 @@ return array (
     ),
     110 =>
     array (
-      'regex' => '(CrOS) [a-z0-9_]+ (\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(CrOS) [a-z0-9_]+ (\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'Chrome OS',
     ),
     111 =>
@@ -1949,11 +1949,11 @@ return array (
     ),
     112 =>
     array (
-      'regex' => '(Linux Mint)(?:/(\\d+))?',
+      'regex' => '(Linux Mint)(?:/(\\d+)|)',
     ),
     113 =>
     array (
-      'regex' => '(Mandriva)(?: Linux)?/(?:[\\d.-]+m[a-z]{2}(\\d+).(\\d))?',
+      'regex' => '(Mandriva)(?: Linux|)/(?:[\\d.-]+m[a-z]{2}(\\d+).(\\d)|)',
     ),
     114 =>
     array (
@@ -2006,12 +2006,12 @@ return array (
     ),
     124 =>
     array (
-      'regex' => '(Black[Bb]erry)[0-9a-z]+/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Black[Bb]erry)[0-9a-z]+/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'BlackBerry OS',
     ),
     125 =>
     array (
-      'regex' => '(Black[Bb]erry).+Version/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(Black[Bb]erry).+Version/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'BlackBerry OS',
     ),
     126 =>
@@ -2104,7 +2104,7 @@ return array (
     ),
     141 =>
     array (
-      'regex' => '(GoogleTV)(?: (\\d+)\\.(\\d+)(?:\\.(\\d+))?|/[\\da-z]+)',
+      'regex' => '(GoogleTV)(?: (\\d+)\\.(\\d+)(?:\\.(\\d+)|)|/[\\da-z]+)',
     ),
     142 =>
     array (
@@ -2112,12 +2112,12 @@ return array (
     ),
     143 =>
     array (
-      'regex' => '(CrKey)(?:[/](\\d+)\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '(CrKey)(?:[/](\\d+)\\.(\\d+)(?:\\.(\\d+)|)|)',
       'os_replacement' => 'Chromecast',
     ),
     144 =>
     array (
-      'regex' => '(hpw|web)OS/(\\d+)\\.(\\d+)(?:\\.(\\d+))?',
+      'regex' => '(hpw|web)OS/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'webOS',
     ),
     145 =>
@@ -2126,11 +2126,11 @@ return array (
     ),
     146 =>
     array (
-      'regex' => '(Fedora|Red Hat|PCLinuxOS|Puppy|Ubuntu|Kindle|Bada|Lubuntu|BackTrack|Slackware|(?:Free|Open|Net|\\b)BSD)[/ ](\\d+)\\.(\\d+)(?:\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '(Fedora|Red Hat|PCLinuxOS|Puppy|Ubuntu|Kindle|Bada|Lubuntu|BackTrack|Slackware|(?:Free|Open|Net|\\b)BSD)[/ ](\\d+)\\.(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
     147 =>
     array (
-      'regex' => '(Linux)[ /](\\d+)\\.(\\d+)(?:\\.(\\d+))?.*gentoo',
+      'regex' => '(Linux)[ /](\\d+)\\.(\\d+)(?:\\.(\\d+)|).*gentoo',
       'os_replacement' => 'Gentoo',
     ),
     148 =>
@@ -2147,7 +2147,7 @@ return array (
     ),
     151 =>
     array (
-      'regex' => '(Linux)(?:[ /](\\d+)\\.(\\d+)(?:\\.(\\d+))?)?',
+      'regex' => '(Linux)(?:[ /](\\d+)\\.(\\d+)(?:\\.(\\d+)|)|)',
     ),
     152 =>
     array (
@@ -2201,7 +2201,7 @@ return array (
     ),
     3 =>
     array (
-      'regex' => 'Android Application[^\\-]+ - (Sony) ?(Ericsson)? (.+) \\w+ - ',
+      'regex' => 'Android Application[^\\-]+ - (Sony) ?(Ericsson|) (.+) \\w+ - ',
       'device_replacement' => '$1 $2',
       'brand_replacement' => '$1$2',
       'model_replacement' => '$3',
@@ -2237,7 +2237,7 @@ return array (
     ),
     8 =>
     array (
-      'regex' => 'Android [34].*; *(A100|A101|A110|A200|A210|A211|A500|A501|A510|A511|A700(?: Lite| 3G)?|A701|B1-A71|A1-\\d{3}|B1-\\d{3}|V360|V370|W500|W500P|W501|W501P|W510|W511|W700|Slider SL101|DA22[^;/]+) Build',
+      'regex' => 'Android [34].*; *(A100|A101|A110|A200|A210|A211|A500|A501|A510|A511|A700(?: Lite| 3G|)|A701|B1-A71|A1-\\d{3}|B1-\\d{3}|V360|V370|W500|W500P|W501|W501P|W510|W511|W700|Slider SL101|DA22[^;/]+) Build',
       'device_replacement' => '$1',
       'brand_replacement' => 'Acer',
       'model_replacement' => '$1',
@@ -2265,14 +2265,14 @@ return array (
     ),
     12 =>
     array (
-      'regex' => '; *(Advent )?(Vega(?:Bean|Comb)?).* Build',
+      'regex' => '; *(Advent |)(Vega(?:Bean|Comb|)).* Build',
       'device_replacement' => '$1$2',
       'brand_replacement' => 'Advent',
       'model_replacement' => '$2',
     ),
     13 =>
     array (
-      'regex' => '; *(Ainol )?((?:NOVO|[Nn]ovo)[^;/]+) Build',
+      'regex' => '; *(Ainol |)((?:NOVO|[Nn]ovo)[^;/]+) Build',
       'device_replacement' => '$1$2',
       'brand_replacement' => 'Ainol',
       'model_replacement' => '$2',
@@ -2309,7 +2309,7 @@ return array (
     ),
     18 =>
     array (
-      'regex' => '; *(?:alcatel[ _])?(?:(?:one[ _]?touch[ _])|ot[ \\-])([^;/]+);? Build',
+      'regex' => '; *(?:alcatel[ _]|)(?:(?:one[ _]?touch[ _])|ot[ \\-])([^;/]+);? Build',
       'regex_flag' => 'i',
       'device_replacement' => 'Alcatel One Touch $1',
       'brand_replacement' => 'Alcatel',
@@ -2359,7 +2359,7 @@ return array (
     ),
     25 =>
     array (
-      'regex' => '; *(ALLVIEW[ _]?|Allview[ _]?)?(AX1_Shine|AX2_Frenzy) Build',
+      'regex' => '; *(ALLVIEW[ _]?|Allview[ _]?|)(AX1_Shine|AX2_Frenzy) Build',
       'device_replacement' => '$1$2',
       'brand_replacement' => 'Allview',
       'model_replacement' => '$2',
@@ -2415,7 +2415,7 @@ return array (
     ),
     33 =>
     array (
-      'regex' => '; *(G7|M1013|M1015G|M11[CG]?|M-?12[B]?|M15|M19[G]?|M30[ACQ]?|M31[GQ]|M32|M33[GQ]|M36|M37|M38|M701T|M710|M712B|M713|M715G|M716G|M71(?:G|GS|T)?|M72[T]?|M73[T]?|M75[GT]?|M77G|M79T|M7L|M7LN|M81|M810|M81T|M82|M92|M92KS|M92S|M717G|M721|M722G|M723|M725G|M739|M785|M791|M92SK|M93D) Build',
+      'regex' => '; *(G7|M1013|M1015G|M11[CG]?|M-?12[B]?|M15|M19[G]?|M30[ACQ]?|M31[GQ]|M32|M33[GQ]|M36|M37|M38|M701T|M710|M712B|M713|M715G|M716G|M71(?:G|GS|T|)|M72[T]?|M73[T]?|M75[GT]?|M77G|M79T|M7L|M7LN|M81|M810|M81T|M82|M92|M92KS|M92S|M717G|M721|M722G|M723|M725G|M739|M785|M791|M92SK|M93D) Build',
       'device_replacement' => 'Aoson $1',
       'brand_replacement' => 'Aoson',
       'model_replacement' => '$1',
@@ -2500,14 +2500,14 @@ return array (
     ),
     45 =>
     array (
-      'regex' => '; *(?:ASSISTANT )?(AP)-?([1789]\\d{2}[A-Z]{0,2}|80104) Build',
+      'regex' => '; *(?:ASSISTANT |)(AP)-?([1789]\\d{2}[A-Z]{0,2}|80104) Build',
       'device_replacement' => 'Assistant $1-$2',
       'brand_replacement' => 'Assistant',
       'model_replacement' => '$1-$2',
     ),
     46 =>
     array (
-      'regex' => '; *(ME17\\d[^;/]*|ME3\\d{2}[^;/]+|K00[A-Z]|Nexus 10|Nexus 7(?: 2013)?|PadFone[^;/]*|Transformer[^;/]*|TF\\d{3}[^;/]*|eeepc) Build',
+      'regex' => '; *(ME17\\d[^;/]*|ME3\\d{2}[^;/]+|K00[A-Z]|Nexus 10|Nexus 7(?: 2013|)|PadFone[^;/]*|Transformer[^;/]*|TF\\d{3}[^;/]*|eeepc) Build',
       'device_replacement' => 'Asus $1',
       'brand_replacement' => 'Asus',
       'model_replacement' => '$1',
@@ -3045,7 +3045,7 @@ return array (
     ),
     122 =>
     array (
-      'regex' => '; *(Gionee)[ _\\-]([^;/]+)(?:/[^;/]+)? Build',
+      'regex' => '; *(Gionee)[ _\\-]([^;/]+)(?:/[^;/]+|) Build',
       'regex_flag' => 'i',
       'device_replacement' => '$1 $2',
       'brand_replacement' => 'Gionee',
@@ -3209,7 +3209,7 @@ return array (
     ),
     145 =>
     array (
-      'regex' => '; *(HUAWEI |Huawei-)?([UY][^;/]+) Build/(?:Huawei|HUAWEI)([UY][^\\);]+)\\)',
+      'regex' => '; *(HUAWEI |Huawei-|)([UY][^;/]+) Build/(?:Huawei|HUAWEI)([UY][^\\);]+)\\)',
       'device_replacement' => '$1$2',
       'brand_replacement' => 'Huawei',
       'model_replacement' => '$2',
@@ -3237,7 +3237,7 @@ return array (
     ),
     149 =>
     array (
-      'regex' => '; *((?:HUAWEI[ _]?|Huawei[ _])?Ascend[ _])([^;/]+) Build',
+      'regex' => '; *((?:HUAWEI[ _]?|Huawei[ _]|)Ascend[ _])([^;/]+) Build',
       'device_replacement' => '$1$2',
       'brand_replacement' => 'Huawei',
       'model_replacement' => '$2',
@@ -3314,49 +3314,49 @@ return array (
     ),
     160 =>
     array (
-      'regex' => '; *(?:HTC[ _/])+([^ _/]+)(?:[ _/]([^ _/]+))?(?:[/\\\\]1\\.0 | V|/| +)\\d+\\.\\d[\\d\\.]*(?: *Build|\\))',
+      'regex' => '; *(?:HTC[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)|)(?:[/\\\\]1\\.0 | V|/| +)\\d+\\.\\d[\\d\\.]*(?: *Build|\\))',
       'device_replacement' => 'HTC $1 $2',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1 $2',
     ),
     161 =>
     array (
-      'regex' => '; *(?:HTC[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/]+))?)?(?:[/\\\\]1\\.0 | V|/| +)\\d+\\.\\d[\\d\\.]*(?: *Build|\\))',
+      'regex' => '; *(?:HTC[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/]+)|)|)(?:[/\\\\]1\\.0 | V|/| +)\\d+\\.\\d[\\d\\.]*(?: *Build|\\))',
       'device_replacement' => 'HTC $1 $2 $3',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1 $2 $3',
     ),
     162 =>
     array (
-      'regex' => '; *(?:HTC[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/]+))?)?)?(?:[/\\\\]1\\.0 | V|/| +)\\d+\\.\\d[\\d\\.]*(?: *Build|\\))',
+      'regex' => '; *(?:HTC[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/]+)|)|)|)(?:[/\\\\]1\\.0 | V|/| +)\\d+\\.\\d[\\d\\.]*(?: *Build|\\))',
       'device_replacement' => 'HTC $1 $2 $3 $4',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1 $2 $3 $4',
     ),
     163 =>
     array (
-      'regex' => '; *(?:(?:HTC|htc)(?:_blocked)*[ _/])+([^ _/;]+)(?: *Build|[;\\)]| - )',
+      'regex' => '; *(?:(?:HTC|htc)(?:_blocked|)[ _/])+([^ _/;]+)(?: *Build|[;\\)]| - )',
       'device_replacement' => 'HTC $1',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1',
     ),
     164 =>
     array (
-      'regex' => '; *(?:(?:HTC|htc)(?:_blocked)*[ _/])+([^ _/]+)(?:[ _/]([^ _/;\\)]+))?(?: *Build|[;\\)]| - )',
+      'regex' => '; *(?:(?:HTC|htc)(?:_blocked|)[ _/])+([^ _/]+)(?:[ _/]([^ _/;\\)]+)|)(?: *Build|[;\\)]| - )',
       'device_replacement' => 'HTC $1 $2',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1 $2',
     ),
     165 =>
     array (
-      'regex' => '; *(?:(?:HTC|htc)(?:_blocked)*[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/;\\)]+))?)?(?: *Build|[;\\)]| - )',
+      'regex' => '; *(?:(?:HTC|htc)(?:_blocked|)[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/;\\)]+)|)|)(?: *Build|[;\\)]| - )',
       'device_replacement' => 'HTC $1 $2 $3',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1 $2 $3',
     ),
     166 =>
     array (
-      'regex' => '; *(?:(?:HTC|htc)(?:_blocked)*[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ /;]+))?)?)?(?: *Build|[;\\)]| - )',
+      'regex' => '; *(?:(?:HTC|htc)(?:_blocked|)[ _/])+([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ _/]+)(?:[ _/]([^ /;]+)|)|)|)(?: *Build|[;\\)]| - )',
       'device_replacement' => 'HTC $1 $2 $3 $4',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1 $2 $3 $4',
@@ -3370,7 +3370,7 @@ return array (
     ),
     168 =>
     array (
-      'regex' => '(?:[;,] *|^)(?:htccn_chs-)?HTC[ _-]?([^;]+?)(?: *Build|clay|Android|-?Mozilla| Opera| Profile| UNTRUSTED|[;/\\(\\)]|$)',
+      'regex' => '(?:[;,] *|^)(?:htccn_chs-|)HTC[ _-]?([^;]+?)(?: *Build|clay|Android|-?Mozilla| Opera| Profile| UNTRUSTED|[;/\\(\\)]|$)',
       'regex_flag' => 'i',
       'device_replacement' => 'HTC $1',
       'brand_replacement' => 'HTC',
@@ -3415,7 +3415,7 @@ return array (
     ),
     174 =>
     array (
-      'regex' => '; *(?:iBall[ _\\-])?(Andi)[ _]?(\\d[^;/]*) Build',
+      'regex' => '; *(?:iBall[ _\\-]|)(Andi)[ _]?(\\d[^;/]*) Build',
       'regex_flag' => 'i',
       'device_replacement' => '$1 $2',
       'brand_replacement' => 'iBall',
@@ -3423,7 +3423,7 @@ return array (
     ),
     175 =>
     array (
-      'regex' => '; *(IBall)(?:[ _]([^;/]+))? Build',
+      'regex' => '; *(IBall)(?:[ _]([^;/]+)|) Build',
       'regex_flag' => 'i',
       'device_replacement' => '$1 $2',
       'brand_replacement' => 'iBall',
@@ -3431,7 +3431,7 @@ return array (
     ),
     176 =>
     array (
-      'regex' => '; *(NT-\\d+[^ ;/]*|Net[Tt]AB [^;/]+|Mercury [A-Z]+|iconBIT)(?: S/N:[^;/]+)? Build',
+      'regex' => '; *(NT-\\d+[^ ;/]*|Net[Tt]AB [^;/]+|Mercury [A-Z]+|iconBIT)(?: S/N:[^;/]+|) Build',
       'device_replacement' => '$1',
       'brand_replacement' => 'IconBIT',
       'model_replacement' => '$1',
@@ -3490,21 +3490,21 @@ return array (
     ),
     184 =>
     array (
-      'regex' => '; *(?:Intex[ _])?(AQUA|Aqua)([ _\\.\\-])([^;/]+) *(?:Build|;)',
+      'regex' => '; *(?:Intex[ _]|)(AQUA|Aqua)([ _\\.\\-])([^;/]+) *(?:Build|;)',
       'device_replacement' => '$1$2$3',
       'brand_replacement' => 'Intex',
       'model_replacement' => '$1 $3',
     ),
     185 =>
     array (
-      'regex' => '; *(?:INTEX|Intex)(?:[_ ]([^\\ _;/]+))(?:[_ ]([^\\ _;/]+))? *(?:Build|;)',
+      'regex' => '; *(?:INTEX|Intex)(?:[_ ]([^\\ _;/]+))(?:[_ ]([^\\ _;/]+)|) *(?:Build|;)',
       'device_replacement' => '$1 $2',
       'brand_replacement' => 'Intex',
       'model_replacement' => '$1 $2',
     ),
     186 =>
     array (
-      'regex' => '; *([iI]Buddy)[ _]?(Connect)(?:_|\\?_| )?([^;/]*) *(?:Build|;)',
+      'regex' => '; *([iI]Buddy)[ _]?(Connect)(?:_|\\?_| |)([^;/]*) *(?:Build|;)',
       'device_replacement' => '$1 $2 $3',
       'brand_replacement' => 'Intex',
       'model_replacement' => 'iBuddy $2 $3',
@@ -3526,7 +3526,7 @@ return array (
     ),
     189 =>
     array (
-      'regex' => '; *(TP\\d+(?:\\.\\d+)?\\-\\d[^;/]+) Build',
+      'regex' => '; *(TP\\d+(?:\\.\\d+|)\\-\\d[^;/]+) Build',
       'device_replacement' => 'ionik $1',
       'brand_replacement' => 'ionik',
       'model_replacement' => '$1',
@@ -3782,7 +3782,7 @@ return array (
     ),
     225 =>
     array (
-      'regex' => '; *(?:LAVA[ _])?IRIS[ _\\-]?([^/;\\)]+) *(?:;|\\)|Build)',
+      'regex' => '; *(?:LAVA[ _]|)IRIS[ _\\-]?([^/;\\)]+) *(?:;|\\)|Build)',
       'regex_flag' => 'i',
       'device_replacement' => 'Iris $1',
       'brand_replacement' => 'Lava',
@@ -3846,21 +3846,21 @@ return array (
     ),
     234 =>
     array (
-      'regex' => '; *(?:LNV-)?(?:=?[Ll]enovo[ _\\-]?|LENOVO[ _])+(.+?)(?:Build|[;/\\)])',
+      'regex' => '; *(?:LNV-|)(?:=?[Ll]enovo[ _\\-]?|LENOVO[ _])(.+?)(?:Build|[;/\\)])',
       'device_replacement' => 'Lenovo $1',
       'brand_replacement' => 'Lenovo',
       'model_replacement' => '$1',
     ),
     235 =>
     array (
-      'regex' => '[;,] (?:Vodafone )?(SmartTab) ?(II) ?(\\d+) Build/',
+      'regex' => '[;,] (?:Vodafone |)(SmartTab) ?(II) ?(\\d+) Build/',
       'device_replacement' => 'Lenovo $1 $2 $3',
       'brand_replacement' => 'Lenovo',
       'model_replacement' => '$1 $2 $3',
     ),
     236 =>
     array (
-      'regex' => '; *(?:Ideapad )?K1 Build/',
+      'regex' => '; *(?:Ideapad |)K1 Build/',
       'device_replacement' => 'Lenovo Ideapad K1',
       'brand_replacement' => 'Lenovo',
       'model_replacement' => 'Ideapad K1',
@@ -3895,7 +3895,7 @@ return array (
     ),
     241 =>
     array (
-      'regex' => '[;:] *(L-\\d+[A-Z]|LGL\\d+[A-Z]?)(?:/V\\d+)? *(?:Build|[;\\)])',
+      'regex' => '[;:] *(L-\\d+[A-Z]|LGL\\d+[A-Z]?)(?:/V\\d+|) *(?:Build|[;\\)])',
       'device_replacement' => '$1',
       'brand_replacement' => 'LG',
       'model_replacement' => '$1',
@@ -3979,7 +3979,7 @@ return array (
     ),
     253 =>
     array (
-      'regex' => '; *(?:MD_)?LIFETAB[ _]([^;/]+) Build',
+      'regex' => '; *(?:MD_|)LIFETAB[ _]([^;/]+) Build',
       'regex_flag' => 'i',
       'device_replacement' => 'Medion Lifetab $1',
       'brand_replacement' => 'Medion',
@@ -4064,7 +4064,7 @@ return array (
     ),
     264 =>
     array (
-      'regex' => '; *(MODECOM )?(FreeTab) ?([^;/]+) Build',
+      'regex' => '; *(MODECOM |)(FreeTab) ?([^;/]+) Build',
       'regex_flag' => 'i',
       'device_replacement' => '$1$2 $3',
       'brand_replacement' => 'Modecom',
@@ -4137,7 +4137,7 @@ return array (
     ),
     274 =>
     array (
-      'regex' => '; *(?:MSI[ _])?(Primo\\d+|Enjoy[ _\\-][^;/]+) Build',
+      'regex' => '; *(?:MSI[ _]|)(Primo\\d+|Enjoy[ _\\-][^;/]+) Build',
       'regex_flag' => 'i',
       'device_replacement' => '$1',
       'brand_replacement' => 'Msi',
@@ -4166,7 +4166,7 @@ return array (
     ),
     278 =>
     array (
-      'regex' => '; *(A\\d+)[ _](Duo)? Build',
+      'regex' => '; *(A\\d+)[ _](Duo|) Build',
       'regex_flag' => 'i',
       'device_replacement' => '$1 $2',
       'brand_replacement' => 'MyPhone',
@@ -4231,7 +4231,7 @@ return array (
     ),
     287 =>
     array (
-      'regex' => '; *(NOOK )?(BNRV200|BNRV200A|BNTV250|BNTV250A|BNTV400|BNTV600|LogicPD Zoom2) Build',
+      'regex' => '; *(NOOK |)(BNRV200|BNRV200A|BNTV250|BNTV250A|BNTV400|BNTV600|LogicPD Zoom2) Build',
       'device_replacement' => '$1$2',
       'brand_replacement' => 'Nook',
       'model_replacement' => '$2',
@@ -4364,14 +4364,14 @@ return array (
     ),
     306 =>
     array (
-      'regex' => '; *(SKY[ _])?(IM\\-[AT]\\d{3}[^;/]+).* Build/',
+      'regex' => '; *(SKY[ _]|)(IM\\-[AT]\\d{3}[^;/]+).* Build/',
       'device_replacement' => 'Pantech $1$2',
       'brand_replacement' => 'Pantech',
       'model_replacement' => '$1$2',
     ),
     307 =>
     array (
-      'regex' => '; *((?:ADR8995|ADR910L|ADR930L|ADR930VW|PTL21|P8000)(?: 4G)?) Build/',
+      'regex' => '; *((?:ADR8995|ADR910L|ADR930L|ADR930VW|PTL21|P8000)(?: 4G|)) Build/',
       'device_replacement' => '$1',
       'brand_replacement' => 'Pantech',
       'model_replacement' => '$1',
@@ -4449,7 +4449,7 @@ return array (
     ),
     318 =>
     array (
-      'regex' => '; *(?:Polaroid[ _])?((?:MIDC\\d{3,}|PMID\\d{2,}|PTAB\\d{3,})[^;/]*)(\\/[^;/]*)? Build/',
+      'regex' => '; *(?:Polaroid[ _]|)((?:MIDC\\d{3,}|PMID\\d{2,}|PTAB\\d{3,})[^;/]*)(\\/[^;/]*|) Build/',
       'device_replacement' => '$1',
       'brand_replacement' => 'Polaroid',
       'model_replacement' => '$1',
@@ -4477,7 +4477,7 @@ return array (
     ),
     322 =>
     array (
-      'regex' => '; *(?:Positivo )?((?:YPY|Ypy)[^;/]+) Build/',
+      'regex' => '; *(?:Positivo |)((?:YPY|Ypy)[^;/]+) Build/',
       'device_replacement' => '$1',
       'brand_replacement' => 'Positivo',
       'model_replacement' => '$1',
@@ -4505,7 +4505,7 @@ return array (
     ),
     326 =>
     array (
-      'regex' => '; *(?:Prestigio )?((?:PAP|PMP)\\d[^;/]+) Build/',
+      'regex' => '; *(?:Prestigio |)((?:PAP|PMP)\\d[^;/]+) Build/',
       'device_replacement' => 'Prestigio $1',
       'brand_replacement' => 'Prestigio',
       'model_replacement' => '$1',
@@ -4519,7 +4519,7 @@ return array (
     ),
     328 =>
     array (
-      'regex' => '; *(A2|A5|A8|A900)_?(Classic)? Build',
+      'regex' => '; *(A2|A5|A8|A900)_?(Classic|) Build',
       'device_replacement' => '$1 $2',
       'brand_replacement' => 'Qmobile',
       'model_replacement' => '$1 $2',
@@ -4589,14 +4589,14 @@ return array (
     ),
     338 =>
     array (
-      'regex' => '; *(SAMSUNG |Samsung )?((?:Galaxy (?:Note II|S\\d)|GT-I9082|GT-I9205|GT-N7\\d{3}|SM-N9005)[^;/]*)\\/?[^;/]* Build/',
+      'regex' => '; *(SAMSUNG |Samsung |)((?:Galaxy (?:Note II|S\\d)|GT-I9082|GT-I9205|GT-N7\\d{3}|SM-N9005)[^;/]*)\\/?[^;/]* Build/',
       'device_replacement' => 'Samsung $1$2',
       'brand_replacement' => 'Samsung',
       'model_replacement' => '$2',
     ),
     339 =>
     array (
-      'regex' => '; *(Google )?(Nexus [Ss](?: 4G)?) Build/',
+      'regex' => '; *(Google |)(Nexus [Ss](?: 4G|)) Build/',
       'device_replacement' => 'Samsung $1$2',
       'brand_replacement' => 'Samsung',
       'model_replacement' => '$2',
@@ -4610,21 +4610,21 @@ return array (
     ),
     341 =>
     array (
-      'regex' => '; *(Galaxy(?: Ace| Nexus| S ?II+|Nexus S| with MCR 1.2| Mini Plus 4G)?) Build/',
+      'regex' => '; *(Galaxy(?: Ace| Nexus| S ?II+|Nexus S| with MCR 1.2| Mini Plus 4G|)) Build/',
       'device_replacement' => 'Samsung $1',
       'brand_replacement' => 'Samsung',
       'model_replacement' => '$1',
     ),
     342 =>
     array (
-      'regex' => '; *(SAMSUNG[ _\\-] *)+([^;/]+) Build',
+      'regex' => '; *(SAMSUNG[ _\\-]|)(?:SAMSUNG[ _\\-])([^;/]+) Build',
       'device_replacement' => 'Samsung $2',
       'brand_replacement' => 'Samsung',
       'model_replacement' => '$2',
     ),
     343 =>
     array (
-      'regex' => '; *(SAMSUNG-)?(GT\\-[BINPS]\\d{4}[^\\/]*)(\\/[^ ]*) Build',
+      'regex' => '; *(SAMSUNG-|)(GT\\-[BINPS]\\d{4}[^\\/]*)(\\/[^ ]*) Build',
       'device_replacement' => 'Samsung $1$2$3',
       'brand_replacement' => 'Samsung',
       'model_replacement' => '$2',
@@ -4645,14 +4645,14 @@ return array (
     ),
     346 =>
     array (
-      'regex' => '; *((?:SCH|SGH|SHV|SHW|SPH|SC|SM)\\-[A-Za-z0-9 ]+)(/?[^ ]*)? Build',
+      'regex' => '; *((?:SCH|SGH|SHV|SHW|SPH|SC|SM)\\-[A-Za-z0-9 ]+)(/?[^ ]*|) Build',
       'device_replacement' => 'Samsung $1',
       'brand_replacement' => 'Samsung',
       'model_replacement' => '$1',
     ),
     347 =>
     array (
-      'regex' => ' ((?:SCH)\\-[A-Za-z0-9 ]+)(/?[^ ]*)? Build',
+      'regex' => ' ((?:SCH)\\-[A-Za-z0-9 ]+)(/?[^ ]*|) Build',
       'device_replacement' => 'Samsung $1',
       'brand_replacement' => 'Samsung',
       'model_replacement' => '$1',
@@ -4799,7 +4799,7 @@ return array (
     ),
     368 =>
     array (
-      'regex' => '; *((?:SK|ST|E|X|LT|MK|MT|WT)\\d{2}[a-z0-9]*(?:-o)?|R800i|U20i) Build',
+      'regex' => '; *((?:SK|ST|E|X|LT|MK|MT|WT)\\d{2}[a-z0-9]*(?:-o|)|R800i|U20i) Build',
       'device_replacement' => '$1',
       'brand_replacement' => 'SonyEricsson',
       'model_replacement' => '$1',
@@ -4877,7 +4877,7 @@ return array (
     ),
     379 =>
     array (
-      'regex' => '; *((?:CSL_Spice|Spice|SPICE|CSL)[ _\\-]?)?([Mm][Ii])([ _\\-])?(\\d{3}[^;/]*) Build/',
+      'regex' => '; *((?:CSL_Spice|Spice|SPICE|CSL)[ _\\-]?|)([Mm][Ii])([ _\\-]|)(\\d{3}[^;/]*) Build/',
       'device_replacement' => '$1$2$3$4',
       'brand_replacement' => 'Spice',
       'model_replacement' => 'Mi$4',
@@ -5018,7 +5018,7 @@ return array (
     ),
     399 =>
     array (
-      'regex' => '\\b(T-Mobile ?)?(myTouch)[ _]?([34]G)[ _]?([^\\/]*) (?:Mozilla|Build)',
+      'regex' => '\\b(T-Mobile ?|)(myTouch)[ _]?([34]G)[ _]?([^\\/]*) (?:Mozilla|Build)',
       'device_replacement' => '$1$2 $3 $4',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$2 $3 $4',
@@ -5068,7 +5068,7 @@ return array (
     ),
     406 =>
     array (
-      'regex' => '; *(AT[0-9]{2,3}(?:\\-A|LE\\-A|PE\\-A|SE|a)?|AT7-A|AT1S0|Hikari-iFrame/WDPF-[^;/]+|THRiVE|Thrive) Build/',
+      'regex' => '; *(AT[0-9]{2,3}(?:\\-A|LE\\-A|PE\\-A|SE|a|)|AT7-A|AT1S0|Hikari-iFrame/WDPF-[^;/]+|THRiVE|Thrive) Build/',
       'device_replacement' => 'Toshiba $1',
       'brand_replacement' => 'Toshiba',
       'model_replacement' => '$1',
@@ -5182,7 +5182,7 @@ return array (
     ),
     422 =>
     array (
-      'regex' => '; *(?:Walton[ _\\-])?(Primo[ _\\-][^;/]+) Build',
+      'regex' => '; *(?:Walton[ _\\-]|)(Primo[ _\\-][^;/]+) Build',
       'regex_flag' => 'i',
       'device_replacement' => 'Walton $1',
       'brand_replacement' => 'Walton',
@@ -5190,7 +5190,7 @@ return array (
     ),
     423 =>
     array (
-      'regex' => '; *(?:WIKO[ \\-])?(CINK\\+?|BARRY|BLOOM|DARKFULL|DARKMOON|DARKNIGHT|DARKSIDE|FIZZ|HIGHWAY|IGGY|OZZY|RAINBOW|STAIRWAY|SUBLIM|WAX|CINK [^;/]+) Build/',
+      'regex' => '; *(?:WIKO[ \\-]|)(CINK\\+?|BARRY|BLOOM|DARKFULL|DARKMOON|DARKNIGHT|DARKSIDE|FIZZ|HIGHWAY|IGGY|OZZY|RAINBOW|STAIRWAY|SUBLIM|WAX|CINK [^;/]+) Build/',
       'regex_flag' => 'i',
       'device_replacement' => 'Wiko $1',
       'brand_replacement' => 'Wiko',
@@ -5226,7 +5226,7 @@ return array (
     ),
     428 =>
     array (
-      'regex' => '; *(?:Xenta |Luna )?(TAB[234][0-9]{2}|TAB0[78]-\\d{3}|TAB0?9-\\d{3}|TAB1[03]-\\d{3}|SMP\\d{2}-\\d{3}) Build/',
+      'regex' => '; *(?:Xenta |Luna |)(TAB[234][0-9]{2}|TAB0[78]-\\d{3}|TAB0?9-\\d{3}|TAB1[03]-\\d{3}|SMP\\d{2}-\\d{3}) Build/',
       'device_replacement' => 'Yarvik $1',
       'brand_replacement' => 'Yarvik',
       'model_replacement' => '$1',
@@ -5240,7 +5240,7 @@ return array (
     ),
     430 =>
     array (
-      'regex' => '; *((Mi|MI|HM|MI-ONE|Redmi)[ -](NOTE |Note )?[^;/]*) (Build|MIUI)/',
+      'regex' => '; *((Mi|MI|HM|MI-ONE|Redmi)[ -](NOTE |Note |)[^;/]*) (Build|MIUI)/',
       'device_replacement' => 'XiaoMi $1',
       'brand_replacement' => 'XiaoMi',
       'model_replacement' => '$1',
@@ -5461,7 +5461,7 @@ return array (
     ),
     461 =>
     array (
-      'regex' => '; ?(Silk)/(\\d+)\\.(\\d+)(?:\\.([0-9\\-]+))? Build\\b',
+      'regex' => '; ?(Silk)/(\\d+)\\.(\\d+)(?:\\.([0-9\\-]+)|) Build\\b',
       'device_replacement' => 'Kindle Fire',
       'brand_replacement' => 'Amazon',
       'model_replacement' => 'Kindle Fire$2',
@@ -5517,91 +5517,91 @@ return array (
     ),
     469 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?)?(?:ALCATEL)[^;]*; *([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|)(?:ALCATEL)[^;]*; *([^;,\\)]+)',
       'device_replacement' => 'Alcatel $1',
       'brand_replacement' => 'Alcatel',
       'model_replacement' => '$1',
     ),
     470 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?)?(?:ASUS|Asus)[^;]*; *([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?|)(?:ASUS|Asus)[^;]*; *([^;,\\)]+)',
       'device_replacement' => 'Asus $1',
       'brand_replacement' => 'Asus',
       'model_replacement' => '$1',
     ),
     471 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?)?(?:DELL|Dell)[^;]*; *([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|)(?:DELL|Dell)[^;]*; *([^;,\\)]+)',
       'device_replacement' => 'Dell $1',
       'brand_replacement' => 'Dell',
       'model_replacement' => '$1',
     ),
     472 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?)?(?:HTC|Htc|HTC_blocked[^;]*)[^;]*; *(?:HTC)?([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?|)(?:HTC|Htc|HTC_blocked[^;]*)[^;]*; *(?:HTC|)([^;,\\)]+)',
       'device_replacement' => 'HTC $1',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1',
     ),
     473 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?)?(?:HUAWEI)[^;]*; *(?:HUAWEI )?([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|)(?:HUAWEI)[^;]*; *(?:HUAWEI |)([^;,\\)]+)',
       'device_replacement' => 'Huawei $1',
       'brand_replacement' => 'Huawei',
       'model_replacement' => '$1',
     ),
     474 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?)?(?:LG|Lg)[^;]*; *(?:LG[ \\-])?([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|)(?:LG|Lg)[^;]*; *(?:LG[ \\-]|)([^;,\\)]+)',
       'device_replacement' => 'LG $1',
       'brand_replacement' => 'LG',
       'model_replacement' => '$1',
     ),
     475 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?)?(?:rv:11; )?(?:NOKIA|Nokia)[^;]*; *(?:NOKIA ?|Nokia ?|LUMIA ?|[Ll]umia ?)*(\\d{3,}[^;\\)]*)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|)(?:rv:11; |)(?:NOKIA|Nokia)[^;]*; *(?:NOKIA ?|Nokia ?|LUMIA ?|[Ll]umia ?|)(\\d{3,10}[^;\\)]*)',
       'device_replacement' => 'Lumia $1',
       'brand_replacement' => 'Nokia',
       'model_replacement' => 'Lumia $1',
     ),
     476 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?)?(?:NOKIA|Nokia)[^;]*; *(RM-\\d{3,})',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|)(?:NOKIA|Nokia)[^;]*; *(RM-\\d{3,})',
       'device_replacement' => 'Nokia $1',
       'brand_replacement' => 'Nokia',
       'model_replacement' => '$1',
     ),
     477 =>
     array (
-      'regex' => '(?:Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)]|WPDesktop;) ?(?:ARM; ?Touch; ?|Touch; ?)?(?:NOKIA|Nokia)[^;]*; *(?:NOKIA ?|Nokia ?|LUMIA ?|[Ll]umia ?)*([^;\\)]+)',
+      'regex' => '(?:Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)]|WPDesktop;) ?(?:ARM; ?Touch; ?|Touch; ?|)(?:NOKIA|Nokia)[^;]*; *(?:NOKIA ?|Nokia ?|LUMIA ?|[Ll]umia ?|)([^;\\)]+)',
       'device_replacement' => 'Nokia $1',
       'brand_replacement' => 'Nokia',
       'model_replacement' => '$1',
     ),
     478 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?)?(?:Microsoft(?: Corporation)?)[^;]*; *([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|)(?:Microsoft(?: Corporation|))[^;]*; *([^;,\\)]+)',
       'device_replacement' => 'Microsoft $1',
       'brand_replacement' => 'Microsoft',
       'model_replacement' => '$1',
     ),
     479 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?)?(?:SAMSUNG)[^;]*; *(?:SAMSUNG )?([^;,\\.\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?|)(?:SAMSUNG)[^;]*; *(?:SAMSUNG |)([^;,\\.\\)]+)',
       'device_replacement' => 'Samsung $1',
       'brand_replacement' => 'Samsung',
       'model_replacement' => '$1',
     ),
     480 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?)?(?:TOSHIBA|FujitsuToshibaMobileCommun)[^;]*; *([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?|)(?:TOSHIBA|FujitsuToshibaMobileCommun)[^;]*; *([^;,\\)]+)',
       'device_replacement' => 'Toshiba $1',
       'brand_replacement' => 'Toshiba',
       'model_replacement' => '$1',
     ),
     481 =>
     array (
-      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?)?([^;]+); *([^;,\\)]+)',
+      'regex' => 'Windows Phone [^;]+; .*?IEMobile/[^;\\)]+[;\\)] ?(?:ARM; ?Touch; ?|Touch; ?|WpsLondonTest; ?|)([^;]+); *([^;,\\)]+)',
       'device_replacement' => '$1 $2',
       'brand_replacement' => '$1',
       'model_replacement' => '$2',
@@ -5615,7 +5615,7 @@ return array (
     ),
     483 =>
     array (
-      'regex' => '\\(Mobile; ALCATEL ?(One|ONE) ?(Touch|TOUCH) ?([^;/]+)(?:/[^;]+)?; rv:[^\\)]+\\) Gecko/[^\\/]+ Firefox/',
+      'regex' => '\\(Mobile; ALCATEL ?(One|ONE) ?(Touch|TOUCH) ?([^;/]+)(?:/[^;]+|); rv:[^\\)]+\\) Gecko/[^\\/]+ Firefox/',
       'device_replacement' => 'Alcatel $1 $2 $3',
       'brand_replacement' => 'Alcatel',
       'model_replacement' => 'One Touch $3',
@@ -5657,7 +5657,7 @@ return array (
     ),
     489 =>
     array (
-      'regex' => '\\(Symbian(?:/3)?; U; ([^;]+);',
+      'regex' => '\\(Symbian(?:/3|); U; ([^;]+);',
       'device_replacement' => 'Nokia $1',
       'brand_replacement' => 'Nokia',
       'model_replacement' => '$1',
@@ -5719,7 +5719,7 @@ return array (
     ),
     498 =>
     array (
-      'regex' => 'webOS.*(P160U(?:NA)?)/(\\d+).(\\d+)',
+      'regex' => 'webOS.*(P160U(?:NA|))/(\\d+).(\\d+)',
       'device_replacement' => 'HP Veer',
       'brand_replacement' => 'HP',
       'model_replacement' => 'Veer',
@@ -5866,7 +5866,7 @@ return array (
     ),
     519 =>
     array (
-      'regex' => '(?:asus.*?ASUS|Asus|ASUS|asus)[\\- ;]*((?:Transformer (?:Pad|Prime) |Transformer |Padfone |Nexus[ _])?[A-Za-z0-9]+)',
+      'regex' => '(?:asus.*?ASUS|Asus|ASUS|asus)[\\- ;]*((?:Transformer (?:Pad|Prime) |Transformer |Padfone |Nexus[ _]|)[A-Za-z0-9]+)',
       'device_replacement' => 'Asus $1',
       'brand_replacement' => 'Asus',
       'model_replacement' => '$1',
@@ -5908,7 +5908,7 @@ return array (
     ),
     525 =>
     array (
-      'regex' => '\\b(?:HTC/|HTC/[a-z0-9]+/)?HTC[ _\\-;]? *(.*?)(?:-?Mozilla|fingerPrint|[;/\\(\\)]|$)',
+      'regex' => '\\b(?:HTC/|HTC/[a-z0-9]+/|)HTC[ _\\-;]? *(.*?)(?:-?Mozilla|fingerPrint|[;/\\(\\)]|$)',
       'device_replacement' => 'HTC $1',
       'brand_replacement' => 'HTC',
       'model_replacement' => '$1',
@@ -5971,14 +5971,14 @@ return array (
     ),
     534 =>
     array (
-      'regex' => '(HbbTV)/1\\.1\\.1.*CE-HTML/1\\.\\d;(Vendor/)*(THOM[^;]*?)[;\\s](?:.*SW-Version/.*)*(LF[^;]+);?',
+      'regex' => '(HbbTV)/1\\.1\\.1.*CE-HTML/1\\.\\d;(Vendor/|)(THOM[^;]*?)[;\\s].{0,30}(LF[^;]+);?',
       'device_replacement' => '$1',
       'brand_replacement' => 'Thomson',
       'model_replacement' => '$4',
     ),
     535 =>
     array (
-      'regex' => '(HbbTV)(?:/1\\.1\\.1)?(?: ?\\(;;;;;\\))?; *CE-HTML(?:/1\\.\\d)?; *([^ ]+) ([^;]+);',
+      'regex' => '(HbbTV)(?:/1\\.1\\.1|) ?(?: \\(;;;;;\\)|); *CE-HTML(?:/1\\.\\d|); *([^ ]+) ([^;]+);',
       'device_replacement' => '$1',
       'brand_replacement' => '$2',
       'model_replacement' => '$3',
@@ -6003,7 +6003,7 @@ return array (
     ),
     539 =>
     array (
-      'regex' => 'LGE; (?:Media\\/)?([^;]*);[^;]*;[^;]*;?\\); "?LG NetCast(\\.TV|\\.Media)?-\\d+',
+      'regex' => 'LGE; (?:Media\\/|)([^;]*);[^;]*;[^;]*;?\\); "?LG NetCast(\\.TV|\\.Media|)-\\d+',
       'device_replacement' => 'NetCast$2',
       'brand_replacement' => 'LG',
       'model_replacement' => '$1',
@@ -6037,7 +6037,7 @@ return array (
     ),
     544 =>
     array (
-      'regex' => '\\b(?:LGE[ \\-]LG\\-(?:AX)?|LGE |LGE?-LG|LGE?[ \\-]|LG[ /\\-]|lg[\\-])([A-Za-z0-9]+)\\b',
+      'regex' => '\\b(?:LGE[ \\-]LG\\-(?:AX|)|LGE |LGE?-LG|LGE?[ \\-]|LG[ /\\-]|lg[\\-])([A-Za-z0-9]+)\\b',
       'device_replacement' => 'LG $1',
       'brand_replacement' => 'LG',
       'model_replacement' => '$1',
@@ -6206,7 +6206,7 @@ return array (
     ),
     568 =>
     array (
-      'regex' => '(Sony)(?:BDP\\/|\\/)?([^ /;\\)]+)[ /;\\)]',
+      'regex' => '(Sony)(?:BDP\\/|\\/|)([^ /;\\)]+)[ /;\\)]',
       'device_replacement' => '$1 $2',
       'brand_replacement' => '$1',
       'model_replacement' => '$2',
@@ -6253,32 +6253,32 @@ return array (
     ),
     575 =>
     array (
-      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+){1,2}; *[A-Za-z]{2}[_\\-][A-Za-z]{0,2}\\-? *; *(.+?) Build[/ ]',
+      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+)(?:\\.[\\d]+|); *[A-Za-z]{2}[_\\-][A-Za-z]{0,2}\\-? *; *(.+?) Build[/ ]',
       'brand_replacement' => 'Generic_Android',
       'model_replacement' => '$1',
     ),
     576 =>
     array (
-      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+){1,2}; *[A-Za-z]{0,2}\\- *; *(.+?) Build[/ ]',
+      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+)(?:\\.[\\d]+|); *[A-Za-z]{0,2}\\- *; *(.+?) Build[/ ]',
       'brand_replacement' => 'Generic_Android',
       'model_replacement' => '$1',
     ),
     577 =>
     array (
-      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+){1,2}; *[a-z]{0,2}[_\\-]?[A-Za-z]{0,2};? Build[/ ]',
+      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+)(?:\\.[\\d]+|); *[a-z]{0,2}[_\\-]?[A-Za-z]{0,2};? Build[/ ]',
       'device_replacement' => 'Generic Smartphone',
       'brand_replacement' => 'Generic',
       'model_replacement' => 'Smartphone',
     ),
     578 =>
     array (
-      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+){1,2}; *\\-?[A-Za-z]{2}; *(.+?) Build[/ ]',
+      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+)(?:\\.[\\d]+|); *\\-?[A-Za-z]{2}; *(.+?) Build[/ ]',
       'brand_replacement' => 'Generic_Android',
       'model_replacement' => '$1',
     ),
     579 =>
     array (
-      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+){1,2}(?:;.*)?; *(.+?) Build[/ ]',
+      'regex' => 'Android[\\- ][\\d]+(?:\\.[\\d]+)(?:\\.[\\d]+|)(?:;.*|); *(.+?) Build[/ ]',
       'brand_replacement' => 'Generic_Android',
       'model_replacement' => '$1',
     ),

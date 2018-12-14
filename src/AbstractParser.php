@@ -107,7 +107,7 @@ abstract class AbstractParser
     protected static function multiReplace(array $regex, $key, $default, array $matches)
     {
         if (!isset($regex[$key])) {
-            return $default;
+            return self::emptyStringToNull($default);
         }
 
         $replacement = preg_replace_callback(
@@ -118,9 +118,14 @@ abstract class AbstractParser
             $regex[$key]
         );
 
-        $replacement = trim($replacement);
+        return self::emptyStringToNull($replacement);
+    }
 
-        return $replacement === '' ? null : $replacement;
+    private static function emptyStringToNull($string)
+    {
+        $string = trim($string);
+
+        return $string === '' ? null : $string;
     }
 
     /**
