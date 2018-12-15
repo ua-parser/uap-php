@@ -37,7 +37,7 @@ abstract class AbstractReaderTest extends AbstractTestCase
 
     public function testReadEmptyLine()
     {
-        $this->fcExpectException(
+        $this->setExpectedException(
             'UAParser\Exception\ReaderException',
             'Cannot extract user agent string from line "invalid"'
         );

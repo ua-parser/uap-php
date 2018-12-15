@@ -13,17 +13,27 @@ use PHPUnit\Framework\TestCase;
 abstract class AbstractTestCase extends TestCase
 {
     /**
-     * Polyfill to allow exception testing across PHPUnit 4 to PHPUnit 7.
+     * Compatibility layer for PHPUnit 6+ to support PHPUnit 4 code.
+     *
+     * @param mixed $class
+     *   The expected exception class.
+     * @param string $message
+     *   The expected exception message.
+     * @param int $exception_code
+     *   The expected exception code.
      */
-    public function fcExpectException($exception, $message = null)
+    public function setExpectedException($class, $message = '', $exception_code = NULL)
     {
         if (method_exists($this, 'expectException')) {
-            $this->expectException($exception);
-            if ($message !== null) {
+            $this->expectException($class);
+            if (!empty($message)) {
                 $this->expectExceptionMessage($message);
             }
+            if ($exception_code !== NULL) {
+                $this->expectExceptionCode($exception_code);
+            }
         } else {
-            $this->setExpectedException($exception, $message);
+            parent::setExpectedException($class, $message, $exception_code);
         }
     }
 }

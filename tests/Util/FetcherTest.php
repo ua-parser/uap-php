@@ -36,7 +36,7 @@ class FetcherTest extends AbstractTestCase
             )
         );
 
-        $this->fcExpectException(
+        $this->setExpectedException(
             'UAParser\Exception\FetcherException',
             'Could not fetch HTTP resource "'.$url.'": file_get_contents('.$url.'): failed to open stream: operation failed'
         );

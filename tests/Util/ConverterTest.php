@@ -75,7 +75,7 @@ EOS;
             ->with('path/to/file')
             ->will($this->returnValue(false));
 
-        $this->fcExpectException(
+        $this->setExpectedException(
             'UAParser\Exception\FileNotFoundException',
             'File "path/to/file" does not exist'
         );
