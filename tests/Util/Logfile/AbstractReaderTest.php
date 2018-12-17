@@ -6,9 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Util\Logfile;
+namespace UAParser\Test\Util\Logfile;
 
-use PHPUnit_Framework_TestCase as AbstractTestCase;
+use UAParser\Test\AbstractTestCase;
 use UAParser\Util\Logfile\ReaderInterface;
 
 abstract class AbstractReaderTest extends AbstractTestCase

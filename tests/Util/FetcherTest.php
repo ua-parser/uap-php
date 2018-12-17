@@ -6,9 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Util;
+namespace UAParser\Test\Util;
 
-use PHPUnit_Framework_TestCase as AbstractTestCase;
+use UAParser\Test\AbstractTestCase;
 use UAParser\Util\Fetcher;
 
 /**
