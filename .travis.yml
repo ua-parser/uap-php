@@ -24,7 +24,6 @@ matrix:
           
 install:
   - composer install
-  - bin/uaparser ua-parser:update || true
 
 script:
   - ./vendor/bin/phpunit
