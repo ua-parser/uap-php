@@ -2,7 +2,8 @@
     "name": "ua-parser/uap-php",
     "description": "A multi-language port of Browserscope's user agent parser.",
     "require": {
-        "php": ">=5.3.0"
+        "php": ">=5.3.0",
+        "composer/ca-bundle": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
