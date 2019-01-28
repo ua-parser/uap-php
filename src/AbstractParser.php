@@ -111,7 +111,7 @@ abstract class AbstractParser
         }
 
         $replacement = preg_replace_callback(
-            "|\\$(?<key>\d)|",
+            '|\$(?P<key>\d)|',
             function ($m) use ($matches) {
                 return isset($matches[$m['key']]) ? $matches[$m['key']] : '';
             },
