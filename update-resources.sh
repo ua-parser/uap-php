@@ -2,7 +2,7 @@
 git pull --quiet
 git submodule --quiet foreach git pull --quiet
 bin/uaparser ua-parser:update
-output=`phpunit --stop-on-failure &> /dev/stdout`
+output=`vendor/bin/phpunit --stop-on-failure &> /dev/stdout`
 if [ $? -eq 0 ] ; then
     git commit --quiet -a -m "Scheduled resource update" && \
         git push --quiet origin master && \
