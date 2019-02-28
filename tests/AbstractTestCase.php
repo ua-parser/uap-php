@@ -9,31 +9,16 @@
 namespace UAParser\Test;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Runner\Version;
 
-abstract class AbstractTestCase extends TestCase
+if (class_exists('PHPUnit\Runner\Version') && version_compare(Version::id(), '8.0.0', '>=')) {
+    class_alias('UAParser\Test\AbstractTestCasePhpunit8', 'UAParser\Test\AbstractTestCaseCompatibility');
+} elseif (class_exists('PHPUnit\Runner\Version') && version_compare(Version::id(), '7.0.0', '>=')) {
+    class_alias('UAParser\Test\AbstractTestCasePhpunit7', 'UAParser\Test\AbstractTestCaseCompatibility');
+} else {
+    class_alias('UAParser\Test\AbstractTestCasePhpunit4', 'UAParser\Test\AbstractTestCaseCompatibility');
+}
+
+abstract class AbstractTestCase extends AbstractTestCaseCompatibility
 {
-    /**
-     * Compatibility layer for PHPUnit 6+ to support PHPUnit 4 code.
-     *
-     * @param mixed $class
-     *   The expected exception class.
-     * @param string $message
-     *   The expected exception message.
-     * @param int $exception_code
-     *   The expected exception code.
-     */
-    public function setExpectedException($class, $message = '', $exception_code = NULL)
-    {
-        if (method_exists($this, 'expectException')) {
-            $this->expectException($class);
-            if (!empty($message)) {
-                $this->expectExceptionMessage($message);
-            }
-            if ($exception_code !== NULL) {
-                $this->expectExceptionCode($exception_code);
-            }
-        } else {
-            parent::setExpectedException($class, $message, $exception_code);
-        }
-    }
 }

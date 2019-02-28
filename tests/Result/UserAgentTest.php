@@ -16,7 +16,7 @@ class UserAgentTest extends AbstractTestCase
     /** @var OperatingSystem */
     private $operatingSystem;
 
-    public function setUp()
+    public function fcSetUp()
     {
         $this->operatingSystem = new OperatingSystem();
     }

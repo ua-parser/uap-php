@@ -12,7 +12,7 @@ use UAParser\Util\Logfile\ApacheCommonLogFormatReader;
 
 class ApacheCommonLogFormatReaderTest extends AbstractReaderTest
 {
-    public function setUp()
+    public function fcSetUp()
     {
         $this->reader = new ApacheCommonLogFormatReader();
 

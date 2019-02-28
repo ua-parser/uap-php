@@ -30,7 +30,7 @@ class ConverterTest extends AbstractTestCase
     /** @var string */
     private $php;
 
-    public function setUp()
+    public function fcSetUp()
     {
         $this->fs = $this
             ->getMockBuilder('Symfony\Component\Filesystem\Filesystem')
@@ -61,7 +61,7 @@ EOS;
         touch($this->phpFile);
     }
 
-    public function tearDown()
+    public function fcTearDown()
     {
         @unlink($this->yamlFile);
         @unlink($this->phpFile);

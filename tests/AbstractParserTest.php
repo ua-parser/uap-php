@@ -59,10 +59,10 @@ abstract class AbstractParserTest extends AbstractTestCase
         $method = $class->getMethod('getDefaultFile');
         $method->setAccessible(true);
 
-        $this->assertNotContains('..', $method->invoke(null));
+        $this->assertStringNotContainsString('..', $method->invoke(null));
     }
 
-    public function tearDown()
+    public function fcTearDown()
     {
         AbstractParser::$defaultFile = null;
     }

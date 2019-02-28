@@ -21,12 +21,12 @@ class ParserTest extends AbstractParserTest
     /** @var Parser */
     private static $staticParser;
 
-    public static function setUpBeforeClass()
+    public static function fcSetUpBeforeClass()
     {
         static::$staticParser = Parser::create();
     }
 
-    public function setUp()
+    public function fcSetUp()
     {
         $this->parser = static::$staticParser;
     }

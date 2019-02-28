@@ -19,7 +19,7 @@ class FetcherTest extends AbstractTestCase
     public function testFetchSuccess()
     {
         $fetcher = new Fetcher();
-        $this->assertInternalType('string', $fetcher->fetch());
+        $this->assertIsString($fetcher->fetch());
     }
 
     public function testFetchError()
