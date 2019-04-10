@@ -6,7 +6,9 @@
  *
  * Released under the MIT license
  */
-namespace UAParser\Util\Logfile;
+namespace UAParser\Util\Logfile\Custom;
+
+use UAParser\Util\Logfile\AbstractReader;
 
 class NginxCustomLogFormatReader extends AbstractReader
 {

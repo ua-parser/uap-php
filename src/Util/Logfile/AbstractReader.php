@@ -54,11 +54,11 @@ abstract class AbstractReader implements ReaderInterface
     private static function getCustomReaders()
     {
         $finder = Finder::create()->in(__DIR__.DIRECTORY_SEPARATOR.'Custom');
-        array_map(array($finder, 'name'), array('*.php'));
+        $finder->name('*.php');
 
         $readers = array();
         foreach ($finder as $file) {
-            $clazz = __NAMESPACE__.'\\'.$file->getBasename('.php');
+            $clazz = __NAMESPACE__.'\\Custom\\'.$file->getBasename('.php');
             $readers[] = new $clazz;
         }
 	return $readers;
