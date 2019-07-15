@@ -1,6 +1,7 @@
 #! /bin/bash
-git pull --quiet
-git submodule --quiet foreach git pull --quiet
+set -e
+git pull --quiet > /dev/null
+git submodule --quiet foreach git pull --quiet > /dev/null
 bin/uaparser ua-parser:update
 output=`vendor/bin/phpunit --stop-on-failure &> /dev/stdout`
 if [ $? -eq 0 ] ; then
