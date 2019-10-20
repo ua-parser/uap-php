@@ -71,7 +71,7 @@ Provides simple usage information:
 
 ### Update the regexes.php File
 
-Fetches an updated YAML file for `ua-parser` and overwrites the current JSON file. You can use the following as part of a cron job that runs nightly.
+Fetches an updated YAML file for `ua-parser` and overwrites the current regexes.php file. You can use the following as part of a cron job that runs nightly.
 
     php bin/uaparser ua-parser:update [--no-backup]
 
