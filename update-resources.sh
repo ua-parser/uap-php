@@ -1,7 +1,7 @@
 #! /bin/bash
 
 function try_catch() {
-    output=`$@ &>/dev/stdout`
+    output=`"$@" &>/dev/stdout`
     if [ $? -gt 0 ]; then
         echo -e "Command $@ failed\n\n$output"
         exit 1
