@@ -227,1140 +227,1174 @@ return array (
     ),
     50 =>
     array (
+      'regex' => '(Twitter for (?:iPhone|iPad)|TwitterAndroid)(?:\\/(\\d+)\\.(\\d+)|)',
+      'family_replacement' => 'Twitter',
+    ),
+    51 =>
+    array (
       'regex' => '(Firefox)/(\\d+)\\.(\\d+) Basilisk/(\\d+)',
       'family_replacement' => 'Basilisk',
     ),
-    51 =>
+    52 =>
     array (
       'regex' => '(PaleMoon)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Pale Moon',
     ),
-    52 =>
+    53 =>
     array (
       'regex' => '(Fennec)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+[a-z]*)',
       'family_replacement' => 'Firefox Mobile',
     ),
-    53 =>
+    54 =>
     array (
       'regex' => '(Fennec)/(\\d+)\\.(\\d+)(pre)',
       'family_replacement' => 'Firefox Mobile',
     ),
-    54 =>
+    55 =>
     array (
       'regex' => '(Fennec)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Firefox Mobile',
     ),
-    55 =>
+    56 =>
     array (
       'regex' => '(?:Mobile|Tablet);.*(Firefox)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Firefox Mobile',
     ),
-    56 =>
+    57 =>
     array (
       'regex' => '(Namoroka|Shiretoko|Minefield)/(\\d+)\\.(\\d+)\\.(\\d+(?:pre|))',
       'family_replacement' => 'Firefox ($1)',
     ),
-    57 =>
+    58 =>
     array (
       'regex' => '(Firefox)/(\\d+)\\.(\\d+)(a\\d+[a-z]*)',
       'family_replacement' => 'Firefox Alpha',
     ),
-    58 =>
+    59 =>
     array (
       'regex' => '(Firefox)/(\\d+)\\.(\\d+)(b\\d+[a-z]*)',
       'family_replacement' => 'Firefox Beta',
     ),
-    59 =>
+    60 =>
     array (
       'regex' => '(Firefox)-(?:\\d+\\.\\d+|)/(\\d+)\\.(\\d+)(a\\d+[a-z]*)',
       'family_replacement' => 'Firefox Alpha',
     ),
-    60 =>
+    61 =>
     array (
       'regex' => '(Firefox)-(?:\\d+\\.\\d+|)/(\\d+)\\.(\\d+)(b\\d+[a-z]*)',
       'family_replacement' => 'Firefox Beta',
     ),
-    61 =>
+    62 =>
     array (
       'regex' => '(Namoroka|Shiretoko|Minefield)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*|)',
       'family_replacement' => 'Firefox ($1)',
     ),
-    62 =>
+    63 =>
     array (
       'regex' => '(Firefox).*Tablet browser (\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'MicroB',
     ),
-    63 =>
+    64 =>
     array (
       'regex' => '(MozillaDeveloperPreview)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*|)',
     ),
-    64 =>
+    65 =>
     array (
       'regex' => '(FxiOS)/(\\d+)\\.(\\d+)(\\.(\\d+)|)(\\.(\\d+)|)',
       'family_replacement' => 'Firefox iOS',
     ),
-    65 =>
+    66 =>
     array (
       'regex' => '(Flock)/(\\d+)\\.(\\d+)(b\\d+?)',
     ),
-    66 =>
+    67 =>
     array (
       'regex' => '(RockMelt)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    67 =>
+    68 =>
     array (
       'regex' => '(Navigator)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Netscape',
     ),
-    68 =>
+    69 =>
     array (
       'regex' => '(Navigator)/(\\d+)\\.(\\d+)([ab]\\d+)',
       'family_replacement' => 'Netscape',
     ),
-    69 =>
+    70 =>
     array (
       'regex' => '(Netscape6)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+|)',
       'family_replacement' => 'Netscape',
     ),
-    70 =>
+    71 =>
     array (
       'regex' => '(MyIBrow)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'My Internet Browser',
     ),
-    71 =>
+    72 =>
     array (
       'regex' => '(UC? ?Browser|UCWEB|U3)[ /]?(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'UC Browser',
     ),
-    72 =>
+    73 =>
     array (
       'regex' => '(Opera Tablet).*Version/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    73 =>
+    74 =>
     array (
       'regex' => '(Opera Mini)(?:/att|)/?(\\d+|)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
-    74 =>
+    75 =>
     array (
       'regex' => '(Opera)/.+Opera Mobi.+Version/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Opera Mobile',
     ),
-    75 =>
+    76 =>
     array (
       'regex' => '(Opera)/(\\d+)\\.(\\d+).+Opera Mobi',
       'family_replacement' => 'Opera Mobile',
     ),
-    76 =>
+    77 =>
     array (
       'regex' => 'Opera Mobi.+(Opera)(?:/|\\s+)(\\d+)\\.(\\d+)',
       'family_replacement' => 'Opera Mobile',
     ),
-    77 =>
+    78 =>
     array (
       'regex' => 'Opera Mobi',
       'family_replacement' => 'Opera Mobile',
     ),
-    78 =>
+    79 =>
     array (
       'regex' => '(Opera)/9.80.*Version/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    79 =>
+    80 =>
     array (
       'regex' => '(?:Mobile Safari).*(OPR)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Opera Mobile',
     ),
-    80 =>
+    81 =>
     array (
       'regex' => '(?:Chrome).*(OPR)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Opera',
     ),
-    81 =>
+    82 =>
     array (
       'regex' => '(Coast)/(\\d+).(\\d+).(\\d+)',
       'family_replacement' => 'Opera Coast',
     ),
-    82 =>
+    83 =>
     array (
       'regex' => '(OPiOS)/(\\d+).(\\d+).(\\d+)',
       'family_replacement' => 'Opera Mini',
     ),
-    83 =>
+    84 =>
     array (
       'regex' => 'Chrome/.+( MMS)/(\\d+).(\\d+).(\\d+)',
       'family_replacement' => 'Opera Neon',
     ),
-    84 =>
+    85 =>
     array (
       'regex' => '(hpw|web)OS/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'webOS Browser',
     ),
-    85 =>
+    86 =>
     array (
       'regex' => '(luakit)',
       'family_replacement' => 'LuaKit',
     ),
-    86 =>
+    87 =>
     array (
       'regex' => '(Snowshoe)/(\\d+)\\.(\\d+).(\\d+)',
     ),
-    87 =>
+    88 =>
     array (
       'regex' => 'Gecko/\\d+ (Lightning)/(\\d+)\\.(\\d+)\\.?((?:[ab]?\\d+[a-z]*)|(?:\\d*))',
     ),
-    88 =>
+    89 =>
     array (
       'regex' => '(Firefox)/(\\d+)\\.(\\d+)\\.(\\d+(?:pre|)) \\(Swiftfox\\)',
       'family_replacement' => 'Swiftfox',
     ),
-    89 =>
+    90 =>
     array (
       'regex' => '(Firefox)/(\\d+)\\.(\\d+)([ab]\\d+[a-z]*|) \\(Swiftfox\\)',
       'family_replacement' => 'Swiftfox',
     ),
-    90 =>
+    91 =>
     array (
       'regex' => '(rekonq)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|) Safari',
       'family_replacement' => 'Rekonq',
     ),
-    91 =>
+    92 =>
     array (
       'regex' => 'rekonq',
       'family_replacement' => 'Rekonq',
     ),
-    92 =>
+    93 =>
     array (
       'regex' => '(conkeror|Conkeror)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Conkeror',
     ),
-    93 =>
+    94 =>
     array (
       'regex' => '(konqueror)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Konqueror',
     ),
-    94 =>
+    95 =>
     array (
       'regex' => '(WeTab)-Browser',
     ),
-    95 =>
+    96 =>
     array (
       'regex' => '(Comodo_Dragon)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Comodo Dragon',
     ),
-    96 =>
+    97 =>
     array (
       'regex' => '(Symphony) (\\d+).(\\d+)',
     ),
-    97 =>
+    98 =>
     array (
       'regex' => 'PLAYSTATION 3.+WebKit',
       'family_replacement' => 'NetFront NX',
     ),
-    98 =>
+    99 =>
     array (
       'regex' => 'PLAYSTATION 3',
       'family_replacement' => 'NetFront',
     ),
-    99 =>
+    100 =>
     array (
       'regex' => '(PlayStation Portable)',
       'family_replacement' => 'NetFront',
     ),
-    100 =>
+    101 =>
     array (
       'regex' => '(PlayStation Vita)',
       'family_replacement' => 'NetFront NX',
     ),
-    101 =>
+    102 =>
     array (
       'regex' => 'AppleWebKit.+ (NX)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'NetFront NX',
     ),
-    102 =>
+    103 =>
     array (
       'regex' => '(Nintendo 3DS)',
       'family_replacement' => 'NetFront NX',
     ),
-    103 =>
+    104 =>
     array (
       'regex' => '(Silk)/(\\d+)\\.(\\d+)(?:\\.([0-9\\-]+)|)',
       'family_replacement' => 'Amazon Silk',
     ),
-    104 =>
+    105 =>
     array (
       'regex' => '(Puffin)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    105 =>
+    106 =>
     array (
       'regex' => 'Windows Phone .*(Edge)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Edge Mobile',
     ),
-    106 =>
+    107 =>
     array (
       'regex' => '(SamsungBrowser)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Samsung Internet',
     ),
-    107 =>
+    108 =>
     array (
       'regex' => '(SznProhlizec)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Seznam prohlížeč',
     ),
-    108 =>
+    109 =>
     array (
       'regex' => '(coc_coc_browser)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Coc Coc',
     ),
-    109 =>
+    110 =>
     array (
       'regex' => '(baidubrowser)[/\\s](\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
       'family_replacement' => 'Baidu Browser',
     ),
-    110 =>
+    111 =>
     array (
       'regex' => '(FlyFlow)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Baidu Explorer',
     ),
-    111 =>
+    112 =>
     array (
       'regex' => '(MxBrowser)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Maxthon',
     ),
-    112 =>
+    113 =>
     array (
       'regex' => '(Crosswalk)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    113 =>
+    114 =>
     array (
       'regex' => '(Line)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'LINE',
     ),
-    114 =>
+    115 =>
     array (
       'regex' => '(MiuiBrowser)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'MiuiBrowser',
     ),
-    115 =>
+    116 =>
     array (
       'regex' => '(Mint Browser)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Mint Browser',
     ),
-    116 =>
+    117 =>
+    array (
+      'regex' => '(TopBuzz)/(\\d+).(\\d+).(\\d+)',
+      'family_replacement' => 'TopBuzz',
+    ),
+    118 =>
     array (
       'regex' => 'Mozilla.+Android.+(GSA)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Google',
     ),
-    117 =>
+    119 =>
     array (
       'regex' => 'Version/.+(Chrome)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Chrome Mobile WebView',
     ),
-    118 =>
+    120 =>
     array (
       'regex' => '; wv\\).+(Chrome)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Chrome Mobile WebView',
     ),
-    119 =>
+    121 =>
     array (
       'regex' => '(CrMo)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Chrome Mobile',
     ),
-    120 =>
+    122 =>
     array (
       'regex' => '(CriOS)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Chrome Mobile iOS',
     ),
-    121 =>
+    123 =>
     array (
       'regex' => '(Chrome)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+) Mobile(?:[ /]|$)',
       'family_replacement' => 'Chrome Mobile',
     ),
-    122 =>
+    124 =>
     array (
       'regex' => ' Mobile .*(Chrome)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Chrome Mobile',
     ),
-    123 =>
+    125 =>
     array (
       'regex' => '(chromeframe)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Chrome Frame',
     ),
-    124 =>
+    126 =>
     array (
       'regex' => '(SLP Browser)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Tizen Browser',
     ),
-    125 =>
+    127 =>
     array (
       'regex' => '(SE 2\\.X) MetaSr (\\d+)\\.(\\d+)',
       'family_replacement' => 'Sogou Explorer',
     ),
-    126 =>
+    128 =>
     array (
       'regex' => '(MQQBrowser/Mini)(?:(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)',
       'family_replacement' => 'QQ Browser Mini',
     ),
-    127 =>
+    129 =>
     array (
       'regex' => '(MQQBrowser)(?:/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)',
       'family_replacement' => 'QQ Browser Mobile',
     ),
-    128 =>
+    130 =>
     array (
       'regex' => '(QQBrowser)(?:/(\\d+)(?:\\.(\\d+)\\.(\\d+)(?:\\.(\\d+)|)|)|)',
       'family_replacement' => 'QQ Browser',
     ),
-    129 =>
+    131 =>
     array (
       'regex' => '(Rackspace Monitoring)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'RackspaceBot',
     ),
-    130 =>
+    132 =>
     array (
       'regex' => '(PyAMF)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    131 =>
+    133 =>
     array (
       'regex' => '(YaBrowser)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Yandex Browser',
     ),
-    132 =>
+    134 =>
     array (
       'regex' => '(Chrome)/(\\d+)\\.(\\d+)\\.(\\d+).* MRCHROME',
       'family_replacement' => 'Mail.ru Chromium Browser',
     ),
-    133 =>
+    135 =>
     array (
       'regex' => '(AOL) (\\d+)\\.(\\d+); AOLBuild (\\d+)',
     ),
-    134 =>
+    136 =>
     array (
       'regex' => '(PodCruncher|Downcast)[ /]?(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
-    135 =>
+    137 =>
     array (
       'regex' => ' (BoxNotes)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    136 =>
+    138 =>
     array (
       'regex' => '(Whale)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+) Mobile(?:[ /]|$)',
       'family_replacement' => 'Whale',
     ),
-    137 =>
+    139 =>
     array (
       'regex' => '(Whale)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Whale',
     ),
-    138 =>
+    140 =>
+    array (
+      'regex' => '(1Password)/(\\d+)\\.(\\d+)\\.(\\d+)',
+    ),
+    141 =>
     array (
       'regex' => '(Ghost)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    139 =>
+    142 =>
     array (
       'regex' => '(Slack_SSB)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Slack Desktop Client',
     ),
-    140 =>
+    143 =>
     array (
       'regex' => '(HipChat)/?(\\d+|)',
       'family_replacement' => 'HipChat Desktop Client',
     ),
-    141 =>
+    144 =>
     array (
       'regex' => '\\b(MobileIron|FireWeb|Jasmine|ANTGalio|Midori|Fresco|Lobo|PaleMoon|Maxthon|Lynx|OmniWeb|Dillo|Camino|Demeter|Fluid|Fennec|Epiphany|Shiira|Sunrise|Spotify|Flock|Netscape|Lunascape|WebPilot|NetFront|Netfront|Konqueror|SeaMonkey|Kazehakase|Vienna|Iceape|Iceweasel|IceWeasel|Iron|K-Meleon|Sleipnir|Galeon|GranParadiso|Opera Mini|iCab|NetNewsWire|ThunderBrowse|Iris|UP\\.Browser|Bunjalloo|Google Earth|Raven for Mac|Openwave|MacOutlook|Electron|OktaMobile)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    142 =>
+    145 =>
     array (
       'regex' => 'Microsoft Office Outlook 12\\.\\d+\\.\\d+|MSOffice 12',
       'family_replacement' => 'Outlook',
       'v1_replacement' => '2007',
     ),
-    143 =>
+    146 =>
     array (
       'regex' => 'Microsoft Outlook 14\\.\\d+\\.\\d+|MSOffice 14',
       'family_replacement' => 'Outlook',
       'v1_replacement' => '2010',
     ),
-    144 =>
+    147 =>
     array (
       'regex' => 'Microsoft Outlook 15\\.\\d+\\.\\d+',
       'family_replacement' => 'Outlook',
       'v1_replacement' => '2013',
     ),
-    145 =>
+    148 =>
     array (
       'regex' => 'Microsoft Outlook (?:Mail )?16\\.\\d+\\.\\d+|MSOffice 16',
       'family_replacement' => 'Outlook',
       'v1_replacement' => '2016',
     ),
-    146 =>
+    149 =>
     array (
       'regex' => 'Microsoft Office (Word) 2014',
     ),
-    147 =>
+    150 =>
     array (
       'regex' => 'Outlook-Express\\/7\\.0.*',
       'family_replacement' => 'Windows Live Mail',
     ),
-    148 =>
+    151 =>
     array (
       'regex' => '(Airmail) (\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    149 =>
+    152 =>
     array (
       'regex' => '(Thunderbird)/(\\d+)\\.(\\d+)(?:\\.(\\d+(?:pre|))|)',
       'family_replacement' => 'Thunderbird',
     ),
-    150 =>
+    153 =>
     array (
       'regex' => '(Postbox)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Postbox',
     ),
-    151 =>
+    154 =>
     array (
       'regex' => '(Barca(?:Pro)?)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Barca',
     ),
-    152 =>
+    155 =>
     array (
       'regex' => '(Lotus-Notes)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Lotus Notes',
     ),
-    153 =>
+    156 =>
+    array (
+      'regex' => 'Superhuman',
+      'family_replacement' => 'Superhuman',
+    ),
+    157 =>
     array (
       'regex' => '(Vivaldi)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    154 =>
+    158 =>
     array (
       'regex' => '(Edge?)/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
       'family_replacement' => 'Edge',
     ),
-    155 =>
+    159 =>
     array (
       'regex' => '(brave)/(\\d+)\\.(\\d+)\\.(\\d+) Chrome',
       'family_replacement' => 'Brave',
     ),
-    156 =>
+    160 =>
     array (
       'regex' => '(Chrome)/(\\d+)\\.(\\d+)\\.(\\d+)[\\d.]* Iron[^/]',
       'family_replacement' => 'Iron',
     ),
-    157 =>
+    161 =>
     array (
       'regex' => '\\b(Dolphin)(?: |HDCN/|/INT\\-)(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    158 =>
+    162 =>
     array (
       'regex' => '(HeadlessChrome)(?:/(\\d+)\\.(\\d+)\\.(\\d+)|)',
     ),
-    159 =>
+    163 =>
     array (
       'regex' => '(Evolution)/(\\d+)\\.(\\d+)\\.(\\d+\\.\\d+)',
     ),
-    160 =>
+    164 =>
     array (
       'regex' => '(RCM CardDAV plugin)/(\\d+)\\.(\\d+)\\.(\\d+(?:-dev|))',
     ),
-    161 =>
+    165 =>
     array (
       'regex' => '(bingbot|Bolt|AdobeAIR|Jasmine|IceCat|Skyfire|Midori|Maxthon|Lynx|Arora|IBrowse|Dillo|Camino|Shiira|Fennec|Phoenix|Flock|Netscape|Lunascape|Epiphany|WebPilot|Opera Mini|Opera|NetFront|Netfront|Konqueror|Googlebot|SeaMonkey|Kazehakase|Vienna|Iceape|Iceweasel|IceWeasel|Iron|K-Meleon|Sleipnir|Galeon|GranParadiso|iCab|iTunes|MacAppStore|NetNewsWire|Space Bison|Stainless|Orca|Dolfin|BOLT|Minimo|Tizen Browser|Polaris|Abrowser|Planetweb|ICE Browser|mDolphin|qutebrowser|Otter|QupZilla|MailBar|kmail2|YahooMobileMail|ExchangeWebServices|ExchangeServicesClient|Dragon|Outlook-iOS-Android)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    162 =>
+    166 =>
     array (
       'regex' => '(Chromium|Chrome)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
-    163 =>
+    167 =>
     array (
       'regex' => '(IEMobile)[ /](\\d+)\\.(\\d+)',
       'family_replacement' => 'IE Mobile',
     ),
-    164 =>
+    168 =>
     array (
       'regex' => '(BacaBerita App)\\/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    165 =>
+    169 =>
     array (
       'regex' => '^(bPod|Pocket Casts|Player FM)$',
     ),
-    166 =>
+    170 =>
     array (
       'regex' => '^(AlexaMediaPlayer|VLC)/(\\d+)\\.(\\d+)\\.([^.\\s]+)',
     ),
-    167 =>
+    171 =>
     array (
       'regex' => '^(AntennaPod|WMPlayer|Zune|Podkicker|Radio|ExoPlayerDemo|Overcast|PocketTunes|NSPlayer|okhttp|DoggCatcher|QuickNews|QuickTime|Peapod|Podcasts|GoldenPod|VLC|Spotify|Miro|MediaGo|Juice|iPodder|gPodder|Banshee)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
-    168 =>
+    172 =>
     array (
       'regex' => '^(Peapod|Liferea)/([^.\\s]+)\\.([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
-    169 =>
+    173 =>
     array (
       'regex' => '^(bPod|Player FM) BMID/(\\S+)',
     ),
-    170 =>
+    174 =>
     array (
       'regex' => '^(Podcast ?Addict)/v(\\d+) ',
     ),
-    171 =>
+    175 =>
     array (
       'regex' => '^(Podcast ?Addict) ',
       'family_replacement' => 'PodcastAddict',
     ),
-    172 =>
+    176 =>
     array (
       'regex' => '(Replay) AV',
     ),
-    173 =>
+    177 =>
     array (
       'regex' => '(VOX) Music Player',
     ),
-    174 =>
+    178 =>
     array (
       'regex' => '(CITA) RSS Aggregator/(\\d+)\\.(\\d+)',
     ),
-    175 =>
+    179 =>
     array (
       'regex' => '(Pocket Casts)$',
     ),
-    176 =>
+    180 =>
     array (
       'regex' => '(Player FM)$',
     ),
-    177 =>
+    181 =>
     array (
       'regex' => '(LG Player|Doppler|FancyMusic|MediaMonkey|Clementine) (\\d+)\\.(\\d+)\\.?([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
-    178 =>
+    182 =>
     array (
       'regex' => '(philpodder)/(\\d+)\\.(\\d+)\\.?([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
-    179 =>
+    183 =>
     array (
       'regex' => '(Player FM|Pocket Casts|DoggCatcher|Spotify|MediaMonkey|MediaGo|BashPodder)',
     ),
-    180 =>
+    184 =>
     array (
       'regex' => '(QuickTime)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    181 =>
+    185 =>
     array (
       'regex' => '(Kinoma)(\\d+)',
     ),
-    182 =>
+    186 =>
     array (
       'regex' => '(Fancy) Cloud Music (\\d+)\\.(\\d+)',
       'family_replacement' => 'FancyMusic',
     ),
-    183 =>
+    187 =>
     array (
       'regex' => 'EspnDownloadManager',
       'family_replacement' => 'ESPN',
     ),
-    184 =>
+    188 =>
     array (
       'regex' => '(ESPN) Radio (\\d+)\\.(\\d+)(?:\\.(\\d+)|) ?(?:rv:(\\d+)|) ',
     ),
-    185 =>
+    189 =>
     array (
       'regex' => '(podracer|jPodder) v ?(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    186 =>
+    190 =>
     array (
       'regex' => '(ZDM)/(\\d+)\\.(\\d+)[; ]?',
     ),
-    187 =>
+    191 =>
     array (
       'regex' => '(Zune|BeyondPod) (\\d+)(?:\\.(\\d+)|)[\\);]',
     ),
-    188 =>
+    192 =>
     array (
       'regex' => '(WMPlayer)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    189 =>
+    193 =>
     array (
       'regex' => '^(Lavf)',
       'family_replacement' => 'WMPlayer',
     ),
-    190 =>
+    194 =>
     array (
       'regex' => '^(RSSRadio)[ /]?(\\d+|)',
     ),
-    191 =>
+    195 =>
     array (
       'regex' => '(RSS_Radio) (\\d+)\\.(\\d+)',
       'family_replacement' => 'RSSRadio',
     ),
-    192 =>
+    196 =>
     array (
       'regex' => '(Podkicker) \\S+/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Podkicker',
     ),
-    193 =>
+    197 =>
     array (
       'regex' => '^(HTC) Streaming Player \\S+ / \\S+ / \\S+ / (\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    194 =>
+    198 =>
     array (
       'regex' => '^(Stitcher)/iOS',
     ),
-    195 =>
+    199 =>
     array (
       'regex' => '^(Stitcher)/Android',
     ),
-    196 =>
+    200 =>
     array (
       'regex' => '^(VLC) .*version (\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    197 =>
+    201 =>
     array (
       'regex' => ' (VLC) for',
     ),
-    198 =>
+    202 =>
     array (
       'regex' => '(vlc)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'VLC',
     ),
-    199 =>
+    203 =>
     array (
       'regex' => '^(foobar)\\S+/([^.\\s]+)\\.([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
-    200 =>
+    204 =>
     array (
       'regex' => '^(Clementine)\\S+ ([^.\\s]+)\\.([^.\\s]+|)\\.?([^.\\s]+|)',
     ),
-    201 =>
+    205 =>
     array (
       'regex' => '(amarok)/([^.\\s]+)\\.([^.\\s]+|)\\.?([^.\\s]+|)',
       'family_replacement' => 'Amarok',
     ),
-    202 =>
+    206 =>
     array (
       'regex' => '(Custom)-Feed Reader',
     ),
-    203 =>
+    207 =>
     array (
       'regex' => '(iRider|Crazy Browser|SkipStone|iCab|Lunascape|Sleipnir|Maemo Browser) (\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    204 =>
+    208 =>
     array (
       'regex' => '(iCab|Lunascape|Opera|Android|Jasmine|Polaris|Microsoft SkyDriveSync|The Bat!) (\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
     ),
-    205 =>
+    209 =>
     array (
       'regex' => '(Kindle)/(\\d+)\\.(\\d+)',
     ),
-    206 =>
+    210 =>
     array (
       'regex' => '(Android) Donut',
       'v1_replacement' => '1',
       'v2_replacement' => '2',
     ),
-    207 =>
+    211 =>
     array (
       'regex' => '(Android) Eclair',
       'v1_replacement' => '2',
       'v2_replacement' => '1',
     ),
-    208 =>
+    212 =>
     array (
       'regex' => '(Android) Froyo',
       'v1_replacement' => '2',
       'v2_replacement' => '2',
     ),
-    209 =>
+    213 =>
     array (
       'regex' => '(Android) Gingerbread',
       'v1_replacement' => '2',
       'v2_replacement' => '3',
     ),
-    210 =>
+    214 =>
     array (
       'regex' => '(Android) Honeycomb',
       'v1_replacement' => '3',
     ),
-    211 =>
+    215 =>
     array (
       'regex' => '(MSIE) (\\d+)\\.(\\d+).*XBLWP7',
       'family_replacement' => 'IE Large Screen',
     ),
-    212 =>
+    216 =>
     array (
       'regex' => '(Nextcloud)',
     ),
-    213 =>
+    217 =>
     array (
       'regex' => '(mirall)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    214 =>
+    218 =>
     array (
       'regex' => '(ownCloud-android)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Owncloud',
     ),
-    215 =>
+    219 =>
     array (
       'regex' => '(OC)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+) \\(Skype for Business\\)',
       'family_replacement' => 'Skype',
     ),
-    216 =>
+    220 =>
     array (
       'regex' => '(Obigo)InternetBrowser',
     ),
-    217 =>
+    221 =>
     array (
       'regex' => '(Obigo)\\-Browser',
     ),
-    218 =>
+    222 =>
     array (
       'regex' => '(Obigo|OBIGO)[^\\d]*(\\d+)(?:.(\\d+)|)',
       'family_replacement' => 'Obigo',
     ),
-    219 =>
+    223 =>
     array (
       'regex' => '(MAXTHON|Maxthon) (\\d+)\\.(\\d+)',
       'family_replacement' => 'Maxthon',
     ),
-    220 =>
+    224 =>
     array (
       'regex' => '(Maxthon|MyIE2|Uzbl|Shiira)',
       'v1_replacement' => '0',
     ),
-    221 =>
+    225 =>
     array (
       'regex' => '(BrowseX) \\((\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    222 =>
+    226 =>
     array (
       'regex' => '(NCSA_Mosaic)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'NCSA Mosaic',
     ),
-    223 =>
+    227 =>
     array (
       'regex' => '(POLARIS)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Polaris',
     ),
-    224 =>
+    228 =>
     array (
       'regex' => '(Embider)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Polaris',
     ),
-    225 =>
+    229 =>
     array (
       'regex' => '(BonEcho)/(\\d+)\\.(\\d+)\\.?([ab]?\\d+|)',
       'family_replacement' => 'Bon Echo',
     ),
-    226 =>
+    230 =>
+    array (
+      'regex' => '(TopBuzz) com.alex.NewsMaster/(\\d+).(\\d+).(\\d+)',
+      'family_replacement' => 'TopBuzz',
+    ),
+    231 =>
+    array (
+      'regex' => '(TopBuzz) com.mobilesrepublic.newsrepublic/(\\d+).(\\d+).(\\d+)',
+      'family_replacement' => 'TopBuzz',
+    ),
+    232 =>
+    array (
+      'regex' => '(TopBuzz) com.topbuzz.videoen/(\\d+).(\\d+).(\\d+)',
+      'family_replacement' => 'TopBuzz',
+    ),
+    233 =>
     array (
       'regex' => '(iPod|iPhone|iPad).+GSA/(\\d+)\\.(\\d+)\\.(\\d+) Mobile',
       'family_replacement' => 'Google',
     ),
-    227 =>
+    234 =>
     array (
       'regex' => '(iPod|iPhone|iPad).+Version/(\\d+)\\.(\\d+)(?:\\.(\\d+)|).*[ +]Safari',
       'family_replacement' => 'Mobile Safari',
     ),
-    228 =>
+    235 =>
     array (
       'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+)|).* AppleNews\\/\\d+\\.\\d+\\.\\d+?',
       'family_replacement' => 'Mobile Safari UI/WKWebView',
     ),
-    229 =>
+    236 =>
     array (
       'regex' => '(iPod|iPhone|iPad).+Version/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'family_replacement' => 'Mobile Safari UI/WKWebView',
     ),
-    230 =>
+    237 =>
     array (
       'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+)|).*Mobile.*[ +]Safari',
       'family_replacement' => 'Mobile Safari',
     ),
-    231 =>
+    238 =>
     array (
       'regex' => '(iPod|iPod touch|iPhone|iPad);.*CPU.*OS[ +](\\d+)_(\\d+)(?:_(\\d+)|).*Mobile',
       'family_replacement' => 'Mobile Safari UI/WKWebView',
     ),
-    232 =>
+    239 =>
     array (
       'regex' => '(iPod|iPhone|iPad).* Safari',
       'family_replacement' => 'Mobile Safari',
     ),
-    233 =>
+    240 =>
     array (
       'regex' => '(iPod|iPhone|iPad)',
       'family_replacement' => 'Mobile Safari UI/WKWebView',
     ),
-    234 =>
+    241 =>
     array (
       'regex' => '(Watch)(\\d+),(\\d+)',
       'family_replacement' => 'Apple $1 App',
     ),
-    235 =>
+    242 =>
     array (
       'regex' => '(Outlook-iOS)/\\d+\\.\\d+\\.prod\\.iphone \\((\\d+)\\.(\\d+)\\.(\\d+)\\)',
     ),
-    236 =>
+    243 =>
     array (
       'regex' => '(AvantGo) (\\d+).(\\d+)',
     ),
-    237 =>
+    244 =>
     array (
       'regex' => '(OneBrowser)/(\\d+).(\\d+)',
       'family_replacement' => 'ONE Browser',
     ),
-    238 =>
+    245 =>
     array (
       'regex' => '(Avant)',
       'v1_replacement' => '1',
     ),
-    239 =>
+    246 =>
     array (
       'regex' => '(QtCarBrowser)',
       'v1_replacement' => '1',
     ),
-    240 =>
+    247 =>
     array (
       'regex' => '^(iBrowser/Mini)(\\d+).(\\d+)',
       'family_replacement' => 'iBrowser Mini',
     ),
-    241 =>
+    248 =>
     array (
       'regex' => '^(iBrowser|iRAPP)/(\\d+).(\\d+)',
     ),
-    242 =>
+    249 =>
     array (
       'regex' => '^(Nokia)',
       'family_replacement' => 'Nokia Services (WAP) Browser',
     ),
-    243 =>
+    250 =>
     array (
       'regex' => '(NokiaBrowser)/(\\d+)\\.(\\d+).(\\d+)\\.(\\d+)',
       'family_replacement' => 'Nokia Browser',
     ),
-    244 =>
+    251 =>
     array (
       'regex' => '(NokiaBrowser)/(\\d+)\\.(\\d+).(\\d+)',
       'family_replacement' => 'Nokia Browser',
     ),
-    245 =>
+    252 =>
     array (
       'regex' => '(NokiaBrowser)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Nokia Browser',
     ),
-    246 =>
+    253 =>
     array (
       'regex' => '(BrowserNG)/(\\d+)\\.(\\d+).(\\d+)',
       'family_replacement' => 'Nokia Browser',
     ),
-    247 =>
+    254 =>
     array (
       'regex' => '(Series60)/5\\.0',
       'family_replacement' => 'Nokia Browser',
       'v1_replacement' => '7',
       'v2_replacement' => '0',
     ),
-    248 =>
+    255 =>
     array (
       'regex' => '(Series60)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Nokia OSS Browser',
     ),
-    249 =>
+    256 =>
     array (
       'regex' => '(S40OviBrowser)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Ovi Browser',
     ),
-    250 =>
+    257 =>
     array (
       'regex' => '(Nokia)[EN]?(\\d+)',
     ),
-    251 =>
+    258 =>
     array (
       'regex' => '(PlayBook).+RIM Tablet OS (\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'BlackBerry WebKit',
     ),
-    252 =>
+    259 =>
     array (
       'regex' => '(Black[bB]erry|BB10).+Version/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'BlackBerry WebKit',
     ),
-    253 =>
+    260 =>
     array (
       'regex' => '(Black[bB]erry)\\s?(\\d+)',
       'family_replacement' => 'BlackBerry',
     ),
-    254 =>
+    261 =>
     array (
       'regex' => '(OmniWeb)/v(\\d+)\\.(\\d+)',
     ),
-    255 =>
+    262 =>
     array (
       'regex' => '(Blazer)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Palm Blazer',
     ),
-    256 =>
+    263 =>
     array (
       'regex' => '(Pre)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Palm Pre',
     ),
-    257 =>
+    264 =>
     array (
       'regex' => '(ELinks)/(\\d+)\\.(\\d+)',
     ),
-    258 =>
+    265 =>
     array (
       'regex' => '(ELinks) \\((\\d+)\\.(\\d+)',
     ),
-    259 =>
+    266 =>
     array (
       'regex' => '(Links) \\((\\d+)\\.(\\d+)',
     ),
-    260 =>
+    267 =>
     array (
       'regex' => '(QtWeb) Internet Browser/(\\d+)\\.(\\d+)',
     ),
-    261 =>
+    268 =>
     array (
       'regex' => '(PhantomJS)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    262 =>
+    269 =>
     array (
       'regex' => '(AppleWebKit)/(\\d+)(?:\\.(\\d+)|)\\+ .* Safari',
       'family_replacement' => 'WebKit Nightly',
     ),
-    263 =>
+    270 =>
     array (
       'regex' => '(Version)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|).*Safari/',
       'family_replacement' => 'Safari',
     ),
-    264 =>
+    271 =>
     array (
       'regex' => '(Safari)/\\d+',
     ),
-    265 =>
+    272 =>
     array (
       'regex' => '(OLPC)/Update(\\d+)\\.(\\d+)',
     ),
-    266 =>
+    273 =>
     array (
       'regex' => '(OLPC)/Update()\\.(\\d+)',
       'v1_replacement' => '0',
     ),
-    267 =>
+    274 =>
     array (
       'regex' => '(SEMC\\-Browser)/(\\d+)\\.(\\d+)',
     ),
-    268 =>
+    275 =>
     array (
       'regex' => '(Teleca)',
       'family_replacement' => 'Teleca Browser',
     ),
-    269 =>
+    276 =>
     array (
       'regex' => '(Phantom)/V(\\d+)\\.(\\d+)',
       'family_replacement' => 'Phantom Browser',
     ),
-    270 =>
+    277 =>
     array (
       'regex' => '(Trident)/(7|8)\\.(0)',
       'family_replacement' => 'IE',
       'v1_replacement' => '11',
     ),
-    271 =>
+    278 =>
     array (
       'regex' => '(Trident)/(6)\\.(0)',
       'family_replacement' => 'IE',
       'v1_replacement' => '10',
     ),
-    272 =>
+    279 =>
     array (
       'regex' => '(Trident)/(5)\\.(0)',
       'family_replacement' => 'IE',
       'v1_replacement' => '9',
     ),
-    273 =>
+    280 =>
     array (
       'regex' => '(Trident)/(4)\\.(0)',
       'family_replacement' => 'IE',
       'v1_replacement' => '8',
     ),
-    274 =>
+    281 =>
     array (
       'regex' => '(Espial)/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
-    275 =>
+    282 =>
     array (
       'regex' => '(AppleWebKit)/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Apple Mail',
     ),
-    276 =>
+    283 =>
     array (
       'regex' => '(Firefox)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    277 =>
+    284 =>
     array (
       'regex' => '(Firefox)/(\\d+)\\.(\\d+)(pre|[ab]\\d+[a-z]*|)',
     ),
-    278 =>
+    285 =>
     array (
       'regex' => '([MS]?IE) (\\d+)\\.(\\d+)',
       'family_replacement' => 'IE',
     ),
-    279 =>
+    286 =>
     array (
       'regex' => '(python-requests)/(\\d+)\\.(\\d+)',
       'family_replacement' => 'Python Requests',
     ),
-    280 =>
+    287 =>
     array (
       'regex' => '\\b(Windows-Update-Agent|Microsoft-CryptoAPI|SophosUpdateManager|SophosAgent|Debian APT-HTTP|Ubuntu APT-HTTP|libcurl-agent|libwww-perl|urlgrabber|curl|PycURL|Wget|aria2|Axel|OpenBSD ftp|lftp|jupdate|insomnia|fetch libfetch|akka-http|got)(?:[ /](\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)',
     ),
-    281 =>
-    array (
-      'regex' => '(Python/3\\.\\d{1,3} aiohttp)/(\\d+)\\.(\\d+)\\.(\\d+)',
-    ),
-    282 =>
-    array (
-      'regex' => '(Python/3\\.\\d{1,3} aiohttp)/(\\d+)\\.(\\d+)\\.(\\d+)',
-    ),
-    283 =>
-    array (
-      'regex' => '(Java)[/ ]{0,1}\\d+\\.(\\d+)\\.(\\d+)[_-]*([a-zA-Z0-9]+|)',
-    ),
-    284 =>
-    array (
-      'regex' => '^(Cyberduck)/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.\\d+|)',
-    ),
-    285 =>
-    array (
-      'regex' => '^(S3 Browser) (\\d+)-(\\d+)-(\\d+)(?:\\s*http://s3browser\\.com|)',
-    ),
-    286 =>
-    array (
-      'regex' => '(S3Gof3r)',
-    ),
-    287 =>
-    array (
-      'regex' => '\\b(ibm-cos-sdk-(?:core|java|js|python))/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
-    ),
     288 =>
     array (
-      'regex' => '^(rusoto)/(\\d+)\\.(\\d+)\\.(\\d+)',
+      'regex' => '(Python/3\\.\\d{1,3} aiohttp)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
     289 =>
     array (
-      'regex' => '^(rclone)/v(\\d+)\\.(\\d+)',
+      'regex' => '(Python/3\\.\\d{1,3} aiohttp)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
     290 =>
     array (
-      'regex' => '^(Roku)/DVP-(\\d+)\\.(\\d+)',
+      'regex' => '(Java)[/ ]{0,1}\\d+\\.(\\d+)\\.(\\d+)[_-]*([a-zA-Z0-9]+|)',
     ),
     291 =>
+    array (
+      'regex' => '^(Cyberduck)/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.\\d+|)',
+    ),
+    292 =>
+    array (
+      'regex' => '^(S3 Browser) (\\d+)-(\\d+)-(\\d+)(?:\\s*http://s3browser\\.com|)',
+    ),
+    293 =>
+    array (
+      'regex' => '(S3Gof3r)',
+    ),
+    294 =>
+    array (
+      'regex' => '\\b(ibm-cos-sdk-(?:core|java|js|python))/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
+    ),
+    295 =>
+    array (
+      'regex' => '^(rusoto)/(\\d+)\\.(\\d+)\\.(\\d+)',
+    ),
+    296 =>
+    array (
+      'regex' => '^(rclone)/v(\\d+)\\.(\\d+)',
+    ),
+    297 =>
+    array (
+      'regex' => '^(Roku)/DVP-(\\d+)\\.(\\d+)',
+    ),
+    298 =>
     array (
       'regex' => '(Kurio)\\/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'Kurio App',
     ),
-    292 =>
+    299 =>
     array (
       'regex' => '^(Box(?: Sync)?)/(\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    293 =>
+    300 =>
     array (
       'regex' => '^(ViaFree|Viafree)-(?:tvOS-)?[A-Z]{2}/(\\d+)\\.(\\d+)\\.(\\d+)',
       'family_replacement' => 'ViaFree',
@@ -1462,169 +1496,173 @@ return array (
     ),
     18 =>
     array (
+      'regex' => '(Android) (\\d+);',
+    ),
+    19 =>
+    array (
       'regex' => '^UCWEB.*; (Adr) (\\d+)\\.(\\d+)(?:[.\\-]([a-z0-9]+)|);',
       'os_replacement' => 'Android',
     ),
-    19 =>
+    20 =>
     array (
       'regex' => '^UCWEB.*; (iPad|iPh|iPd) OS (\\d+)_(\\d+)(?:_(\\d+)|);',
       'os_replacement' => 'iOS',
     ),
-    20 =>
+    21 =>
     array (
       'regex' => '^UCWEB.*; (wds) (\\d+)\\.(\\d+)(?:\\.(\\d+)|);',
       'os_replacement' => 'Windows Phone',
     ),
-    21 =>
+    22 =>
     array (
       'regex' => '^(JUC).*; ?U; ?(?:Android|)(\\d+)\\.(\\d+)(?:[\\.\\-]([a-z0-9]+)|)',
       'os_replacement' => 'Android',
     ),
-    22 =>
+    23 =>
     array (
       'regex' => '(android)\\s(?:mobile\\/)(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)',
       'os_replacement' => 'Android',
     ),
-    23 =>
+    24 =>
     array (
       'regex' => '(Silk-Accelerated=[a-z]{4,5})',
       'os_replacement' => 'Android',
     ),
-    24 =>
+    25 =>
     array (
       'regex' => '(x86_64|aarch64)\\ (\\d+)\\.(\\d+)\\.(\\d+).*Chrome.*(?:CitrixChromeApp)$',
       'os_replacement' => 'Chrome OS',
     ),
-    25 =>
+    26 =>
     array (
       'regex' => '(XBLWP7)',
       'os_replacement' => 'Windows Phone',
     ),
-    26 =>
+    27 =>
     array (
       'regex' => '(Windows ?Mobile)',
       'os_replacement' => 'Windows Mobile',
     ),
-    27 =>
+    28 =>
     array (
       'regex' => '(Windows 10)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '10',
     ),
-    28 =>
+    29 =>
     array (
       'regex' => '(Windows (?:NT 5\\.2|NT 5\\.1))',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => 'XP',
     ),
-    29 =>
+    30 =>
     array (
       'regex' => '(Windows NT 6\\.1)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '7',
     ),
-    30 =>
+    31 =>
     array (
       'regex' => '(Windows NT 6\\.0)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => 'Vista',
     ),
-    31 =>
+    32 =>
     array (
       'regex' => '(Win 9x 4\\.90)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => 'ME',
     ),
-    32 =>
+    33 =>
     array (
       'regex' => '(Windows NT 6\\.2; ARM;)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => 'RT',
     ),
-    33 =>
+    34 =>
     array (
       'regex' => '(Windows NT 6\\.2)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '8',
     ),
-    34 =>
+    35 =>
     array (
       'regex' => '(Windows NT 6\\.3; ARM;)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => 'RT 8',
       'os_v2_replacement' => '1',
     ),
-    35 =>
+    36 =>
     array (
       'regex' => '(Windows NT 6\\.3)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '8',
       'os_v2_replacement' => '1',
     ),
-    36 =>
+    37 =>
     array (
       'regex' => '(Windows NT 6\\.4)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '10',
     ),
-    37 =>
+    38 =>
     array (
       'regex' => '(Windows NT 10\\.0)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '10',
     ),
-    38 =>
+    39 =>
     array (
       'regex' => '(Windows NT 5\\.0)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '2000',
     ),
-    39 =>
+    40 =>
     array (
       'regex' => '(WinNT4.0)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => 'NT 4.0',
     ),
-    40 =>
+    41 =>
     array (
       'regex' => '(Windows ?CE)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => 'CE',
     ),
-    41 =>
+    42 =>
     array (
       'regex' => 'Win(?:dows)? ?(95|98|3.1|NT|ME|2000|XP|Vista|7|CE)',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '$1',
     ),
-    42 =>
+    43 =>
     array (
       'regex' => 'Win16',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '3.1',
     ),
-    43 =>
+    44 =>
     array (
       'regex' => 'Win32',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '95',
     ),
-    44 =>
+    45 =>
     array (
       'regex' => '^Box.*Windows/([\\d.]+);',
       'os_replacement' => 'Windows',
       'os_v1_replacement' => '$1',
     ),
-    45 =>
+    46 =>
     array (
       'regex' => '(Tizen)[/ ](\\d+)\\.(\\d+)',
     ),
-    46 =>
+    47 =>
     array (
       'regex' => '((?:Mac[ +]?|; )OS[ +]X)[\\s+/](?:(\\d+)[_.](\\d+)(?:[_.](\\d+)|)|Mach-O)',
       'os_replacement' => 'Mac OS X',
     ),
-    47 =>
+    48 =>
     array (
       'regex' => '\\w+\\s+Mac OS X\\s+\\w+\\s+(\\d+).(\\d+).(\\d+).*',
       'os_replacement' => 'Mac OS X',
@@ -1632,155 +1670,155 @@ return array (
       'os_v2_replacement' => '$2',
       'os_v3_replacement' => '$3',
     ),
-    48 =>
+    49 =>
     array (
       'regex' => ' (Dar)(win)/(9).(\\d+).*\\((?:i386|x86_64|Power Macintosh)\\)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '5',
     ),
-    49 =>
+    50 =>
     array (
       'regex' => ' (Dar)(win)/(10).(\\d+).*\\((?:i386|x86_64)\\)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '6',
     ),
-    50 =>
+    51 =>
     array (
       'regex' => ' (Dar)(win)/(11).(\\d+).*\\((?:i386|x86_64)\\)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '7',
     ),
-    51 =>
+    52 =>
     array (
       'regex' => ' (Dar)(win)/(12).(\\d+).*\\((?:i386|x86_64)\\)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '8',
     ),
-    52 =>
+    53 =>
     array (
       'regex' => ' (Dar)(win)/(13).(\\d+).*\\((?:i386|x86_64)\\)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '9',
     ),
-    53 =>
+    54 =>
     array (
       'regex' => 'Mac_PowerPC',
       'os_replacement' => 'Mac OS',
     ),
-    54 =>
+    55 =>
     array (
       'regex' => '(?:PPC|Intel) (Mac OS X)',
     ),
-    55 =>
+    56 =>
     array (
       'regex' => '^Box.*;(Darwin)/(10)\\.(1\\d)(?:\\.(\\d+)|)',
       'os_replacement' => 'Mac OS X',
     ),
-    56 =>
+    57 =>
     array (
       'regex' => '(Apple\\s?TV)(?:/(\\d+)\\.(\\d+)|)',
       'os_replacement' => 'ATV OS X',
     ),
-    57 =>
+    58 =>
     array (
       'regex' => '(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone|CPU IPhone OS)[ +]+(\\d+)[_\\.](\\d+)(?:[_\\.](\\d+)|)',
       'os_replacement' => 'iOS',
     ),
-    58 =>
+    59 =>
     array (
       'regex' => '(iPhone|iPad|iPod); Opera',
       'os_replacement' => 'iOS',
     ),
-    59 =>
+    60 =>
     array (
       'regex' => '(iPhone|iPad|iPod).*Mac OS X.*Version/(\\d+)\\.(\\d+)',
       'os_replacement' => 'iOS',
     ),
-    60 =>
+    61 =>
     array (
       'regex' => '(CFNetwork)/(5)48\\.0\\.3.* Darwin/11\\.0\\.0',
       'os_replacement' => 'iOS',
     ),
-    61 =>
+    62 =>
     array (
       'regex' => '(CFNetwork)/(5)48\\.(0)\\.4.* Darwin/(1)1\\.0\\.0',
       'os_replacement' => 'iOS',
     ),
-    62 =>
+    63 =>
     array (
       'regex' => '(CFNetwork)/(5)48\\.(1)\\.4',
       'os_replacement' => 'iOS',
     ),
-    63 =>
+    64 =>
     array (
       'regex' => '(CFNetwork)/(4)85\\.1(3)\\.9',
       'os_replacement' => 'iOS',
     ),
-    64 =>
+    65 =>
     array (
       'regex' => '(CFNetwork)/(6)09\\.(1)\\.4',
       'os_replacement' => 'iOS',
     ),
-    65 =>
+    66 =>
     array (
       'regex' => '(CFNetwork)/(6)(0)9',
       'os_replacement' => 'iOS',
     ),
-    66 =>
+    67 =>
     array (
       'regex' => '(CFNetwork)/6(7)2\\.(1)\\.13',
       'os_replacement' => 'iOS',
     ),
-    67 =>
+    68 =>
     array (
       'regex' => '(CFNetwork)/6(7)2\\.(1)\\.(1)4',
       'os_replacement' => 'iOS',
     ),
-    68 =>
+    69 =>
     array (
       'regex' => '(CF)(Network)/6(7)(2)\\.1\\.15',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '7',
       'os_v2_replacement' => '1',
     ),
-    69 =>
+    70 =>
     array (
       'regex' => '(CFNetwork)/6(7)2\\.(0)\\.(?:2|8)',
       'os_replacement' => 'iOS',
     ),
-    70 =>
+    71 =>
     array (
       'regex' => '(CFNetwork)/709\\.1',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '8',
       'os_v2_replacement' => '0.b5',
     ),
-    71 =>
+    72 =>
     array (
       'regex' => '(CF)(Network)/711\\.(\\d)',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '8',
     ),
-    72 =>
+    73 =>
     array (
       'regex' => '(CF)(Network)/(720)\\.(\\d)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '10',
     ),
-    73 =>
+    74 =>
     array (
       'regex' => '(CF)(Network)/(760)\\.(\\d)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '11',
     ),
-    74 =>
+    75 =>
     array (
       'regex' => 'CFNetwork/7.* Darwin/15\\.4\\.\\d+',
       'os_replacement' => 'iOS',
@@ -1788,7 +1826,7 @@ return array (
       'os_v2_replacement' => '3',
       'os_v3_replacement' => '1',
     ),
-    75 =>
+    76 =>
     array (
       'regex' => 'CFNetwork/7.* Darwin/15\\.5\\.\\d+',
       'os_replacement' => 'iOS',
@@ -1796,7 +1834,7 @@ return array (
       'os_v2_replacement' => '3',
       'os_v3_replacement' => '2',
     ),
-    76 =>
+    77 =>
     array (
       'regex' => 'CFNetwork/7.* Darwin/15\\.6\\.\\d+',
       'os_replacement' => 'iOS',
@@ -1804,13 +1842,13 @@ return array (
       'os_v2_replacement' => '3',
       'os_v3_replacement' => '5',
     ),
-    77 =>
+    78 =>
     array (
       'regex' => '(CF)(Network)/758\\.(\\d)',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '9',
     ),
-    78 =>
+    79 =>
     array (
       'regex' => 'CFNetwork/808\\.3 Darwin/16\\.3\\.\\d+',
       'os_replacement' => 'iOS',
@@ -1818,85 +1856,85 @@ return array (
       'os_v2_replacement' => '2',
       'os_v3_replacement' => '1',
     ),
-    79 =>
+    80 =>
     array (
       'regex' => '(CF)(Network)/808\\.(\\d)',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '10',
     ),
-    80 =>
+    81 =>
     array (
       'regex' => 'CFNetwork/.* Darwin/17\\.\\d+.*\\(x86_64\\)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '13',
     ),
-    81 =>
+    82 =>
     array (
       'regex' => 'CFNetwork/.* Darwin/16\\.\\d+.*\\(x86_64\\)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '12',
     ),
-    82 =>
+    83 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/15\\.\\d+.*\\(x86_64\\)',
       'os_replacement' => 'Mac OS X',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '11',
     ),
-    83 =>
+    84 =>
     array (
       'regex' => 'CFNetwork/.* Darwin/(9)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '1',
     ),
-    84 =>
+    85 =>
     array (
       'regex' => 'CFNetwork/.* Darwin/(10)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '4',
     ),
-    85 =>
+    86 =>
     array (
       'regex' => 'CFNetwork/.* Darwin/(11)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '5',
     ),
-    86 =>
+    87 =>
     array (
       'regex' => 'CFNetwork/.* Darwin/(13)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '6',
     ),
-    87 =>
+    88 =>
     array (
       'regex' => 'CFNetwork/6.* Darwin/(14)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '7',
     ),
-    88 =>
+    89 =>
     array (
       'regex' => 'CFNetwork/7.* Darwin/(14)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '8',
       'os_v2_replacement' => '0',
     ),
-    89 =>
+    90 =>
     array (
       'regex' => 'CFNetwork/7.* Darwin/(15)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '9',
       'os_v2_replacement' => '0',
     ),
-    90 =>
+    91 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/16\\.5\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '10',
       'os_v2_replacement' => '3',
     ),
-    91 =>
+    92 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/16\\.6\\.\\d+',
       'os_replacement' => 'iOS',
@@ -1904,7 +1942,7 @@ return array (
       'os_v2_replacement' => '3',
       'os_v3_replacement' => '2',
     ),
-    92 =>
+    93 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/16\\.7\\.\\d+',
       'os_replacement' => 'iOS',
@@ -1912,34 +1950,34 @@ return array (
       'os_v2_replacement' => '3',
       'os_v3_replacement' => '3',
     ),
-    93 =>
+    94 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/(16)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '10',
     ),
-    94 =>
+    95 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/17\\.0\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '11',
       'os_v2_replacement' => '0',
     ),
-    95 =>
+    96 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/17\\.2\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '11',
       'os_v2_replacement' => '1',
     ),
-    96 =>
+    97 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/17\\.3\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '11',
       'os_v2_replacement' => '2',
     ),
-    97 =>
+    98 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/17\\.4\\.\\d+',
       'os_replacement' => 'iOS',
@@ -1947,21 +1985,21 @@ return array (
       'os_v2_replacement' => '2',
       'os_v3_replacement' => '6',
     ),
-    98 =>
+    99 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/17\\.5\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '11',
       'os_v2_replacement' => '3',
     ),
-    99 =>
+    100 =>
     array (
       'regex' => 'CFNetwork/9.* Darwin/17\\.6\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '11',
       'os_v2_replacement' => '4',
     ),
-    100 =>
+    101 =>
     array (
       'regex' => 'CFNetwork/9.* Darwin/17\\.7\\.\\d+',
       'os_replacement' => 'iOS',
@@ -1969,156 +2007,156 @@ return array (
       'os_v2_replacement' => '4',
       'os_v3_replacement' => '1',
     ),
-    101 =>
+    102 =>
     array (
       'regex' => 'CFNetwork/8.* Darwin/(17)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '11',
     ),
-    102 =>
+    103 =>
     array (
       'regex' => 'CFNetwork/9.* Darwin/18\\.0\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '12',
       'os_v2_replacement' => '0',
     ),
-    103 =>
+    104 =>
     array (
       'regex' => 'CFNetwork/9.* Darwin/(18)\\.\\d+',
       'os_replacement' => 'iOS',
       'os_v1_replacement' => '12',
     ),
-    104 =>
+    105 =>
     array (
       'regex' => 'CFNetwork/.* Darwin/',
       'os_replacement' => 'iOS',
     ),
-    105 =>
+    106 =>
     array (
       'regex' => '\\b(iOS[ /]|iOS; |iPhone(?:/| v|[ _]OS[/,]|; | OS : |\\d,\\d/|\\d,\\d; )|iPad/)(\\d{1,2})[_\\.](\\d{1,2})(?:[_\\.](\\d+)|)',
       'os_replacement' => 'iOS',
     ),
-    106 =>
+    107 =>
     array (
       'regex' => '\\((iOS);',
     ),
-    107 =>
+    108 =>
     array (
       'regex' => '(watchOS)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'WatchOS',
     ),
-    108 =>
+    109 =>
     array (
       'regex' => 'Outlook-(iOS)/\\d+\\.\\d+\\.prod\\.iphone',
     ),
-    109 =>
+    110 =>
     array (
       'regex' => '(iPod|iPhone|iPad)',
       'os_replacement' => 'iOS',
     ),
-    110 =>
+    111 =>
     array (
       'regex' => '(tvOS)[/ ](\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'tvOS',
     ),
-    111 =>
+    112 =>
     array (
       'regex' => '(CrOS) [a-z0-9_]+ (\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'Chrome OS',
     ),
-    112 =>
+    113 =>
     array (
       'regex' => '([Dd]ebian)',
       'os_replacement' => 'Debian',
     ),
-    113 =>
+    114 =>
     array (
       'regex' => '(Linux Mint)(?:/(\\d+)|)',
     ),
-    114 =>
+    115 =>
     array (
       'regex' => '(Mandriva)(?: Linux|)/(?:[\\d.-]+m[a-z]{2}(\\d+).(\\d)|)',
     ),
-    115 =>
+    116 =>
     array (
       'regex' => '(Symbian[Oo][Ss])[/ ](\\d+)\\.(\\d+)',
       'os_replacement' => 'Symbian OS',
     ),
-    116 =>
+    117 =>
     array (
       'regex' => '(Symbian/3).+NokiaBrowser/7\\.3',
       'os_replacement' => 'Symbian^3 Anna',
     ),
-    117 =>
+    118 =>
     array (
       'regex' => '(Symbian/3).+NokiaBrowser/7\\.4',
       'os_replacement' => 'Symbian^3 Belle',
     ),
-    118 =>
+    119 =>
     array (
       'regex' => '(Symbian/3)',
       'os_replacement' => 'Symbian^3',
     ),
-    119 =>
+    120 =>
     array (
       'regex' => '\\b(Series 60|SymbOS|S60Version|S60V\\d|S60\\b)',
       'os_replacement' => 'Symbian OS',
     ),
-    120 =>
+    121 =>
     array (
       'regex' => '(MeeGo)',
     ),
-    121 =>
+    122 =>
     array (
       'regex' => 'Symbian [Oo][Ss]',
       'os_replacement' => 'Symbian OS',
     ),
-    122 =>
+    123 =>
     array (
       'regex' => 'Series40;',
       'os_replacement' => 'Nokia Series 40',
     ),
-    123 =>
+    124 =>
     array (
       'regex' => 'Series30Plus;',
       'os_replacement' => 'Nokia Series 30 Plus',
     ),
-    124 =>
+    125 =>
     array (
       'regex' => '(BB10);.+Version/(\\d+)\\.(\\d+)\\.(\\d+)',
       'os_replacement' => 'BlackBerry OS',
     ),
-    125 =>
+    126 =>
     array (
       'regex' => '(Black[Bb]erry)[0-9a-z]+/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'BlackBerry OS',
     ),
-    126 =>
+    127 =>
     array (
       'regex' => '(Black[Bb]erry).+Version/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'BlackBerry OS',
     ),
-    127 =>
+    128 =>
     array (
       'regex' => '(RIM Tablet OS) (\\d+)\\.(\\d+)\\.(\\d+)',
       'os_replacement' => 'BlackBerry Tablet OS',
     ),
-    128 =>
+    129 =>
     array (
       'regex' => '(Play[Bb]ook)',
       'os_replacement' => 'BlackBerry Tablet OS',
     ),
-    129 =>
+    130 =>
     array (
       'regex' => '(Black[Bb]erry)',
       'os_replacement' => 'BlackBerry OS',
     ),
-    130 =>
+    131 =>
     array (
       'regex' => '(K[Aa][Ii]OS)\\/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'KaiOS',
     ),
-    131 =>
+    132 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/18.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
@@ -2126,144 +2164,144 @@ return array (
       'os_v2_replacement' => '0',
       'os_v3_replacement' => '1',
     ),
-    132 =>
+    133 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/18.1 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '1',
       'os_v2_replacement' => '1',
     ),
-    133 =>
+    134 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/26.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '1',
       'os_v2_replacement' => '2',
     ),
-    134 =>
+    135 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/28.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '1',
       'os_v2_replacement' => '3',
     ),
-    135 =>
+    136 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/30.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '1',
       'os_v2_replacement' => '4',
     ),
-    136 =>
+    137 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/32.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '2',
       'os_v2_replacement' => '0',
     ),
-    137 =>
+    138 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Gecko/34.0 Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
       'os_v1_replacement' => '2',
       'os_v2_replacement' => '1',
     ),
-    138 =>
+    139 =>
     array (
       'regex' => '\\((?:Mobile|Tablet);.+Firefox/\\d+\\.\\d+',
       'os_replacement' => 'Firefox OS',
     ),
-    139 =>
+    140 =>
     array (
       'regex' => '(BREW)[ /](\\d+)\\.(\\d+)\\.(\\d+)',
     ),
-    140 =>
+    141 =>
     array (
       'regex' => '(BREW);',
     ),
-    141 =>
+    142 =>
     array (
       'regex' => '(Brew MP|BMP)[ /](\\d+)\\.(\\d+)\\.(\\d+)',
       'os_replacement' => 'Brew MP',
     ),
-    142 =>
+    143 =>
     array (
       'regex' => 'BMP;',
       'os_replacement' => 'Brew MP',
     ),
-    143 =>
+    144 =>
     array (
       'regex' => '(GoogleTV)(?: (\\d+)\\.(\\d+)(?:\\.(\\d+)|)|/[\\da-z]+)',
     ),
-    144 =>
+    145 =>
     array (
       'regex' => '(WebTV)/(\\d+).(\\d+)',
     ),
-    145 =>
+    146 =>
     array (
       'regex' => '(CrKey)(?:[/](\\d+)\\.(\\d+)(?:\\.(\\d+)|)|)',
       'os_replacement' => 'Chromecast',
     ),
-    146 =>
+    147 =>
     array (
       'regex' => '(hpw|web)OS/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)',
       'os_replacement' => 'webOS',
     ),
-    147 =>
+    148 =>
     array (
       'regex' => '(VRE);',
     ),
-    148 =>
+    149 =>
     array (
       'regex' => '(Fedora|Red Hat|PCLinuxOS|Puppy|Ubuntu|Kindle|Bada|Sailfish|Lubuntu|BackTrack|Slackware|(?:Free|Open|Net|\\b)BSD)[/ ](\\d+)\\.(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)',
     ),
-    149 =>
+    150 =>
     array (
       'regex' => '(Linux)[ /](\\d+)\\.(\\d+)(?:\\.(\\d+)|).*gentoo',
       'os_replacement' => 'Gentoo',
     ),
-    150 =>
+    151 =>
     array (
       'regex' => '\\((Bada);',
     ),
-    151 =>
+    152 =>
     array (
       'regex' => '(Windows|Android|WeTab|Maemo|Web0S)',
     ),
-    152 =>
+    153 =>
     array (
       'regex' => '(Ubuntu|Kubuntu|Arch Linux|CentOS|Slackware|Gentoo|openSUSE|SUSE|Red Hat|Fedora|PCLinuxOS|Mageia|(?:Free|Open|Net|\\b)BSD)',
     ),
-    153 =>
+    154 =>
     array (
       'regex' => '(Linux)(?:[ /](\\d+)\\.(\\d+)(?:\\.(\\d+)|)|)',
     ),
-    154 =>
+    155 =>
     array (
       'regex' => 'SunOS',
       'os_replacement' => 'Solaris',
     ),
-    155 =>
+    156 =>
     array (
       'regex' => '\\(linux-gnu\\)',
       'os_replacement' => 'Linux',
     ),
-    156 =>
+    157 =>
     array (
       'regex' => '\\(x86_64-redhat-linux-gnu\\)',
       'os_replacement' => 'Red Hat',
     ),
-    157 =>
+    158 =>
     array (
       'regex' => '\\((freebsd)(\\d+)\\.(\\d+)\\)',
       'os_replacement' => 'FreeBSD',
     ),
-    158 =>
+    159 =>
     array (
       'regex' => 'linux',
       'os_replacement' => 'Linux',
     ),
-    159 =>
+    160 =>
     array (
       'regex' => '^(Roku)/DVP-(\\d+)\\.(\\d+)',
     ),
