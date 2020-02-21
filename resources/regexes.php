@@ -1106,7 +1106,7 @@ return array (
     ),
     238 =>
     array (
-      'regex' => '(iPod|iPhone|iPad).+GSA/(\\d+)\\.(\\d+)\\.(\\d+) Mobile',
+      'regex' => '(iPod|iPhone|iPad).+GSA/(\\d+)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+)|) Mobile',
       'family_replacement' => 'Google',
     ),
     239 =>
@@ -1368,7 +1368,7 @@ return array (
     ),
     293 =>
     array (
-      'regex' => '(Java)[/ ]{0,1}\\d+\\.(\\d+)\\.(\\d+)[_-]*([a-zA-Z0-9]+|)',
+      'regex' => '(Java)[/ ]?\\d+\\.(\\d+)\\.(\\d+)[_-]*([a-zA-Z0-9]+|)',
     ),
     294 =>
     array (
@@ -2351,7 +2351,7 @@ return array (
     ),
     4 =>
     array (
-      'regex' => '\\bSmartWatch *\\( *([^;]+) *; *([^;]+) *;',
+      'regex' => '\\bSmartWatch {0,2}\\( {0,2}([^;]+) {0,2}; {0,2}([^;]+) {0,2};',
       'device_replacement' => '$1 $2',
       'brand_replacement' => '$1',
       'model_replacement' => '$2',
@@ -3373,7 +3373,7 @@ return array (
     ),
     148 =>
     array (
-      'regex' => '; *([^;/]+) Build[/ ]Huawei(MT1-U06|[A-Z]+\\d+[^\\);]+)[^\\);]*\\)',
+      'regex' => '; *([^;/]+) Build[/ ]Huawei(MT1-U06|[A-Z]+\\d+[^\\);]+)\\)',
       'device_replacement' => '$1',
       'brand_replacement' => 'Huawei',
       'model_replacement' => '$2',
@@ -4437,7 +4437,7 @@ return array (
     ),
     296 =>
     array (
-      'regex' => '; *(Find ?(?:5|7a)|R8[012]\\d{1,2}|T703\\d{0,1}|U70\\d{1,2}T?|X90\\d{1,2})(?: Build|\\) AppleWebKit)',
+      'regex' => '; *(Find ?(?:5|7a)|R8[012]\\d{1,2}|T703\\d?|U70\\d{1,2}T?|X90\\d{1,2})(?: Build|\\) AppleWebKit)',
       'device_replacement' => 'Oppo $1',
       'brand_replacement' => 'Oppo',
       'model_replacement' => '$1',
@@ -6205,7 +6205,7 @@ return array (
     ),
     547 =>
     array (
-      'regex' => '(HbbTV)/[0-9]+\\.[0-9]+\\.[0-9]+ \\([^;]*; *(LG)E *; *([^;]*) *;[^;]*;[^;]*;\\)',
+      'regex' => '(HbbTV)/[0-9]+\\.[0-9]+\\.[0-9]+ \\( ?;(LG)E ?;([^;]{0,30})',
       'device_replacement' => '$1',
       'brand_replacement' => '$2',
       'model_replacement' => '$3',
@@ -6232,7 +6232,7 @@ return array (
     ),
     551 =>
     array (
-      'regex' => '(HbbTV)/[0-9]+\\.[0-9]+\\.[0-9]+ \\([^;]*; *(?:CUS:([^;]*)|([^;]+)) *; *([^;]*) *;.*;',
+      'regex' => '(HbbTV)/[0-9]+\\.[0-9]+\\.[0-9]+ \\([^;]{0,30}; ?(?:CUS:([^;]*)|([^;]+)) ?; ?([^;]{0,30})',
       'device_replacement' => '$1',
       'brand_replacement' => '$2$3',
       'model_replacement' => '$4',
@@ -6630,6 +6630,13 @@ return array (
       'device_replacement' => 'Generic Feature Phone',
       'brand_replacement' => 'Generic',
       'model_replacement' => 'Feature Phone',
+    ),
+    609 =>
+    array (
+      'regex' => 'Mac OS',
+      'device_replacement' => 'Mac',
+      'brand_replacement' => 'Apple',
+      'model_replacement' => 'Mac',
     ),
   ),
 );
