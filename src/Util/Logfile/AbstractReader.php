@@ -8,6 +8,8 @@
  */
 namespace UAParser\Util\Logfile;
 
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\SplFileInfo;
 use UAParser\Exception\ReaderException;
 
 abstract class AbstractReader implements ReaderInterface
@@ -34,9 +36,32 @@ abstract class AbstractReader implements ReaderInterface
             return static::$readers;
         }
 
+        static::$readers = static::getCustomReaders();
         static::$readers[] = new ApacheCommonLogFormatReader();
 
         return static::$readers;
+    }
+
+    public static function autoloadCustomReaders($clazz)
+    {
+        $parts = explode('\\', $clazz);
+        $path = __DIR__.DIRECTORY_SEPARATOR.'Custom'.DIRECTORY_SEPARATOR.end($parts).'.php';
+        if (is_file($path)) {
+            require $path;
+        }
+    }
+
+    private static function getCustomReaders()
+    {
+        $finder = Finder::create()->in(__DIR__.DIRECTORY_SEPARATOR.'Custom');
+        $finder->name('*.php');
+
+        $readers = array();
+        foreach ($finder as $file) {
+            $clazz = __NAMESPACE__.'\\Custom\\'.$file->getBasename('.php');
+            $readers[] = new $clazz;
+        }
+	return $readers;
     }
 
     public function test($line)
@@ -68,3 +93,5 @@ abstract class AbstractReader implements ReaderInterface
 
     abstract protected function getRegex();
 }
+
+spl_autoload_register(array('UAParser\Util\Logfile\AbstractReader','autoloadCustomReaders'));
