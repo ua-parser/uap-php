@@ -12,14 +12,14 @@ use InvalidArgumentException as BaseInvalidArgumentException;
 
 class InvalidArgumentException extends BaseInvalidArgumentException
 {
-    public static function oneOfCommandArguments()
+    public static function oneOfCommandArguments(): InvalidArgumentException
     {
         return new static(
             sprintf('One of the command arguments "%s" is required', join('", "', func_get_args()))
         );
     }
 
-    public static function unexpectedArgument($expectedType, $actualType, $position, $symbol)
+    public static function unexpectedArgument($expectedType, $actualType, $position, $symbol): InvalidArgumentException
     {
         return new static(
             sprintf(

@@ -42,7 +42,7 @@ class Parser extends AbstractParser
      * @param array $jsParseBits
      * @return Client
      */
-    public function parse($userAgent, array $jsParseBits = array())
+    public function parse($userAgent, array $jsParseBits = array()): Client
     {
         $client = new Client($userAgent);
 

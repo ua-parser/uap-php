@@ -7,6 +7,7 @@
  *
  * Released under the MIT license
  */
+
 namespace UAParser;
 
 use UAParser\Result\Device;
@@ -19,17 +20,17 @@ class DeviceParser extends AbstractParser
      * @param string $userAgent a user agent string to test
      * @return Device
      */
-    public function parseDevice($userAgent)
+    public function parseDevice($userAgent): Device
     {
         $device = new Device();
 
-        list($regex, $matches) = self::tryMatch($this->regexes['device_parsers'], $userAgent);
+        [$regex, $matches] = self::tryMatch($this->regexes['device_parsers'], $userAgent);
 
         if ($matches) {
             $device->family = self::multiReplace($regex, 'device_replacement', $matches[1], $matches);
-            $device->brand  = self::multiReplace($regex, 'brand_replacement', null, $matches);
+            $device->brand = self::multiReplace($regex, 'brand_replacement', null, $matches);
             $deviceModelDefault = $matches[1] !== 'Other' ? $matches[1] : null;
-            $device->model  = self::multiReplace($regex, 'model_replacement', $deviceModelDefault, $matches);
+            $device->model = self::multiReplace($regex, 'model_replacement', $deviceModelDefault, $matches);
         }
 
         return $device;

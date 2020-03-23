@@ -7,6 +7,7 @@
  *
  * Released under the MIT license
  */
+
 namespace UAParser;
 
 use UAParser\Result\OperatingSystem;
@@ -19,11 +20,11 @@ class OperatingSystemParser extends AbstractParser
      * @param string $userAgent a user agent string to test
      * @return OperatingSystem
      */
-    public function parseOperatingSystem($userAgent)
+    public function parseOperatingSystem($userAgent): OperatingSystem
     {
         $os = new OperatingSystem();
 
-        list($regex, $matches) = self::tryMatch($this->regexes['os_parsers'], $userAgent);
+        [$regex, $matches] = self::tryMatch($this->regexes['os_parsers'], $userAgent);
 
         if ($matches) {
             $os->family = self::multiReplace($regex, 'os_replacement', $matches[1], $matches);

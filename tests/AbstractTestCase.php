@@ -6,6 +6,7 @@
  *
  * Released under the MIT license
  */
+
 namespace UAParser\Test;
 
 use PHPUnit\Framework\TestCase;
@@ -22,7 +23,7 @@ abstract class AbstractTestCase extends TestCase
      * @param int $exception_code
      *   The expected exception code.
      */
-    public function setExpectedException($class, $message = '', $exception_code = NULL)
+    public function setExpectedException($class, string $message = '', int $exception_code = NULL): void
     {
         if (method_exists($this, 'expectException')) {
             $this->expectException($class);

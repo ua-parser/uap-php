@@ -31,8 +31,8 @@ class Client extends AbstractClient
         $this->originalUserAgent = $originalUserAgent;
     }
 
-    public function toString()
+    public function toString(): string
     {
-        return $this->ua->toString() . '/' . $this->os->toString();
+        return $this->ua->toString().'/'.$this->os->toString();
     }
 }

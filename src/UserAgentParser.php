@@ -7,6 +7,7 @@
  *
  * Released under the MIT license
  */
+
 namespace UAParser;
 
 use UAParser\Result\UserAgent;
@@ -20,7 +21,7 @@ class UserAgentParser extends AbstractParser
      * @param array $jsParseBits
      * @return UserAgent
      */
-    public function parseUserAgent($userAgent, array $jsParseBits = array())
+    public function parseUserAgent($userAgent, array $jsParseBits = array()): UserAgent
     {
         $ua = new UserAgent();
 

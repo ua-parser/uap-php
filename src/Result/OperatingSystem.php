@@ -23,7 +23,7 @@ class OperatingSystem extends AbstractVersionedSoftware
     /** @var string */
     public $patchMinor;
 
-    public function toVersion()
+    public function toVersion(): string
     {
         return $this->formatVersion($this->major, $this->minor, $this->patch, $this->patchMinor);
     }

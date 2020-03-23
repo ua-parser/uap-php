@@ -12,12 +12,12 @@ use Exception;
 
 class FileNotFoundException extends Exception
 {
-    public static function fileNotFound($file)
+    public static function fileNotFound($file): FileNotFoundException
     {
         return new static(sprintf('File "%s" does not exist', $file));
     }
 
-    public static function customRegexFileNotFound($file)
+    public static function customRegexFileNotFound($file): FileNotFoundException
     {
         return new static(
             sprintf(

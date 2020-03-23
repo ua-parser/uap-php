@@ -4,21 +4,22 @@ before_script:
   - phpenv config-rm xdebug.ini || true
 
 php:
-  - 5.6
-  - 7.0
-  - 7.1
   - 7.2
   - 7.3
   - 7.4
   - nightly
 
 matrix:
-    allow_failures:
-        - php: nightly
-    include:
-        - php: 5.3
-          dist: precise
-          
+  allow_failures:
+    - php: nightly
+  include:
+    - php: 7.2
+      env: php_extra="7.4"
+    - php: 7.3
+      env: deps=high
+    - php: 7.4
+      env: deps=low
+
 install:
   - composer install
 

@@ -6,13 +6,14 @@
  *
  * Released under the MIT license
  */
+
 namespace UAParser\Test\Util\Logfile;
 
 use UAParser\Util\Logfile\ApacheCommonLogFormatReader;
 
 class ApacheCommonLogFormatReaderTest extends AbstractReaderTest
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->reader = new ApacheCommonLogFormatReader();
 
@@ -22,6 +23,6 @@ EOS;
         $this->userAgentString = 'Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.0.19; aggregator:Spinn3r (Spinn3r 3.1); http://spinn3r.com/robot) Gecko/2010040121 Firefox/3.0.19';
 
         // Set your example log file
-        //$this->exampleLogFile = '/var/log/access.log';
+        //$this->exampleLogFile = '/var/log/apache2/access.log';
     }
 }

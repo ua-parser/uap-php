@@ -9,27 +9,28 @@
 namespace UAParser\Test;
 
 use UAParser\AbstractParser;
+use UAParser\Exception\FileNotFoundException;
 
 abstract class AbstractParserTest extends AbstractTestCase
 {
-    public function testCreateDefault()
+    public function testCreateDefault(): void
     {
         $parserClassName = $this->getParserClassName();
 
         $this->assertInstanceOf($parserClassName, $parserClassName::create());
     }
 
-    public function testCreateCustom()
+    public function testCreateCustom(): void
     {
         $parserClassName = $this->getParserClassName();
 
         $this->assertInstanceOf(
             $parserClassName,
-            $parserClassName::create(__DIR__ . '/../resources/regexes.php')
+            $parserClassName::create(__DIR__.'/../resources/regexes.php')
         );
     }
 
-    public function testCreateCustomWithInvalidFile()
+    public function testCreateCustomWithInvalidFile(): void
     {
         $parserClassName = $this->getParserClassName();
 
@@ -40,12 +41,12 @@ abstract class AbstractParserTest extends AbstractTestCase
         $parserClassName::create('foo.php');
     }
 
-    public function testExceptionOnFileNotFoundInvalidDefault()
+    public function testExceptionOnFileNotFoundInvalidDefault(): void
     {
         $parserClassName = $this->getParserClassName();
 
         $this->setExpectedException(
-            'UAParser\Exception\FileNotFoundException',
+            FileNotFoundException::class,
             'Please download the "invalidFile" file before using ua-parser by running "php bin/uaparser ua-parser:update"'
         );
 
@@ -53,19 +54,19 @@ abstract class AbstractParserTest extends AbstractTestCase
         $parserClassName::create();
     }
 
-    public function testDefaultFileIsAbsolute()
+    public function testDefaultFileIsAbsolute(): void
     {
-        $class = new \ReflectionClass('UAParser\AbstractParser');
+        $class = new \ReflectionClass(AbstractParser::class);
         $method = $class->getMethod('getDefaultFile');
         $method->setAccessible(true);
 
-        $this->assertNotContains('..', $method->invoke(null));
+        $this->assertStringNotContainsString('..', $method->invoke(null));
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         AbstractParser::$defaultFile = null;
     }
 
-    abstract protected function getParserClassName();
+    abstract protected function getParserClassName(): string;
 }
