@@ -130,7 +130,7 @@ class LogfileCommand extends Command
         return 0;
     }
 
-    private function outputProgress(OutputInterface $output, $result, $count, $totalCount, $end = false): int
+    private function outputProgress(OutputInterface $output, string $result, int $count, int $totalCount, bool $end = false): int
     {
         if (($count % 70) === 0 || $end) {
             $formatString = '%s  %'.strlen($totalCount).'d / %-'.strlen($totalCount).'d (%3d%%)';

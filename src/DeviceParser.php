@@ -20,7 +20,7 @@ class DeviceParser extends AbstractParser
      * @param string $userAgent a user agent string to test
      * @return Device
      */
-    public function parseDevice($userAgent): Device
+    public function parseDevice(string $userAgent): Device
     {
         $device = new Device();
 

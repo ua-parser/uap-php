@@ -20,7 +20,7 @@ class OperatingSystemParser extends AbstractParser
      * @param string $userAgent a user agent string to test
      * @return OperatingSystem
      */
-    public function parseOperatingSystem($userAgent): OperatingSystem
+    public function parseOperatingSystem(string $userAgent): OperatingSystem
     {
         $os = new OperatingSystem();
 

@@ -34,7 +34,7 @@ abstract class AbstractParser
      * @return static
      * @throws FileNotFoundException
      */
-    public static function create($file = null)
+    public static function create(?string $file = null): self
     {
         return $file ? static::createCustom($file) : static::createDefault();
     }
@@ -43,27 +43,28 @@ abstract class AbstractParser
      * @return static
      * @throws FileNotFoundException
      */
-    protected static function createDefault()
+    protected static function createDefault(): self
     {
         return static::createInstance(
             static::getDefaultFile(),
-            array(FileNotFoundException::class, 'defaultFileNotFound')
+            [FileNotFoundException::class, 'defaultFileNotFound']
         );
     }
 
     /**
+     * @param string $file
      * @return static
      * @throws FileNotFoundException
      */
-    protected static function createCustom($file)
+    protected static function createCustom(string $file): self
     {
         return static::createInstance(
             $file,
-            array(FileNotFoundException::class, 'customRegexFileNotFound')
+            [FileNotFoundException::class, 'customRegexFileNotFound']
         );
     }
 
-    private static function createInstance($file, $exceptionFactory)
+    private static function createInstance(string $file, $exceptionFactory): self
     {
         if (!file_exists($file)) {
             throw $exceptionFactory($file);
@@ -77,7 +78,7 @@ abstract class AbstractParser
      * @param string $userAgent
      * @return array
      */
-    protected static function tryMatch(array $regexes, $userAgent): array
+    protected static function tryMatch(array $regexes, string $userAgent): array
     {
         foreach ($regexes as $regex) {
             $flag = $regex['regex_flag'] ?? '';
@@ -122,7 +123,7 @@ abstract class AbstractParser
         return self::emptyStringToNull($replacement);
     }
 
-    private static function emptyStringToNull($string): ?string
+    private static function emptyStringToNull(?string $string): ?string
     {
         $string = trim($string);
 

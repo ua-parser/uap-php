@@ -21,7 +21,7 @@ class UserAgentParser extends AbstractParser
      * @param array $jsParseBits
      * @return UserAgent
      */
-    public function parseUserAgent($userAgent, array $jsParseBits = array()): UserAgent
+    public function parseUserAgent(string $userAgent, array $jsParseBits = array()): UserAgent
     {
         $ua = new UserAgent();
 
@@ -34,7 +34,7 @@ class UserAgentParser extends AbstractParser
 
         } else {
 
-            list($regex, $matches) = self::tryMatch($this->regexes['user_agent_parsers'], $userAgent);
+            [$regex, $matches] = self::tryMatch($this->regexes['user_agent_parsers'], $userAgent);
 
             if ($matches) {
                 $ua->family = self::multiReplace($regex, 'family_replacement', $matches[1], $matches);
