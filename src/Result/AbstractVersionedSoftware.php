@@ -20,9 +20,12 @@ abstract class AbstractVersionedSoftware extends AbstractSoftware
         return implode(' ', array_filter(array($this->family, $this->toVersion())));
     }
 
-    /** @return string */
-    protected function formatVersion(): string
+    /**
+     * @param string ...$args
+     * @return string
+     */
+    protected function formatVersion(?string ...$args): string
     {
-        return implode('.', array_filter(func_get_args(), 'is_numeric'));
+        return implode('.', array_filter($args, 'is_numeric'));
     }
 }
