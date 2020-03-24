@@ -23,7 +23,6 @@ class Client extends AbstractClient
     /** @var string */
     public $originalUserAgent;
 
-    /** @param string $originalUserAgent */
     public function __construct(string $originalUserAgent)
     {
         $this->originalUserAgent = $originalUserAgent;

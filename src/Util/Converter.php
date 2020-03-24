@@ -20,21 +20,13 @@ class Converter
     /** @var Filesystem */
     private $fs;
 
-    /**
-     * @param string $destination
-     * @param Filesystem $fs
-     */
     public function __construct(string $destination, Filesystem $fs = null)
     {
         $this->destination = $destination;
         $this->fs = $fs ?: new Filesystem();
     }
 
-    /**
-     * @param string $yamlFile
-     * @param bool $backupBeforeOverride
-     * @throws FileNotFoundException
-     */
+    /** @throws FileNotFoundException */
     public function convertFile(string $yamlFile, bool $backupBeforeOverride = true): void
     {
         if (!$this->fs->exists($yamlFile)) {
@@ -44,19 +36,11 @@ class Converter
         $this->doConvert(Yaml::parse(file_get_contents($yamlFile)), $backupBeforeOverride);
     }
 
-    /**
-     * @param string $yamlString
-     * @param bool $backupBeforeOverride
-     */
     public function convertString(string $yamlString, bool $backupBeforeOverride = true): void
     {
         $this->doConvert(Yaml::parse($yamlString), $backupBeforeOverride);
     }
 
-    /**
-     * @param array $regexes
-     * @param bool $backupBeforeOverride
-     */
     protected function doConvert(array $regexes, bool $backupBeforeOverride = true): void
     {
         $regexes = $this->sanitizeRegexes($regexes);

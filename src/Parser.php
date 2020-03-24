@@ -22,11 +22,7 @@ class Parser extends AbstractParser
     /** @var UserAgentParser */
     private $userAgentParser;
 
-    /**
-     * Start up the parser by importing the data file to $this->regexes
-     *
-     * @param array $regexes
-     */
+    /** Start up the parser by importing the data file to $this->regexes */
     public function __construct(array $regexes)
     {
         parent::__construct($regexes);
@@ -35,13 +31,7 @@ class Parser extends AbstractParser
         $this->userAgentParser = new UserAgentParser($this->regexes);
     }
 
-    /**
-     * Sets up some standard variables as well as starts the user agent parsing process
-     *
-     * @param string $userAgent a user agent string to test, defaults to an empty string
-     * @param array $jsParseBits
-     * @return Client
-     */
+    /** Sets up some standard variables as well as starts the user agent parsing process */
     public function parse(string $userAgent, array $jsParseBits = array()): Client
     {
         $client = new Client($userAgent);

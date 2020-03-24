@@ -16,10 +16,6 @@ abstract class AbstractReader implements ReaderInterface
     /** @var ReaderInterface[] */
     private static $readers = array();
 
-    /**
-     * @param string $line
-     * @return ReaderInterface
-     */
     public static function factory(string $line): ReaderInterface
     {
         foreach (static::getReaders() as $reader) {

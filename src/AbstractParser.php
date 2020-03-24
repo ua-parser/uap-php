@@ -29,9 +29,6 @@ abstract class AbstractParser
      * Create parser instance
      *
      * Either pass a custom regexes.php file or leave the argument empty and use the default file.
-     *
-     * @param string $file
-     * @return static
      * @throws FileNotFoundException
      */
     public static function create(?string $file = null): self
@@ -39,10 +36,7 @@ abstract class AbstractParser
         return $file ? static::createCustom($file) : static::createDefault();
     }
 
-    /**
-     * @return static
-     * @throws FileNotFoundException
-     */
+    /** @throws FileNotFoundException */
     protected static function createDefault(): self
     {
         return static::createInstance(
@@ -51,11 +45,7 @@ abstract class AbstractParser
         );
     }
 
-    /**
-     * @param string $file
-     * @return static
-     * @throws FileNotFoundException
-     */
+    /** @throws FileNotFoundException */
     protected static function createCustom(string $file): self
     {
         return static::createInstance(
@@ -73,11 +63,6 @@ abstract class AbstractParser
         return new static(include $file);
     }
 
-    /**
-     * @param array $regexes
-     * @param string $userAgent
-     * @return array
-     */
     protected static function tryMatch(array $regexes, string $userAgent): array
     {
         foreach ($regexes as $regex) {
@@ -99,13 +84,6 @@ abstract class AbstractParser
         return array(null, null);
     }
 
-    /**
-     * @param array $regex
-     * @param string $key
-     * @param string $default
-     * @param array $matches
-     * @return string|null
-     */
     protected static function multiReplace(array $regex, string $key, ?string $default, array $matches): ?string
     {
         if (!isset($regex[$key])) {
@@ -130,9 +108,6 @@ abstract class AbstractParser
         return $string === '' ? null : $string;
     }
 
-    /**
-     * @return string
-     */
     protected static function getDefaultFile(): string
     {
         return static::$defaultFile ?: dirname(__DIR__).'/resources'.DIRECTORY_SEPARATOR.'regexes.php';
