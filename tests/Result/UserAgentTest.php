@@ -8,20 +8,20 @@
  */
 namespace UAParser\Test\Result;
 
-use UAParser\Test\AbstractTestCase;
 use UAParser\Result\OperatingSystem;
+use UAParser\Test\AbstractTestCase;
 
 class UserAgentTest extends AbstractTestCase
 {
     /** @var OperatingSystem */
     private $operatingSystem;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->operatingSystem = new OperatingSystem();
     }
 
-    public function testBugWith0InVersion()
+    public function testBugWith0InVersion(): void
     {
         $this->operatingSystem->major = 0;
         $this->operatingSystem->minor = 0;

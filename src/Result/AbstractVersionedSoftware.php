@@ -11,18 +11,15 @@ namespace UAParser\Result;
 
 abstract class AbstractVersionedSoftware extends AbstractSoftware
 {
-    /** @return string */
-    abstract public function toVersion();
+    abstract public function toVersion(): string;
 
-    /** @return string */
-    public function toString()
+    public function toString(): string
     {
-        return join(' ', array_filter(array($this->family, $this->toVersion())));
+        return implode(' ', array_filter(array($this->family, $this->toVersion())));
     }
 
-    /** @return string */
-    protected function formatVersion()
+    protected function formatVersion(?string ...$args): string
     {
-        return join('.', array_filter(func_get_args(), 'is_numeric'));
+        return implode('.', array_filter($args, 'is_numeric'));
     }
 }

@@ -23,16 +23,13 @@ class Client extends AbstractClient
     /** @var string */
     public $originalUserAgent;
 
-    /**
-     * @param string $originalUserAgent
-     */
-    public function __construct($originalUserAgent)
+    public function __construct(string $originalUserAgent)
     {
         $this->originalUserAgent = $originalUserAgent;
     }
 
-    public function toString()
+    public function toString(): string
     {
-        return $this->ua->toString() . '/' . $this->os->toString();
+        return $this->ua->toString().'/'.$this->os->toString();
     }
 }

@@ -6,6 +6,7 @@
  *
  * Released under the MIT license
  */
+
 namespace UAParser\Util;
 
 use Composer\CaBundle\CaBundle;
@@ -26,11 +27,11 @@ class Fetcher
             $this->streamContext = stream_context_create(
                 array(
                     'ssl' => array(
-                        'verify_peer'            => true,
-                        'verify_depth'           => 10,
-                        'cafile'                 => CaBundle::getSystemCaRootBundlePath(),
+                        'verify_peer' => true,
+                        'verify_depth' => 10,
+                        'cafile' => CaBundle::getSystemCaRootBundlePath(),
                         static::getPeerNameKey() => 'www.github.com',
-                        'disable_compression'    => true,
+                        'disable_compression' => true,
                     )
                 )
             );
@@ -51,7 +52,7 @@ class Fetcher
         return $result;
     }
 
-    public static function getPeerNameKey()
+    public static function getPeerNameKey(): string
     {
         return version_compare(PHP_VERSION, '5.6') === 1 ? 'peer_name' : 'CN_match';
     }

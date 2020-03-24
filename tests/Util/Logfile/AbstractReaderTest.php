@@ -8,6 +8,7 @@
  */
 namespace UAParser\Test\Util\Logfile;
 
+use UAParser\Exception\ReaderException;
 use UAParser\Test\AbstractTestCase;
 use UAParser\Util\Logfile\ReaderInterface;
 
@@ -25,31 +26,31 @@ abstract class AbstractReaderTest extends AbstractTestCase
     /** @var string */
     protected $exampleLogFile;
 
-    public function testTestEmptyLine()
+    public function testTestEmptyLine(): void
     {
         $this->assertFalse($this->reader->test(''));
     }
 
-    public function testTestRealLine()
+    public function testTestRealLine(): void
     {
         $this->assertTrue($this->reader->test($this->line));
     }
 
-    public function testReadEmptyLine()
+    public function testReadEmptyLine(): void
     {
         $this->setExpectedException(
-            'UAParser\Exception\ReaderException',
+            ReaderException::class,
             'Cannot extract user agent string from line "invalid"'
         );
         $this->reader->read('invalid');
     }
 
-    public function testReadRealLine()
+    public function testReadRealLine(): void
     {
         $this->assertSame($this->userAgentString, $this->reader->read($this->line));
     }
 
-    public function testReadingFile()
+    public function testReadingFile(): void
     {
         if (!$this->exampleLogFile) {
             $this->markTestSkipped('Try with your own log file');

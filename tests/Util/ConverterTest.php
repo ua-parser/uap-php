@@ -6,11 +6,13 @@
  *
  * Released under the MIT license
  */
+
 namespace UAParser\Test\Util;
 
-use UAParser\Test\AbstractTestCase;
-use PHPUnit_Framework_MockObject_MockObject as MockObject;
+use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\Filesystem\Filesystem;
+use UAParser\Exception\FileNotFoundException;
+use UAParser\Test\AbstractTestCase;
 use UAParser\Util\Converter;
 
 class ConverterTest extends AbstractTestCase
@@ -30,10 +32,10 @@ class ConverterTest extends AbstractTestCase
     /** @var string */
     private $php;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->fs = $this
-            ->getMockBuilder('Symfony\Component\Filesystem\Filesystem')
+            ->getMockBuilder(Filesystem::class)
             ->disableOriginalConstructor()
             ->disableOriginalClone()
             ->getMock();
@@ -42,7 +44,7 @@ class ConverterTest extends AbstractTestCase
 group:
     - {regex: "REGEX@"}
 EOS;
-        $this->yamlFile = sys_get_temp_dir() . '/uaparser-' . time() . '.yaml';
+        $this->yamlFile = sys_get_temp_dir().'/uaparser-'.time().'.yaml';
         file_put_contents($this->yamlFile, $yaml);
 
         $this->php = <<<EOS
@@ -57,44 +59,44 @@ return array (
   ),
 );
 EOS;
-        $this->phpFile = sys_get_temp_dir() . '/regexes.php';
+        $this->phpFile = sys_get_temp_dir().'/regexes.php';
         touch($this->phpFile);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         @unlink($this->yamlFile);
         @unlink($this->phpFile);
     }
 
-    public function testExceptionIsThrownIfFileDoesNotExist()
+    public function testExceptionIsThrownIfFileDoesNotExist(): void
     {
         $this->fs
             ->expects($this->once())
             ->method('exists')
             ->with('path/to/file')
-            ->will($this->returnValue(false));
+            ->willReturn(false);
 
         $this->setExpectedException(
-            'UAParser\Exception\FileNotFoundException',
+            FileNotFoundException::class,
             'File "path/to/file" does not exist'
         );
         $this->converter->convertFile('path/to/file');
     }
 
-    public function testFileIsBackedUpIfExists()
+    public function testFileIsBackedUpIfExists(): void
     {
         $this->fs
             ->expects($this->at(0))
             ->method('exists')
             ->with($this->yamlFile)
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $this->fs
             ->expects($this->at(1))
             ->method('exists')
             ->with($this->phpFile)
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $this->fs
             ->expects($this->once())
@@ -103,7 +105,7 @@ EOS;
                 $this->phpFile,
                 $this->matchesRegularExpression('@/regexes-.{128}\.php@')
             )
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $this->fs
             ->expects($this->once())
@@ -113,7 +115,7 @@ EOS;
         $this->converter->convertFile($this->yamlFile);
     }
 
-    public function testFileIsNotBackedUpIfHashesDoNotMatch()
+    public function testFileIsNotBackedUpIfHashesDoNotMatch(): void
     {
         file_put_contents($this->phpFile, $this->php);
 
@@ -121,13 +123,13 @@ EOS;
             ->expects($this->at(0))
             ->method('exists')
             ->with($this->yamlFile)
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $this->fs
             ->expects($this->at(1))
             ->method('exists')
             ->with($this->phpFile)
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $this->fs
             ->expects($this->never())
@@ -140,13 +142,13 @@ EOS;
         $this->converter->convertFile($this->yamlFile);
     }
 
-    public function testFileIsNotBackedUp()
+    public function testFileIsNotBackedUp(): void
     {
         $this->fs
             ->expects($this->once())
             ->method('exists')
             ->with($this->yamlFile)
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $this->fs
             ->expects($this->never())

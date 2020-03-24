@@ -8,6 +8,7 @@
  */
 namespace UAParser\Test\Util;
 
+use UAParser\Exception\FetcherException;
 use UAParser\Test\AbstractTestCase;
 use UAParser\Util\Fetcher;
 
@@ -16,28 +17,29 @@ use UAParser\Util\Fetcher;
  */
 class FetcherTest extends AbstractTestCase
 {
-    public function testFetchSuccess()
+    public function testFetchSuccess(): void
     {
         $fetcher = new Fetcher();
-        $this->assertInternalType('string', $fetcher->fetch());
+
+        $this->assertIsString($fetcher->fetch());
     }
 
-    public function testFetchError()
+    public function testFetchError(): void
     {
-        $url = "https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml";
+        $url = 'https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml';
         $fetcher = new Fetcher(
             stream_context_create(
                 array(
                     'ssl' => array(
-                        'verify_peer'              => true,
-                        Fetcher::getPeerNameKey()  => 'invalid.com',
+                        'verify_peer' => true,
+                        Fetcher::getPeerNameKey() => 'invalid.com',
                     )
                 )
             )
         );
 
         $this->setExpectedException(
-            'UAParser\Exception\FetcherException',
+            FetcherException::class,
             'Could not fetch HTTP resource "'.$url.'": file_get_contents('.$url.'): failed to open stream: operation failed'
         );
 

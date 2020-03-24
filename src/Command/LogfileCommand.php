@@ -6,6 +6,7 @@
  *
  * Released under the MIT license
  */
+
 namespace UAParser\Command;
 
 use Symfony\Component\Console\Command\Command;
@@ -24,7 +25,7 @@ use UAParser\Util\Logfile\AbstractReader;
 
 class LogfileCommand extends Command
 {
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('ua-parser:log')
@@ -59,11 +60,10 @@ class LogfileCommand extends Command
                 InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED,
                 'Exclude glob expressions for log files in the log directory',
                 array('*error*')
-            )
-        ;
+            );
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         if (!$input->getOption('log-file') && !$input->getOption('log-dir')) {
             throw InvalidArgumentException::oneOfCommandArguments('log-file', 'log-dir');
@@ -125,13 +125,15 @@ class LogfileCommand extends Command
         $undefinedClients = $this->filter($undefinedClients);
 
         $fs = new Filesystem();
-        $fs->dumpFile($input->getArgument('output'), join(PHP_EOL, $undefinedClients));
+        $fs->dumpFile($input->getArgument('output'), implode(PHP_EOL, $undefinedClients));
+
+        return 0;
     }
 
-    private function outputProgress(OutputInterface $output, $result, $count, $totalCount, $end = false)
+    private function outputProgress(OutputInterface $output, string $result, int $count, int $totalCount, bool $end = false): int
     {
         if (($count % 70) === 0 || $end) {
-            $formatString = '%s  %' . strlen($totalCount) . 'd / %-' . strlen($totalCount) . 'd (%3d%%)';
+            $formatString = '%s  %'.strlen($totalCount).'d / %-'.strlen($totalCount).'d (%3d%%)';
             $result = $end ? str_repeat(' ', 70 - ($count % 70)) : $result;
             $output->writeln(sprintf($formatString, $result, $count, $totalCount, $count / $totalCount * 100));
         } else {
@@ -141,24 +143,28 @@ class LogfileCommand extends Command
         return $count + 1;
     }
 
-    private function getResult(Client $client)
+    private function getResult(Client $client): string
     {
         if ($client->device->family === 'Spider') {
             return '.';
-        } elseif ($client->ua->family === 'Other') {
+        }
+        if ($client->ua->family === 'Other') {
             return 'U';
-        } elseif ($client->os->family === 'Other') {
+        }
+        if ($client->os->family === 'Other') {
             return 'O';
-        } elseif ($client->device->family === 'Generic Smartphone') {
+        }
+        if ($client->device->family === 'Generic Smartphone') {
             return 'S';
-        } elseif ($client->device->family === 'Generic Feature Phone') {
+        }
+        if ($client->device->family === 'Generic Feature Phone') {
             return 'F';
         }
 
         return '.';
     }
 
-    private function getFiles(InputInterface $input)
+    private function getFiles(InputInterface $input): Finder
     {
         $finder = Finder::create();
 
@@ -179,20 +185,20 @@ class LogfileCommand extends Command
         return $finder;
     }
 
-    private function filter(array $lines)
+    private function filter(array $lines): array
     {
         return array_values(array_unique($lines));
     }
 
-    private function getPath(SplFileInfo $file)
+    private function getPath(SplFileInfo $file): string
     {
         switch ($file->getExtension()) {
             case 'gz':
-                $path = 'compress.zlib://' . $file->getPathname();
+                $path = 'compress.zlib://'.$file->getPathname();
                 break;
 
             case 'bz2':
-                $path = 'compress.bzip2://' . $file->getPathname();
+                $path = 'compress.bzip2://'.$file->getPathname();
                 break;
 
             default:

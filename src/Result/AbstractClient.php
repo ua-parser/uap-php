@@ -11,10 +11,8 @@ namespace UAParser\Result;
 
 abstract class AbstractClient
 {
-    /** @return string */
-    abstract public function toString();
+    abstract public function toString(): string;
 
-    /** @return string */
     public function __toString()
     {
         return $this->toString();

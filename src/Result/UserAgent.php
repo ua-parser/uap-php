@@ -20,7 +20,7 @@ class UserAgent extends AbstractVersionedSoftware
     /** @var string */
     public $patch;
 
-    public function toVersion()
+    public function toVersion(): string
     {
         return $this->formatVersion($this->major, $this->minor, $this->patch);
     }

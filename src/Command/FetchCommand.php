@@ -26,7 +26,7 @@ class FetchCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('ua-parser:fetch')
@@ -40,10 +40,12 @@ class FetchCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $fs = new Filesystem();
         $fetcher = new Fetcher();
         $fs->dumpFile($input->getArgument('file'), $fetcher->fetch());
+
+        return 0;
     }
 }

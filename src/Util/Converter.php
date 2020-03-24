@@ -20,22 +20,14 @@ class Converter
     /** @var Filesystem */
     private $fs;
 
-    /**
-     * @param string $destination
-     * @param Filesystem $fs
-     */
-    public function __construct($destination, Filesystem $fs = null)
+    public function __construct(string $destination, Filesystem $fs = null)
     {
         $this->destination = $destination;
-        $this->fs = $fs ? $fs : new Filesystem();
+        $this->fs = $fs ?: new Filesystem();
     }
 
-    /**
-     * @param string $yamlFile
-     * @param bool $backupBeforeOverride
-     * @throws FileNotFoundException
-     */
-    public function convertFile($yamlFile, $backupBeforeOverride = true)
+    /** @throws FileNotFoundException */
+    public function convertFile(string $yamlFile, bool $backupBeforeOverride = true): void
     {
         if (!$this->fs->exists($yamlFile)) {
             throw FileNotFoundException::fileNotFound($yamlFile);
@@ -44,25 +36,17 @@ class Converter
         $this->doConvert(Yaml::parse(file_get_contents($yamlFile)), $backupBeforeOverride);
     }
 
-    /**
-     * @param string $yamlString
-     * @param bool $backupBeforeOverride
-     */
-    public function convertString($yamlString, $backupBeforeOverride = true)
+    public function convertString(string $yamlString, bool $backupBeforeOverride = true): void
     {
         $this->doConvert(Yaml::parse($yamlString), $backupBeforeOverride);
     }
 
-    /**
-     * @param array $regexes
-     * @param bool $backupBeforeOverride
-     */
-    protected function doConvert(array $regexes, $backupBeforeOverride = true)
+    protected function doConvert(array $regexes, bool $backupBeforeOverride = true): void
     {
         $regexes = $this->sanitizeRegexes($regexes);
-        $data = "<?php\nreturn " . preg_replace('/\s+$/m', '', var_export($regexes, true)) . ';';
+        $data = "<?php\nreturn ".preg_replace('/\s+$/m', '', var_export($regexes, true)).';';
 
-        $regexesFile = $this->destination . '/regexes.php';
+        $regexesFile = $this->destination.'/regexes.php';
         if ($backupBeforeOverride && $this->fs->exists($regexesFile)) {
 
             $currentHash = hash('sha512', file_get_contents($regexesFile));
@@ -79,7 +63,7 @@ class Converter
         $this->fs->dumpFile($regexesFile, $data);
     }
 
-    private function sanitizeRegexes(array $regexes)
+    private function sanitizeRegexes(array $regexes): array
     {
         foreach ($regexes as $groupName => $group) {
             $regexes[$groupName] = array_map(array($this, 'sanitizeRegex'), $group);
@@ -88,7 +72,7 @@ class Converter
         return $regexes;
     }
 
-    private function sanitizeRegex(array $regex)
+    private function sanitizeRegex(array $regex): array
     {
         $regex['regex'] = str_replace('@', '\@', $regex['regex']);
 
