@@ -54,7 +54,7 @@ abstract class AbstractParser
         );
     }
 
-    private static function createInstance(string $file, $exceptionFactory): self
+    private static function createInstance(string $file, callable $exceptionFactory): self
     {
         if (!file_exists($file)) {
             throw $exceptionFactory($file);
