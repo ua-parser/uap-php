@@ -60,7 +60,12 @@ abstract class AbstractParser
             throw $exceptionFactory($file);
         }
 
-        return new static(include $file);
+        static $map = [];
+        if (!isset($map[$file])) {
+            $map[$file] = include $file;
+        }
+
+        return new static($map[$file]);
     }
 
     protected static function tryMatch(array $regexes, string $userAgent): array
