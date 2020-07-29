@@ -13,6 +13,8 @@ use UAParser\Result\Client;
 
 class Parser extends AbstractParser
 {
+    use ParserFactoryMethods;
+
     /** @var DeviceParser */
     private $deviceParser;
 

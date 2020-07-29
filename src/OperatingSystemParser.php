@@ -14,6 +14,8 @@ use UAParser\Result\OperatingSystem;
 
 class OperatingSystemParser extends AbstractParser
 {
+    use ParserFactoryMethods;
+
     /** Attempts to see if the user agent matches an operating system regex from regexes.php */
     public function parseOperatingSystem(string $userAgent): OperatingSystem
     {

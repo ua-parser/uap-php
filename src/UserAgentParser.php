@@ -14,6 +14,8 @@ use UAParser\Result\UserAgent;
 
 class UserAgentParser extends AbstractParser
 {
+    use ParserFactoryMethods;
+
     /** Attempts to see if the user agent matches a user agents regex from regexes.php */
     public function parseUserAgent(string $userAgent, array $jsParseBits = array()): UserAgent
     {
