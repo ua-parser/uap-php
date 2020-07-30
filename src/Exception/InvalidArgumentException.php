@@ -10,11 +10,11 @@ namespace UAParser\Exception;
 
 use InvalidArgumentException as BaseInvalidArgumentException;
 
-class InvalidArgumentException extends BaseInvalidArgumentException
+final class InvalidArgumentException extends BaseInvalidArgumentException
 {
     public static function oneOfCommandArguments(string ...$args): self
     {
-        return new static(
+        return new self(
             sprintf('One of the command arguments "%s" is required', implode('", "', $args))
         );
     }

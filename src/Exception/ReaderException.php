@@ -8,15 +8,15 @@
  */
 namespace UAParser\Exception;
 
-class ReaderException extends DomainException
+final class ReaderException extends DomainException
 {
     public static function userAgentParserError(string $line): self
     {
-        return new static(sprintf('Cannot extract user agent string from line "%s"', $line));
+        return new self(sprintf('Cannot extract user agent string from line "%s"', $line));
     }
 
     public static function readerNotFound(string $line): self
     {
-        return new static(sprintf('Cannot find reader that can handle "%s"', $line));
+        return new self(sprintf('Cannot find reader that can handle "%s"', $line));
     }
 }

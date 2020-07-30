@@ -3,7 +3,8 @@
     "description": "A multi-language port of Browserscope's user agent parser.",
     "require": {
         "php": "^7.2",
-        "composer/ca-bundle": "^1.1"
+        "composer/ca-bundle": "^1.1",
+        "phpstan/phpstan": "^0.12.33"
     },
     "require-dev": {
         "phpunit/phpunit": "^8 || ^9",

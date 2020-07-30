@@ -23,5 +23,6 @@ install:
 script:
   - ./vendor/bin/phpunit
   - ./vendor/bin/psalm
+  - ./vendor/bin/phpstan analyse -l 5 src
 
 sudo: false
