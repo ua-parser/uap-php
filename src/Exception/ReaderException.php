@@ -14,4 +14,9 @@ class ReaderException extends DomainException
     {
         return new static(sprintf('Cannot extract user agent string from line "%s"', $line));
     }
+
+    public static function readerNotFound(string $line): self
+    {
+        return new static(sprintf('Cannot find reader that can handle "%s"', $line));
+    }
 }

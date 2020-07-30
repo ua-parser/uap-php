@@ -33,7 +33,7 @@ class UserAgentParser extends AbstractParser
             [$regex, $matches] = self::tryMatch($this->regexes['user_agent_parsers'], $userAgent);
 
             if ($matches) {
-                $ua->family = self::multiReplace($regex, 'family_replacement', $matches[1], $matches);
+                $ua->family = self::multiReplace($regex, 'family_replacement', $matches[1], $matches) ?? $ua->family;
                 $ua->major = self::multiReplace($regex, 'v1_replacement', $matches[2], $matches);
                 $ua->minor = self::multiReplace($regex, 'v2_replacement', $matches[3], $matches);
                 $ua->patch = self::multiReplace($regex, 'v3_replacement', $matches[4], $matches);
@@ -44,7 +44,11 @@ class UserAgentParser extends AbstractParser
             $jsUserAgentString = $jsParseBits['js_user_agent_string'];
             if (strpos($jsUserAgentString, 'Chrome/') !== false && strpos($userAgent, 'chromeframe') !== false) {
                 $override = $this->parseUserAgent($jsUserAgentString);
-                $ua->family = sprintf('Chrome Frame (%s %s)', $ua->family, $ua->major);
+                $family = $ua->family;
+                $ua->family = 'Chrome Frame';
+                if ($family !== null && $ua->major !== null) {
+                    $ua->family .= sprintf(' (%s %s)', $family, $ua->major);
+                }
                 $ua->major = $override->major;
                 $ua->minor = $override->minor;
                 $ua->patch = $override->patch;

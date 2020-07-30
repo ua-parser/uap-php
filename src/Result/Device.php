@@ -11,9 +11,9 @@ namespace UAParser\Result;
 
 class Device extends AbstractSoftware
 {
-    /** @var string */
+    /** @var string|null */
     public $brand;
 
-    /** @var string */
+    /** @var string|null */
     public $model;
 }

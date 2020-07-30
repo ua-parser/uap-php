@@ -42,9 +42,10 @@ class FetchCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $fs = new Filesystem();
-        $fetcher = new Fetcher();
-        $fs->dumpFile($input->getArgument('file'), $fetcher->fetch());
+        $file = $input->getArgument('file');
+        assert(is_string($file));
+
+        (new Filesystem())->dumpFile($file, (new Fetcher())->fetch());
 
         return 0;
     }

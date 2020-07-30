@@ -24,7 +24,7 @@ class OperatingSystemParser extends AbstractParser
         [$regex, $matches] = self::tryMatch($this->regexes['os_parsers'], $userAgent);
 
         if ($matches) {
-            $os->family = self::multiReplace($regex, 'os_replacement', $matches[1], $matches);
+            $os->family = self::multiReplace($regex, 'os_replacement', $matches[1], $matches) ?? $os->family;
             $os->major = self::multiReplace($regex, 'os_v1_replacement', $matches[2], $matches);
             $os->minor = self::multiReplace($regex, 'os_v2_replacement', $matches[3], $matches);
             $os->patch = self::multiReplace($regex, 'os_v3_replacement', $matches[4], $matches);

@@ -62,7 +62,7 @@ abstract class AbstractParser
 
     private static function emptyStringToNull(?string $string): ?string
     {
-        $string = trim($string);
+        $string = trim($string ?? '');
 
         return $string === '' ? null : $string;
     }

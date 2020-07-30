@@ -22,5 +22,6 @@ install:
 
 script:
   - ./vendor/bin/phpunit
+  - ./vendor/bin/psalm
 
 sudo: false
