@@ -14,58 +14,12 @@ use UAParser\Exception\FileNotFoundException;
 
 abstract class AbstractParser
 {
-    /** @var string */
-    public static $defaultFile;
-
     /** @var array */
     protected $regexes = array();
 
     public function __construct(array $regexes)
     {
         $this->regexes = $regexes;
-    }
-
-    /**
-     * Create parser instance
-     *
-     * Either pass a custom regexes.php file or leave the argument empty and use the default file.
-     * @throws FileNotFoundException
-     */
-    public static function create(?string $file = null): self
-    {
-        return $file ? static::createCustom($file) : static::createDefault();
-    }
-
-    /** @throws FileNotFoundException */
-    protected static function createDefault(): self
-    {
-        return static::createInstance(
-            static::getDefaultFile(),
-            [FileNotFoundException::class, 'defaultFileNotFound']
-        );
-    }
-
-    /** @throws FileNotFoundException */
-    protected static function createCustom(string $file): self
-    {
-        return static::createInstance(
-            $file,
-            [FileNotFoundException::class, 'customRegexFileNotFound']
-        );
-    }
-
-    private static function createInstance(string $file, callable $exceptionFactory): self
-    {
-        if (!file_exists($file)) {
-            throw $exceptionFactory($file);
-        }
-
-        static $map = [];
-        if (!isset($map[$file])) {
-            $map[$file] = include $file;
-        }
-
-        return new static($map[$file]);
     }
 
     protected static function tryMatch(array $regexes, string $userAgent): array
@@ -108,13 +62,8 @@ abstract class AbstractParser
 
     private static function emptyStringToNull(?string $string): ?string
     {
-        $string = trim($string);
+        $string = trim($string ?? '');
 
         return $string === '' ? null : $string;
-    }
-
-    protected static function getDefaultFile(): string
-    {
-        return static::$defaultFile ?: dirname(__DIR__).'/resources'.DIRECTORY_SEPARATOR.'regexes.php';
     }
 }

@@ -41,12 +41,12 @@ class Fetcher
     public function fetch()
     {
         $level = error_reporting(0);
-        $result = file_get_contents($this->resourceUri, null, $this->streamContext);
+        $result = file_get_contents($this->resourceUri, false, $this->streamContext);
         error_reporting($level);
 
         if ($result === false) {
             $error = error_get_last();
-            throw FetcherException::httpError($this->resourceUri, $error['message']);
+            throw FetcherException::httpError($this->resourceUri, $error['message'] ?? 'Undefined error');
         }
 
         return $result;

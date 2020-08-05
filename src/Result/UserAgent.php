@@ -11,13 +11,13 @@ namespace UAParser\Result;
 
 class UserAgent extends AbstractVersionedSoftware
 {
-    /** @var string */
+    /** @var string|null */
     public $major;
 
-    /** @var string */
+    /** @var string|null */
     public $minor;
 
-    /** @var string */
+    /** @var string|null */
     public $patch;
 
     public function toVersion(): string

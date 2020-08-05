@@ -11,16 +11,16 @@ namespace UAParser\Result;
 
 class OperatingSystem extends AbstractVersionedSoftware
 {
-    /** @var string */
+    /** @var string|null */
     public $major;
 
-    /** @var string */
+    /** @var string|null */
     public $minor;
 
-    /** @var string */
+    /** @var string|null */
     public $patch;
 
-    /** @var string */
+    /** @var string|null */
     public $patchMinor;
 
     public function toVersion(): string

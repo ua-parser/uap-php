@@ -23,6 +23,8 @@ abstract class AbstractReader implements ReaderInterface
                 return $reader;
             }
         }
+
+        throw ReaderException::readerNotFound($line);
     }
 
     private static function getReaders(): array

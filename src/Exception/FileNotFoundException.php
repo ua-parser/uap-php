@@ -10,16 +10,16 @@ namespace UAParser\Exception;
 
 use Exception;
 
-class FileNotFoundException extends Exception
+final class FileNotFoundException extends Exception
 {
     public static function fileNotFound(string $file): self
     {
-        return new static(sprintf('File "%s" does not exist', $file));
+        return new self(sprintf('File "%s" does not exist', $file));
     }
 
     public static function customRegexFileNotFound(string $file): self
     {
-        return new static(
+        return new self(
             sprintf(
                 'ua-parser cannot find the custom regexes file you supplied ("%s"). Please make sure you have the correct path.',
                 $file
@@ -29,7 +29,7 @@ class FileNotFoundException extends Exception
 
     public static function defaultFileNotFound(string $file): self
     {
-        return new static(
+        return new self(
             sprintf(
                 'Please download the "%s" file before using ua-parser by running "php bin/uaparser ua-parser:update"',
                 $file

@@ -6,11 +6,13 @@
         "composer/ca-bundle": "^1.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7 || ^8 || ^9",
-        "symfony/yaml": "^3.4 || ^4.3 || ^5.0",
-        "symfony/filesystem": "^3.4 || ^4.3 || ^5.0",
-        "symfony/finder": "^3.4 || ^4.3 || ^5.0",
-        "symfony/console": "^3.4 || ^4.3 || ^5.0"
+        "phpunit/phpunit": "^8 || ^9",
+        "symfony/yaml": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+        "symfony/filesystem": "^3.4 || ^4.2 ||  ^4.3 || ^5.0",
+        "symfony/finder": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+        "symfony/console": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+        "phpstan/phpstan": "^0.12.33",
+        "vimeo/psalm": "^3.12"
     },
     "suggest": {
         "symfony/yaml": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
