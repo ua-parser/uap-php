@@ -3,6 +3,10 @@ language: php
 before_script:
   - phpenv config-rm xdebug.ini || true
 
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
 php:
   - 7.2
   - 7.3
