@@ -25,15 +25,15 @@ class Fetcher
             $this->streamContext = $streamContext;
         } else {
             $this->streamContext = stream_context_create(
-                array(
-                    'ssl' => array(
+                [
+                    'ssl' => [
                         'verify_peer' => true,
                         'verify_depth' => 10,
                         'cafile' => CaBundle::getSystemCaRootBundlePath(),
                         static::getPeerNameKey() => 'www.github.com',
                         'disable_compression' => true,
-                    )
-                )
+                    ]
+                ]
             );
         }
     }

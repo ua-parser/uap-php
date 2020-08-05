@@ -52,14 +52,14 @@ class LogfileCommand extends Command
                 'i',
                 InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED,
                 'Include glob expressions for log files in the log directory',
-                array('*.log', '*.log*.gz', '*.log*.bz2')
+                ['*.log', '*.log*.gz', '*.log*.bz2']
             )
             ->addOption(
                 'exclude',
                 'e',
                 InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED,
                 'Exclude glob expressions for log files in the log directory',
-                array('*error*')
+                ['*error*']
             );
     }
 
@@ -70,7 +70,7 @@ class LogfileCommand extends Command
         }
 
         $parser = Parser::create();
-        $undefinedClients = array();
+        $undefinedClients = [];
         foreach ($this->getFiles($input) as $file) {
 
             $path = $this->getPath($file);
@@ -111,7 +111,7 @@ class LogfileCommand extends Command
                 $result = $this->getResult($client);
                 if ($result !== '.') {
                     $undefinedClients[] = json_encode(
-                        array($client->toString(), $userAgentString),
+                        [$client->toString(), $userAgentString],
                         JSON_UNESCAPED_SLASHES
                     );
                 }
@@ -179,8 +179,8 @@ class LogfileCommand extends Command
         $logDir = $input->getOption('log-dir');
         if (is_string($logDir)) {
             $dirFinder = Finder::create()->in($logDir);
-            array_map(array($dirFinder, 'name'), array_filter((array)$input->getOption('include'),'is_string'));
-            array_map(array($dirFinder, 'notName'), array_filter((array)$input->getOption('exclude'),'is_string'));
+            array_map([$dirFinder, 'name'], array_filter((array)$input->getOption('include'), 'is_string'));
+            array_map([$dirFinder, 'notName'], array_filter((array)$input->getOption('exclude'), 'is_string'));
 
             $finder->append($dirFinder);
         }

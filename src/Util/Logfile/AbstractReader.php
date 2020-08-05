@@ -14,7 +14,7 @@ use UAParser\Exception\ReaderException;
 abstract class AbstractReader implements ReaderInterface
 {
     /** @var ReaderInterface[] */
-    private static $readers = array();
+    private static $readers = [];
 
     public static function factory(string $line): ReaderInterface
     {

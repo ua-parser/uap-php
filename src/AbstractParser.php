@@ -15,7 +15,7 @@ use UAParser\Exception\FileNotFoundException;
 abstract class AbstractParser
 {
     /** @var array */
-    protected $regexes = array();
+    protected $regexes = [];
 
     public function __construct(array $regexes)
     {
@@ -25,22 +25,21 @@ abstract class AbstractParser
     protected static function tryMatch(array $regexes, string $userAgent): array
     {
         foreach ($regexes as $regex) {
-            $flag = $regex['regex_flag'] ?? '';
-            if (preg_match('@'.$regex['regex'].'@'.$flag, $userAgent, $matches)) {
+            if (preg_match($regex['regex'], $userAgent, $matches)) {
 
-                $defaults = array(
+                $defaults = [
                     1 => 'Other',
                     2 => null,
                     3 => null,
                     4 => null,
                     5 => null,
-                );
+                ];
 
-                return array($regex, $matches + $defaults);
+                return [$regex, $matches + $defaults];
             }
         }
 
-        return array(null, null);
+        return [null, null];
     }
 
     protected static function multiReplace(array $regex, string $key, ?string $default, array $matches): ?string

@@ -151,7 +151,7 @@ class ParserTest extends AbstractParserTest
     private static function createTestData(Finder $resources): array
     {
         $resourcesDirectory = realpath(__DIR__.'/../uap-core');
-        $testData = array();
+        $testData = [];
 
         /** @var $resource SplFileInfo */
         foreach ($resources->in($resourcesDirectory) as $resource) {
@@ -166,9 +166,9 @@ class ParserTest extends AbstractParserTest
 
     private static function createArguments(array $testCase, SplFileInfo $resource): array
     {
-        return array(
+        return [
             $testCase['user_agent_string'],
-            isset($testCase['js_ua']) ? json_decode(str_replace("'", '"', $testCase['js_ua']), true) : array(),
+            isset($testCase['js_ua']) ? json_decode(str_replace("'", '"', $testCase['js_ua']), true) : [],
             $testCase['family'],
             $testCase['major'] ?? null,
             $testCase['minor'] ?? null,
@@ -177,7 +177,7 @@ class ParserTest extends AbstractParserTest
             $testCase['brand'] ?? null,
             $testCase['model'] ?? null,
             $resource->getFilename()
-        );
+        ];
     }
 
     protected function getParserClassName(): string
