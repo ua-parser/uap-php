@@ -33,3 +33,5 @@ script:
   - ./vendor/bin/psalm
   - ./vendor/bin/phpstan analyse -l 5 src
   - ./ci/publish.sh
+
+secure: "KdRIoeVMAjv63erXmG3EkOnE/UrIsgIJ7/S3yZwJq3y+c6jd7Xax6lNWRF6PcfKtNHJNhreIKA/skW5CkPktKIKqOrHrJVx5GsIQX3OqW1z2LF/qqDr7zxNWWrCCI13t7uy4GkPNU0xMwauk+5GCoyBrsxwjwf3/Lm3SA7xZTrE="
