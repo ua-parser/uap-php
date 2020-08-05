@@ -12,3 +12,6 @@ $RECYCLE.BIN/
 
 # PHPStorm
 .idea/
+
+# PHPUnit
+.phpunit.result.cache
