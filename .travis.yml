@@ -19,7 +19,7 @@ jobs:
   include:
     - php: 7.4
     - php: 7.4
-      if: branch = auto-update-resources
+      # if: branch = master
       env: UPDATE_RESOURCES=true
 
 install:
