@@ -16,6 +16,8 @@ git submodule foreach git pull origin master --ff-only
 bin/uaparser ua-parser:convert uap-core/regexes.yaml
 
 if git diff-index --quiet HEAD; then
+    echo "No resource update necessary"
+else
     ./vendor/bin/phpunit
 
     git config --global user.email travis@travis-ci.org
@@ -32,6 +34,4 @@ if git diff-index --quiet HEAD; then
     git push upstream $new_version
 
     echo "$new_version published"
-else
-    echo "No resource update necessary"
 fi
