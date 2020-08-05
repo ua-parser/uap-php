@@ -9,13 +9,13 @@ php:
   - 7.4
   - nightly
 
-matrix:
+jobs:
   allow_failures:
     - php: nightly
   include:
-    - php: 7.2
-    - php: 7.3
     - php: 7.4
+      if: branch = auto-update-resources
+      env: UPDATE_RESOURCES=true
 
 install:
   - composer install
@@ -24,5 +24,6 @@ script:
   - ./vendor/bin/phpunit
   - ./vendor/bin/psalm
   - ./vendor/bin/phpstan analyse -l 5 src
+  - ./update-resources.sh
 
 sudo: false
