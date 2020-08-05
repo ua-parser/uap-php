@@ -26,11 +26,10 @@ install:
   - composer install
 
 script:
-  - [ "$UPDATE_RESOURCES" == "true" ] && git submodule foreach git pull origin master
-  - [ "$UPDATE_RESOURCES" == "true" ] && bin/uaparser ua-parser:convert uap-core/regexes.yaml
+  - ./ci/update.sh
   - ./vendor/bin/phpunit
   - ./vendor/bin/psalm
   - ./vendor/bin/phpstan analyse -l 5 src
-  - ./update-resources.sh
+  - ./ci/publish.sh
 
 sudo: false
