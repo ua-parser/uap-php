@@ -29,12 +29,12 @@ class FetcherTest extends AbstractTestCase
         $url = 'https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml';
         $fetcher = new Fetcher(
             stream_context_create(
-                array(
-                    'ssl' => array(
+                [
+                    'ssl' => [
                         'verify_peer' => true,
                         Fetcher::getPeerNameKey() => 'invalid.com',
-                    )
-                )
+                    ]
+                ]
             )
         );
 

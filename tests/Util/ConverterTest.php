@@ -39,25 +39,19 @@ class ConverterTest extends AbstractTestCase
             ->disableOriginalConstructor()
             ->disableOriginalClone()
             ->getMock();
-        $this->converter = new Converter(sys_get_temp_dir(), $this->fs);
+        $this->converter = new Converter(sys_get_temp_dir(), null, $this->fs);
         $yaml = <<<EOS
 group:
-    - {regex: "REGEX@"}
+    - regex: "REGEX@"
+      regex_flag: "i"
 EOS;
         $this->yamlFile = sys_get_temp_dir().'/uaparser-'.time().'.yaml';
         file_put_contents($this->yamlFile, $yaml);
 
         $this->php = <<<EOS
 <?php
-return array (
-  'group' =>
-  array (
-    0 =>
-    array (
-      'regex' => 'REGEX\\\\@',
-    ),
-  ),
-);
+return ['group' => [['regex' => '@REGEX\\\\@@i']]];
+
 EOS;
         $this->phpFile = sys_get_temp_dir().'/regexes.php';
         touch($this->phpFile);

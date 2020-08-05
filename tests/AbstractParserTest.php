@@ -8,6 +8,7 @@
  */
 namespace UAParser\Test;
 
+use ReflectionClass;
 use UAParser\Exception\FileNotFoundException;
 
 abstract class AbstractParserTest extends AbstractTestCase
@@ -55,7 +56,7 @@ abstract class AbstractParserTest extends AbstractTestCase
 
     public function testDefaultFileIsAbsolute(): void
     {
-        $class = new \ReflectionClass($this->getParserClassName());
+        $class = new ReflectionClass($this->getParserClassName());
         $method = $class->getMethod('getDefaultFile');
         $method->setAccessible(true);
 

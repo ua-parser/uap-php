@@ -15,7 +15,7 @@ abstract class AbstractVersionedSoftware extends AbstractSoftware
 
     public function toString(): string
     {
-        return implode(' ', array_filter(array($this->family, $this->toVersion())));
+        return implode(' ', array_filter([$this->family, $this->toVersion()]));
     }
 
     protected function formatVersion(?string ...$args): string
