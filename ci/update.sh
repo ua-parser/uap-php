@@ -29,7 +29,6 @@ else
     git commit -a -m "Automatic resource update"
     git push upstream ${TRAVIS_BRANCH}
 
-    git tag
     new_version=$test_prefix`git tag | sort --version-sort | tail -n 1 | awk -F. -v OFS=. 'NF==1{print ++$NF}; NF>1{if(length($NF+1)>length($NF))$(NF-1)++; $NF=sprintf("%0*d", length($NF), ($NF+1)%(10^length($NF))); print}'`
 
     git tag $new_version
