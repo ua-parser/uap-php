@@ -1,5 +1,5 @@
 #! /bin/bash
-if [ -z "$UPDATE_RESOURCES" ]; then
+if [ "$UPDATE_RESOURCES" == true ]; then
     echo "Skipping resource updates"
     exit 0
 fi
@@ -12,9 +12,6 @@ function try_catch() {
     fi
 }
 
-try_catch git submodule foreach git pull origin master
-try_catch php bin/uaparser ua-parser:convert uap-core/regexes.yaml
-try_catch php vendor/bin/phpunit --stop-on-failure
 try_catch git config --global user.email travis@travis-ci.org
 try_catch git config --global user.name "Travis CI"
 git status
