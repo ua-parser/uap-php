@@ -1,6 +1,56 @@
 <?php
 return [
     'user_agent_parsers' => [
+        ['regex' => '@(GeoEvent Server) (\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)@'],
+        ['regex' => '@(ArcGIS Pro)(?: (\\d+)\\.(\\d+)\\.([^ ]+)|)@'],
+        [
+            'regex' => '@ArcGIS Client Using WinInet@',
+            'family_replacement' => 'ArcMap',
+        ],
+        [
+            'regex' => '@(OperationsDashboard)-(?:Windows)-(\\d+)\\.(\\d+)\\.(\\d+)@',
+            'family_replacement' => 'Operations Dashboard for ArcGIS',
+        ],
+        [
+            'regex' => '@(arcgisearth)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)@',
+            'family_replacement' => 'ArcGIS Earth',
+        ],
+        [
+            'regex' => '@com.esri.(earth).phone/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)@',
+            'family_replacement' => 'ArcGIS Earth',
+        ],
+        [
+            'regex' => '@(arcgis-explorer)/(\\d+)\\.(\\d+)\\.(\\d+)@',
+            'family_replacement' => 'Explorer for ArcGIS',
+        ],
+        [
+            'regex' => '@arcgis-(collector|aurora)/(\\d+)\\.(\\d+)\\.(\\d+)@',
+            'family_replacement' => 'Collector for ArcGIS',
+        ],
+        [
+            'regex' => '@(arcgis-workforce)/(\\d+)\\.(\\d+)\\.(\\d+)@',
+            'family_replacement' => 'Workforce for ArcGIS',
+        ],
+        [
+            'regex' => '@(Collector|Explorer|Workforce)-(?:Android|iOS)-(\\d+)\\.(\\d+)(?:\\.(\\d+)|)@',
+            'family_replacement' => '$1 for ArcGIS',
+        ],
+        [
+            'regex' => '@(Explorer|Collector)/(\\d+) CFNetwork@',
+            'family_replacement' => '$1 for ArcGIS',
+        ],
+        [
+            'regex' => '@ArcGISRuntime-(Android|iOS|NET|Qt)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)@',
+            'family_replacement' => 'ArcGIS Runtime SDK for $1',
+        ],
+        [
+            'regex' => '@ArcGIS\\.?(iOS|Android|NET|Qt)(?:-|\\.)(\\d+)\\.(\\d+)(?:\\.(\\d+)|)@',
+            'family_replacement' => 'ArcGIS Runtime SDK for $1',
+        ],
+        [
+            'regex' => '@ArcGIS\\.Runtime\\.(Qt)\\.(\\d+)\\.(\\d+)(?:\\.(\\d+)|)@',
+            'family_replacement' => 'ArcGIS Runtime SDK for $1',
+        ],
         ['regex' => '@^(Luminary)[Stage]+/(\\d+) CFNetwork@'],
         ['regex' => '@(ESPN)[%20| ]+Radio/(\\d+)\\.(\\d+)\\.(\\d+) CFNetwork@'],
         [
@@ -96,8 +146,12 @@ return [
             'regex' => '@(Pinterest(?:bot|))/(\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)[;\\s(]+\\+https://www.pinterest.com/bot.html@',
             'family_replacement' => 'Pinterestbot',
         ],
-        ['regex' => '@(CSimpleSpider|Cityreview Robot|CrawlDaddy|CrawlFire|Finderbots|Index crawler|Job Roboter|KiwiStatus Spider|Lijit Crawler|QuerySeekerSpider|ScollSpider|Trends Crawler|USyd-NLP-Spider|SiteCat Webbot|BotName\\/\\$BotVersion|123metaspider-Bot|1470\\.net crawler|50\\.nu|8bo Crawler Bot|Aboundex|Accoona-[A-z]{1,30}-Agent|AdsBot-Google(?:-[a-z]{1,30}|)|altavista|AppEngine-Google|archive.{0,30}\\.org_bot|archiver|Ask Jeeves|[Bb]ai[Dd]u[Ss]pider(?:-[A-Za-z]{1,30})(?:-[A-Za-z]{1,30}|)|bingbot|BingPreview|blitzbot|BlogBridge|Bloglovin|BoardReader Blog Indexer|BoardReader Favicon Fetcher|boitho.com-dc|BotSeer|BUbiNG|\\b\\w{0,30}favicon\\w{0,30}\\b|\\bYeti(?:-[a-z]{1,30}|)|Catchpoint(?: bot|)|[Cc]harlotte|Checklinks|clumboot|Comodo HTTP\\(S\\) Crawler|Comodo-Webinspector-Crawler|ConveraCrawler|CRAWL-E|CrawlConvera|Daumoa(?:-feedfetcher|)|Feed Seeker Bot|Feedbin|findlinks|Flamingo_SearchEngine|FollowSite Bot|furlbot|Genieo|gigabot|GomezAgent|gonzo1|(?:[a-zA-Z]{1,30}-|)Googlebot(?:-[a-zA-Z]{1,30}|)|Google SketchUp|grub-client|gsa-crawler|heritrix|HiddenMarket|holmes|HooWWWer|htdig|ia_archiver|ICC-Crawler|Icarus6j|ichiro(?:/mobile|)|IconSurf|IlTrovatore(?:-Setaccio|)|InfuzApp|Innovazion Crawler|InternetArchive|IP2[a-z]{1,30}Bot|jbot\\b|KaloogaBot|Kraken|Kurzor|larbin|LEIA|LesnikBot|Linguee Bot|LinkAider|LinkedInBot|Lite Bot|Llaut|lycos|Mail\\.RU_Bot|masscan|masidani_bot|Mediapartners-Google|Microsoft .{0,30} Bot|mogimogi|mozDex|MJ12bot|msnbot(?:-media {0,2}|)|msrbot|Mtps Feed Aggregation System|netresearch|Netvibes|NewsGator[^/]{0,30}|^NING|Nutch[^/]{0,30}|Nymesis|ObjectsSearch|OgScrper|Orbiter|OOZBOT|PagePeeker|PagesInventory|PaxleFramework|Peeplo Screenshot Bot|PlantyNet_WebRobot|Pompos|Qwantify|Read%20Later|Reaper|RedCarpet|Retreiver|Riddler|Rival IQ|scooter|Scrapy|Scrubby|searchsight|seekbot|semanticdiscovery|SemrushBot|Simpy|SimplePie|SEOstats|SimpleRSS|SiteCon|Slackbot-LinkExpanding|Slack-ImgProxy|Slurp|snappy|Speedy Spider|Squrl Java|Stringer|TheUsefulbot|ThumbShotsBot|Thumbshots\\.ru|Tiny Tiny RSS|Twitterbot|WhatsApp|URL2PNG|Vagabondo|VoilaBot|^vortex|Votay bot|^voyager|WASALive.Bot|Web-sniffer|WebThumb|WeSEE:[A-z]{1,30}|WhatWeb|WIRE|WordPress|Wotbox|www\\.almaden\\.ibm\\.com|Xenu(?:.s|) Link Sleuth|Xerka [A-z]{1,30}Bot|yacy(?:bot|)|YahooSeeker|Yahoo! Slurp|Yandex\\w{1,30}|YodaoBot(?:-[A-z]{1,30}|)|YottaaMonitor|Yowedo|^Zao|^Zao-Crawler|ZeBot_www\\.ze\\.bz|ZooShot|ZyBorg)(?:[ /]v?(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)|)@'],
+        ['regex' => '@(CSimpleSpider|Cityreview Robot|CrawlDaddy|CrawlFire|Finderbots|Index crawler|Job Roboter|KiwiStatus Spider|Lijit Crawler|QuerySeekerSpider|ScollSpider|Trends Crawler|USyd-NLP-Spider|SiteCat Webbot|BotName\\/\\$BotVersion|123metaspider-Bot|1470\\.net crawler|50\\.nu|8bo Crawler Bot|Aboundex|Accoona-[A-z]{1,30}-Agent|AdsBot-Google(?:-[a-z]{1,30}|)|altavista|AppEngine-Google|archive.{0,30}\\.org_bot|archiver|Ask Jeeves|[Bb]ai[Dd]u[Ss]pider(?:-[A-Za-z]{1,30})(?:-[A-Za-z]{1,30}|)|bingbot|BingPreview|blitzbot|BlogBridge|Bloglovin|BoardReader Blog Indexer|BoardReader Favicon Fetcher|boitho.com-dc|BotSeer|BUbiNG|\\b\\w{0,30}favicon\\w{0,30}\\b|\\bYeti(?:-[a-z]{1,30}|)|Catchpoint(?: bot|)|[Cc]harlotte|Checklinks|clumboot|Comodo HTTP\\(S\\) Crawler|Comodo-Webinspector-Crawler|ConveraCrawler|CRAWL-E|CrawlConvera|Daumoa(?:-feedfetcher|)|Feed Seeker Bot|Feedbin|findlinks|Flamingo_SearchEngine|FollowSite Bot|furlbot|Genieo|gigabot|GomezAgent|gonzo1|(?:[a-zA-Z]{1,30}-|)Googlebot(?:-[a-zA-Z]{1,30}|)|Google SketchUp|grub-client|gsa-crawler|heritrix|HiddenMarket|holmes|HooWWWer|htdig|ia_archiver|ICC-Crawler|Icarus6j|ichiro(?:/mobile|)|IconSurf|IlTrovatore(?:-Setaccio|)|InfuzApp|Innovazion Crawler|InternetArchive|IP2[a-z]{1,30}Bot|jbot\\b|KaloogaBot|Kraken|Kurzor|larbin|LEIA|LesnikBot|Linguee Bot|LinkAider|LinkedInBot|Lite Bot|Llaut|lycos|Mail\\.RU_Bot|masscan|masidani_bot|Mediapartners-Google|Microsoft .{0,30} Bot|mogimogi|mozDex|MJ12bot|msnbot(?:-media {0,2}|)|msrbot|Mtps Feed Aggregation System|netresearch|Netvibes|NewsGator[^/]{0,30}|^NING|Nutch[^/]{0,30}|Nymesis|ObjectsSearch|OgScrper|Orbiter|OOZBOT|PagePeeker|PagesInventory|PaxleFramework|Peeplo Screenshot Bot|PlantyNet_WebRobot|Pompos|Qwantify|Read%20Later|Reaper|RedCarpet|Retreiver|Riddler|Rival IQ|scooter|Scrapy|Scrubby|searchsight|seekbot|semanticdiscovery|SemrushBot|Simpy|SimplePie|SEOstats|SimpleRSS|SiteCon|Slackbot-LinkExpanding|Slack-ImgProxy|Slurp|snappy|Speedy Spider|Squrl Java|Stringer|TheUsefulbot|ThumbShotsBot|Thumbshots\\.ru|Tiny Tiny RSS|Twitterbot|WhatsApp|URL2PNG|Vagabondo|VoilaBot|^vortex|Votay bot|^voyager|WASALive.Bot|Web-sniffer|WebThumb|WeSEE:[A-z]{1,30}|WhatWeb|WIRE|WordPress|Wotbox|www\\.almaden\\.ibm\\.com|Xenu(?:.s|) Link Sleuth|Xerka [A-z]{1,30}Bot|yacy(?:bot|)|YahooSeeker|Yahoo! Slurp|Yandex\\w{1,30}|YodaoBot(?:-[A-z]{1,30}|)|YottaaMonitor|Yowedo|^Zao|^Zao-Crawler|ZeBot_www\\.ze\\.bz|ZooShot|ZyBorg|ArcGIS Hub Indexer)(?:[ /]v?(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)|)@'],
         ['regex' => '@\\b(Boto3?|JetS3t|aws-(?:cli|sdk-(?:cpp|go|java|nodejs|ruby2?|dotnet-(?:\\d{1,2}|core)))|s3fs)/(\\d+)\\.(\\d+)(?:\\.(\\d+)|)@'],
+        ['regex' => '@(FME)\\/(\\d+\\.\\d+)\\.(\\d+)\\.(\\d+)@'],
+        ['regex' => '@(QGIS)\\/(\\d)\\.?0?(\\d{1,2})\\.?0?(\\d{1,2})@'],
+        ['regex' => '@(JOSM)/(\\d+)\\.(\\d+)@'],
+        ['regex' => '@(Tygron Platform) \\((\\d+)\\.(\\d+)\\.(\\d+(?:\\.\\d+| RC \\d+\\.\\d+))@'],
         [
             'regex' => '@\\[(FBAN/MessengerForiOS|FB_IAB/MESSENGER);FBAV/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)@',
             'family_replacement' => 'Facebook Messenger',
@@ -334,14 +388,6 @@ return [
             'family_replacement' => 'Edge Mobile',
         ],
         [
-            'regex' => '@(EdgA)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)@',
-            'family_replacement' => 'Edge Mobile',
-        ],
-        [
-            'regex' => '@(EdgiOS)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)@',
-            'family_replacement' => 'Edge Mobile',
-        ],
-        [
             'regex' => '@(EdgiOS|EdgA)/(\\d+)\\.(\\d+)\\.(\\d+)\\.(\\d+)@',
             'family_replacement' => 'Edge Mobile',
         ],
@@ -442,6 +488,7 @@ return [
             'regex' => '@(Rackspace Monitoring)/(\\d+)\\.(\\d+)@',
             'family_replacement' => 'RackspaceBot',
         ],
+        ['regex' => '@(PRTG Network Monitor)@'],
         ['regex' => '@(PyAMF)/(\\d+)\\.(\\d+)\\.(\\d+)@'],
         [
             'regex' => '@(YaBrowser)/(\\d+)\\.(\\d+)\\.(\\d+)@',
@@ -606,7 +653,7 @@ return [
         ],
         ['regex' => '@(Custom)-Feed Reader@'],
         ['regex' => '@(iRider|Crazy Browser|SkipStone|iCab|Lunascape|Sleipnir|Maemo Browser) (\\d+)\\.(\\d+)\\.(\\d+)@'],
-        ['regex' => '@(iCab|Lunascape|Opera|Android|Jasmine|Polaris|Microsoft SkyDriveSync|The Bat!) (\\d+)\\.(\\d+)(?:\\.(\\d+)|)@'],
+        ['regex' => '@(iCab|Lunascape|Opera|Android|Jasmine|Polaris|Microsoft SkyDriveSync|The Bat!) (\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)@'],
         ['regex' => '@(Kindle)/(\\d+)\\.(\\d+)@'],
         [
             'regex' => '@(Android) Donut@',
@@ -855,7 +902,7 @@ return [
             'regex' => '@(python-requests)/(\\d+)\\.(\\d+)@',
             'family_replacement' => 'Python Requests',
         ],
-        ['regex' => '@\\b(Windows-Update-Agent|Microsoft-CryptoAPI|SophosUpdateManager|SophosAgent|Debian APT-HTTP|Ubuntu APT-HTTP|libcurl-agent|libwww-perl|urlgrabber|curl|PycURL|Wget|wget2|aria2|Axel|OpenBSD ftp|lftp|jupdate|insomnia|fetch libfetch|akka-http|got)(?:[ /](\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)@'],
+        ['regex' => '@\\b(Windows-Update-Agent|WindowsPowerShell|Microsoft-CryptoAPI|SophosUpdateManager|SophosAgent|Debian APT-HTTP|Ubuntu APT-HTTP|libcurl-agent|libwww-perl|urlgrabber|curl|PycURL|Wget|wget2|aria2|Axel|OpenBSD ftp|lftp|jupdate|insomnia|fetch libfetch|akka-http|got)(?:[ /](\\d+)(?:\\.(\\d+)|)(?:\\.(\\d+)|)|)@'],
         [
             'regex' => '@(Python/3\\.\\d{1,3} aiohttp)/(\\d+)\\.(\\d+)\\.(\\d+)@',
             'family_replacement' => 'Python aiohttp',
@@ -926,6 +973,8 @@ return [
             'regex' => '@(CPU[ +]OS|iPhone[ +]OS|CPU[ +]iPhone)[ +]+(\\d+)[_\\.](\\d+)(?:[_\\.](\\d+)|).*Outlook-iOS-Android@',
             'os_replacement' => 'iOS',
         ],
+        ['regex' => '@ArcGIS\\.?(iOS|Android)-\\d+\\.\\d+(?:\\.\\d+|)(?:[^\\/]+|)\\/(\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|)@'],
+        ['regex' => '@ArcGISRuntime-(?:Android|iOS)\\/\\d+\\.\\d+(?:\\.\\d+|) \\((Android|iOS) (\\d+)(?:\\.(\\d+)(?:\\.(\\d+)|)|);@'],
         ['regex' => '@(Android)[ \\-/](\\d+)(?:\\.(\\d+)|)(?:[.\\-]([a-z0-9]+)|)@'],
         [
             'regex' => '@(Android) Donut@',
@@ -999,12 +1048,12 @@ return [
             'os_v1_replacement' => 'XP',
         ],
         [
-            'regex' => '@(Windows NT 6\\.1)@',
+            'regex' => '@(Win(?:dows NT |32NT\\/)6\\.1)@',
             'os_replacement' => 'Windows',
             'os_v1_replacement' => '7',
         ],
         [
-            'regex' => '@(Windows NT 6\\.0)@',
+            'regex' => '@(Win(?:dows NT |32NT\\/)6\\.0)@',
             'os_replacement' => 'Windows',
             'os_v1_replacement' => 'Vista',
         ],
@@ -1019,7 +1068,7 @@ return [
             'os_v1_replacement' => 'RT',
         ],
         [
-            'regex' => '@(Windows NT 6\\.2)@',
+            'regex' => '@(Win(?:dows NT |32NT\\/)6\\.2)@',
             'os_replacement' => 'Windows',
             'os_v1_replacement' => '8',
         ],
@@ -1030,13 +1079,13 @@ return [
             'os_v2_replacement' => '1',
         ],
         [
-            'regex' => '@(Windows NT 6\\.3)@',
+            'regex' => '@(Win(?:dows NT |32NT\\/)6\\.3)@',
             'os_replacement' => 'Windows',
             'os_v1_replacement' => '8',
             'os_v2_replacement' => '1',
         ],
         [
-            'regex' => '@(Windows NT 6\\.4)@',
+            'regex' => '@(Win(?:dows NT |32NT\\/)6\\.4)@',
             'os_replacement' => 'Windows',
             'os_v1_replacement' => '10',
         ],
@@ -2758,6 +2807,12 @@ return [
             'model_replacement' => '$1',
         ],
         [
+            'regex' => '@; *itel ([^;/]*)(?: Build|\\) AppleWebKit)@',
+            'device_replacement' => 'Itel $1',
+            'brand_replacement' => 'Itel',
+            'model_replacement' => '$1',
+        ],
+        [
             'regex' => '@; *(DE88Plus|MD70)(?: Build|\\) AppleWebKit)@',
             'device_replacement' => '$1',
             'brand_replacement' => 'Ivio',
@@ -3328,6 +3383,12 @@ return [
             'model_replacement' => '$3',
         ],
         [
+            'regex' => '@; *(TA\\-\\d{4})(?: Build|\\) AppleWebKit)@',
+            'device_replacement' => 'Nokia $1',
+            'brand_replacement' => 'Nokia',
+            'model_replacement' => '$1',
+        ],
+        [
             'regex' => '@; *(Nook ?|Barnes & Noble Nook |BN )([^;/]+?)(?: Build|\\) AppleWebKit)@',
             'device_replacement' => '$1$2',
             'brand_replacement' => 'Nook',
@@ -3370,7 +3431,7 @@ return [
             'model_replacement' => '$1',
         ],
         [
-            'regex' => '@; *(Find ?(?:5|7a)|R8[012]\\d{1,2}|T703\\d?|U70\\d{1,2}T?|X90\\d{1,2})(?: Build|\\) AppleWebKit)@',
+            'regex' => '@; *(Find ?(?:5|7a)|R8[012]\\d{1,2}|T703\\d?|U70\\d{1,2}T?|X90\\d{1,2}|[AFR]\\d{1,2}[a-z]{1,2})(?: Build|\\) AppleWebKit)@',
             'device_replacement' => 'Oppo $1',
             'brand_replacement' => 'Oppo',
             'model_replacement' => '$1',
@@ -3378,6 +3439,17 @@ return [
         [
             'regex' => '@; *OPPO ?([^;/]+?)(?: Build|\\) AppleWebKit)@',
             'device_replacement' => 'Oppo $1',
+            'brand_replacement' => 'Oppo',
+            'model_replacement' => '$1',
+        ],
+        [
+            'regex' => '@; *(CPH\\d{1,4}|RMX\\d{1,4}|P[A-Z]{3}\\d{2})(?: Build|\\) AppleWebKit)@',
+            'device_replacement' => 'Oppo $1',
+            'brand_replacement' => 'Oppo',
+        ],
+        [
+            'regex' => '@; *(A1601)(?: Build|\\) AppleWebKit)@',
+            'device_replacement' => 'Oppo F1s',
             'brand_replacement' => 'Oppo',
             'model_replacement' => '$1',
         ],
