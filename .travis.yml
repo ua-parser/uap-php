@@ -32,7 +32,6 @@ script:
   - ./vendor/bin/phpunit || travis_terminate 1
   - ./vendor/bin/psalm || travis_terminate 1
   - ./vendor/bin/phpstan analyse -l 5 src || travis_terminate 1
-  - ./vendor/bin/phpunit
   - ./ci/update.sh
 
 env:

@@ -16,6 +16,8 @@ git submodule foreach git pull origin master --ff-only
 bin/uaparser ua-parser:convert uap-core/regexes.yaml
 
 if git diff-index --quiet HEAD; then
+    ./vendor/bin/phpunit
+
     git config --global user.email travis@travis-ci.org
     git config --global user.name "Travis CI"
 
