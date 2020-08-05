@@ -1,3 +1,5 @@
+dist: bionic
+os: linux
 language: php
 
 before_script:
@@ -18,8 +20,8 @@ jobs:
     - php: nightly
   include:
     - php: 7.4
-    - php: 7.4
-      # if: branch = master
+    - php: 7.2
+      # if: branch = master AND fork = false
       env: UPDATE_RESOURCES=true
 
 install:
@@ -31,5 +33,3 @@ script:
   - ./vendor/bin/psalm
   - ./vendor/bin/phpstan analyse -l 5 src
   - ./ci/publish.sh
-
-sudo: false
