@@ -14,6 +14,7 @@ jobs:
     - php: nightly
   include:
     - php: 7.4
+    - php: 7.4
       if: branch = auto-update-resources
       env: UPDATE_RESOURCES=true
 
