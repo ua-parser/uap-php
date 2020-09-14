@@ -40,7 +40,7 @@ class FetcherTest extends AbstractTestCase
 
         $this->setExpectedException(
             FetcherException::class,
-            'Could not fetch HTTP resource "'.$url.'": file_get_contents('.$url.'): failed to open stream: operation failed'
+            'Could not fetch HTTP resource "'.$url.'": file_get_contents('.$url.'): '.(PHP_MAJOR_VERSION < 8 ? 'f' : 'F').'ailed to open stream: operation failed'
         );
 
         $fetcher->fetch();

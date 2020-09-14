@@ -17,8 +17,6 @@ php:
   - nightly
 
 jobs:
-  allow_failures:
-    - php: nightly
   include:
     - php: 7.4
     - php: 7.2
