@@ -10,15 +10,12 @@ cache:
     - $HOME/.composer/cache/files
     - vendor
 
-php:
-  - 7.2
-  - 7.3
-  - 7.4
-  - nightly
-
 jobs:
+  allow_failures:
+    - php: nightly
   include:
     - php: 7.4
+    - php: 7.3
     - php: 7.2
       if: branch = master AND fork = false
       env:
