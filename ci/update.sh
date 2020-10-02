@@ -15,7 +15,7 @@ fi
 git submodule foreach git pull origin master --ff-only
 bin/uaparser ua-parser:convert uap-core/regexes.yaml
 
-if git diff-index --quiet HEAD; then
+if git diff-index HEAD --; then
     echo "No resource update necessary"
 else
     ./vendor/bin/phpunit
