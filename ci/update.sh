@@ -26,6 +26,8 @@ else
     git remote add upstream https://${GITHUB_TOKEN}@github.com/ua-parser/uap-php.git
     git fetch upstream --tags
 
+    git status
+
     git commit -m "Automatic resource update" uap-core resources/regexes.php
     git push upstream ${TRAVIS_BRANCH}
 
