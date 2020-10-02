@@ -179,8 +179,8 @@ class LogfileCommand extends Command
         $logDir = $input->getOption('log-dir');
         if (is_string($logDir)) {
             $dirFinder = Finder::create()->in($logDir);
-            array_map([$dirFinder, 'name'], array_filter((array)$input->getOption('include'), 'is_string'));
-            array_map([$dirFinder, 'notName'], array_filter((array)$input->getOption('exclude'), 'is_string'));
+            array_map([$dirFinder, 'name'], array_map('strval', (array)$input->getOption('include')));
+            array_map([$dirFinder, 'notName'], array_map('strval', (array)$input->getOption('exclude')));
 
             $finder->append($dirFinder);
         }
