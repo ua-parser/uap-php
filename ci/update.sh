@@ -15,7 +15,7 @@ fi
 git submodule foreach git pull origin master --ff-only
 bin/uaparser ua-parser:convert uap-core/regexes.yaml
 
-if [[ `git status --porcelain` ]]; then
+if [[ ! `git status --porcelain` ]]; then
     echo "No resource update necessary"
 else
     ./vendor/bin/phpunit
