@@ -1,0 +1,70 @@
+name: CI
+
+on:
+    push:
+    pull_request:
+
+permissions:
+    contents: read
+
+jobs:
+    check_composer:
+        name: Check composer.json
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: shivammathur/setup-php@v2
+              with:
+                  coverage: none
+                  php-version: '8.0'
+            - run: composer validate --strict --no-check-lock
+
+    phpstan:
+        name: PHPStan
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: shivammathur/setup-php@v2
+              with:
+                  coverage: none
+                  php-version: '7.4'
+            - name: Install dependencies
+              run: composer update --ansi --no-progress --prefer-dist --no-interaction
+            - run: vendor/bin/phpstan analyze -l 5 src
+
+    psalm:
+        name: Psalm
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: shivammathur/setup-php@v2
+              with:
+                  coverage: none
+                  php-version: '7.4'
+            - name: Install dependencies
+              run: composer update --ansi --no-progress --prefer-dist --no-interaction
+            - run: vendor/bin/psalm
+
+    tests:
+        name: "Tests on PHP ${{ matrix.php }}"
+        runs-on: ubuntu-latest
+
+        strategy:
+            fail-fast: false
+            matrix:
+                php: [ '7.2', '7.3', '7.4', '8.0', '8.1' ]
+
+        steps:
+            -   uses: actions/checkout@v3
+                with:
+                    submodules: true
+            -   uses: shivammathur/setup-php@v2
+                with:
+                    coverage: "none"
+                    php-version: "${{ matrix.php }}"
+
+            -   name: Install dependencies
+                run: composer update --ansi --no-progress --prefer-dist --no-interaction
+
+            -   name: Run tests
+                run: vendor/bin/phpunit --colors=always

@@ -1,0 +1,24 @@
+name: Automatic update
+
+on:
+    schedule:
+        - cron: '13 10 * * *' # Update once a day at 10:13 (chosen arbitrarily)
+
+jobs:
+    update:
+        name: "Update regexes"
+        runs-on: ubuntu-latest
+        # Don't run it on forks that might enable Actions
+        if: github.repository == 'ua-parser/uap-php'
+
+        steps:
+            -   uses: actions/checkout@v3
+            -   uses: shivammathur/setup-php@v2
+                with:
+                    coverage: "none"
+                    php-version: "7.4"
+
+            -   name: Install dependencies
+                run: composer update --ansi --no-progress --prefer-dist --no-interaction
+
+            -   run: ./ci/update.sh
