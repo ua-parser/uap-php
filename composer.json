@@ -7,18 +7,18 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^8 || ^9",
-        "symfony/yaml": "^3.4 || ^4.2 || ^4.3 || ^5.0",
-        "symfony/filesystem": "^3.4 || ^4.2 ||  ^4.3 || ^5.0",
-        "symfony/finder": "^3.4 || ^4.2 || ^4.3 || ^5.0",
-        "symfony/console": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+        "symfony/yaml": "^4.4 || ^5.3 || ^6.0",
+        "symfony/filesystem": "^4.4 || ^5.3 || ^6.0",
+        "symfony/finder": "^4.4 || ^5.3 || ^6.0",
+        "symfony/console": "^4.4 || ^5.3 || ^6.0",
         "phpstan/phpstan": "^0.12.33",
         "vimeo/psalm": "^3.12"
     },
     "suggest": {
-        "symfony/yaml": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
-        "symfony/filesystem": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
-        "symfony/finder": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
-        "symfony/console": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0"
+        "symfony/yaml": "Required for CLI usage - ^4.4 || ^5.3 || ^6.0",
+        "symfony/filesystem": "Required for CLI usage - ^4.4 || ^5.3 || ^6.0",
+        "symfony/finder": "Required for CLI usage - ^4.4 || ^5.3 || ^6.0",
+        "symfony/console": "Required for CLI usage - ^4.4 || ^5.3 || ^6.0"
     },
     "prefer-stable": true,
     "license": "MIT",
