@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.3
+- Bugfix: handling null values in source yaml file
+
 ## 3.4.2
  - Update uap-core
 
