@@ -24,7 +24,7 @@ class Converter
     /** @var Filesystem */
     private $fs;
 
-    public function __construct(string $destination, CodeGenerator $codeGenerator = null, Filesystem $fs = null)
+    public function __construct(string $destination, ?CodeGenerator $codeGenerator = null, ?Filesystem $fs = null)
     {
         $this->destination = $destination;
         $this->codeGenerator = $codeGenerator ?: new CodeGenerator();

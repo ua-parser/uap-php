@@ -23,7 +23,7 @@ abstract class AbstractTestCase extends TestCase
      * @param int $exception_code
      *   The expected exception code.
      */
-    public function setExpectedException($class, string $message = '', int $exception_code = NULL): void
+    public function setExpectedException($class, string $message = '', ?int $exception_code = NULL): void
     {
         if (method_exists($this, 'expectException')) {
             $this->expectException($class);
