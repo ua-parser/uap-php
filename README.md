@@ -8,7 +8,9 @@
 This is the PHP library for the [uap-core](https://github.com/ua-parser/uap-core) project.
 
 ## Installation ##
-Add `ua-parser/uap-php` to the require section of your `composer.json` file and run `composer update`.
+```
+composer require ua-parser/uap-php
+```
 
 ## Usage ##
 
