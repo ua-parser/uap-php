@@ -25,11 +25,14 @@ class CodeGenerator
             return static function(string $source, array $element) use ($indentation, $multi, $createReducer) {
                 [$key, $value] = $element;
 
-                if (is_scalar($value)) {
-                    if ($multi) {
-                        $source .= self::indent($indentation);
-                    }
-                    $source .= self::generateKey($key) .  var_export($value, true);
+                if ($multi) {
+                    $source .= self::indent($indentation);
+                }
+
+                $source .= self::generateKey($key);
+
+                if (is_scalar($value) || is_null($value)) {
+                    $source .= var_export($value, true);
                     if ($multi) {
                         $source .= ",\n";
                     }
@@ -37,10 +40,7 @@ class CodeGenerator
                     return $source;
                 }
 
-                if ($multi) {
-                    $source .= self::indent($indentation);
-                }
-                $source .= self::generateKey($key) . "[";
+                $source .= "[";
                 $nextMulti = count($value) > 1;
                 if ($nextMulti) {
                     $source .= "\n";
